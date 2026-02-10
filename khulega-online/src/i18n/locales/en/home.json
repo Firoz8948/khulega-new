@@ -1,0 +1,33 @@
+{
+  "hero": {
+    "title": "Welcome to Khulega.online",
+    "subtitle": "Your one-stop destination for services, shopping, and career opportunities.",
+    "cta1": "Explore Shop",
+    "cta2": "Our Services"
+  },
+  "features": {
+    "title": "Why Choose Khulega?",
+    "items": [
+      {
+        "icon": "\ud83d\uded2",
+        "title": "Online Shop",
+        "description": "Browse our wide range of products with amazing deals and offers."
+      },
+      {
+        "icon": "\ud83d\udcbc",
+        "title": "Job Opportunities",
+        "description": "Find and apply for the best career opportunities near you."
+      },
+      {
+        "icon": "\u26a1",
+        "title": "Fast Services",
+        "description": "Quick and reliable services delivered right at your doorstep."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Join thousands of satisfied customers today.",
+    "button": "Get Started Now"
+  }
+}

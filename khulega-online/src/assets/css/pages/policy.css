@@ -1,0 +1,26 @@
+/* Policy page specific styles */
+.policy__content {
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.policy__content h2 {
+  margin-top: var(--space-2xl);
+  margin-bottom: var(--space-md);
+}
+
+.policy__content p {
+  margin-bottom: var(--space-md);
+  color: var(--color-text-secondary);
+}
+
+.policy__content ul {
+  list-style: disc;
+  padding-left: var(--space-xl);
+  margin-bottom: var(--space-md);
+}
+
+.policy__content li {
+  margin-bottom: var(--space-xs);
+  color: var(--color-text-secondary);
+}

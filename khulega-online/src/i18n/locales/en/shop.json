@@ -1,0 +1,19 @@
+{
+  "page": {
+    "title": "Our Shop",
+    "subtitle": "Browse our collection of quality products",
+    "breadcrumb": "Shop"
+  },
+  "filters": {
+    "all": "All",
+    "popular": "Popular",
+    "newest": "Newest",
+    "priceLow": "Price: Low to High",
+    "priceHigh": "Price: High to Low"
+  },
+  "product": {
+    "addToCart": "Add to Cart",
+    "outOfStock": "Out of Stock",
+    "currency": "\u20b9"
+  }
+}

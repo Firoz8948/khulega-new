@@ -1,0 +1,26 @@
+/* Terms page specific styles */
+.terms__content {
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.terms__content h2 {
+  margin-top: var(--space-2xl);
+  margin-bottom: var(--space-md);
+}
+
+.terms__content p {
+  margin-bottom: var(--space-md);
+  color: var(--color-text-secondary);
+}
+
+.terms__content ol {
+  list-style: decimal;
+  padding-left: var(--space-xl);
+  margin-bottom: var(--space-md);
+}
+
+.terms__content li {
+  margin-bottom: var(--space-sm);
+  color: var(--color-text-secondary);
+}

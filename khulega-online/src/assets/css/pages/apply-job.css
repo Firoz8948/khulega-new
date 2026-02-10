@@ -1,0 +1,24 @@
+/* Apply Job specific styles */
+.job__list {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.job__card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+@media (min-width: 768px) {
+  .job__card {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.job__form {
+  max-width: 600px;
+  margin-inline: auto;
+}

@@ -1,0 +1,32 @@
+{
+  "page": {
+    "title": "Privacy Policy",
+    "subtitle": "How we protect your data and privacy",
+    "breadcrumb": "Privacy Policy",
+    "lastUpdated": "Last updated: February 2026"
+  },
+  "sections": [
+    {
+      "title": "1. Information We Collect",
+      "content": "We collect information you provide directly to us, including your name, email address, phone number, and any other information you choose to provide."
+    },
+    {
+      "title": "2. How We Use Your Information",
+      "content": "We use the information we collect to provide, maintain, and improve our services, and to communicate with you.",
+      "list": [
+        "To process your transactions",
+        "To send you technical notices and support messages",
+        "To respond to your comments and questions",
+        "To provide customer service"
+      ]
+    },
+    {
+      "title": "3. Data Security",
+      "content": "We take reasonable measures to help protect your personal information from loss, theft, misuse, and unauthorized access."
+    },
+    {
+      "title": "4. Contact Us",
+      "content": "If you have any questions about this Privacy Policy, please contact us at our contact page."
+    }
+  ]
+}

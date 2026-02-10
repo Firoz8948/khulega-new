@@ -1,0 +1,25 @@
+{
+  "page": {
+    "title": "User Journey",
+    "subtitle": "See how our users achieve success",
+    "breadcrumb": "User Journey"
+  },
+  "steps": [
+    {
+      "title": "Step 1: Discover",
+      "description": "Users find Khulega.online through search, social media, or word of mouth."
+    },
+    {
+      "title": "Step 2: Explore",
+      "description": "Browse our services, shop items, and job opportunities."
+    },
+    {
+      "title": "Step 3: Engage",
+      "description": "Sign up, make purchases, or apply for jobs that match their skills."
+    },
+    {
+      "title": "Step 4: Succeed",
+      "description": "Achieve their goals with our reliable platform and support."
+    }
+  ]
+}

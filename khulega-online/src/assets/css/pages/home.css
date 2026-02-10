@@ -1,0 +1,47 @@
+/* ---- Hero Section ---- */
+.hero {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: var(--color-text-inverse);
+  padding: var(--space-4xl) 0;
+  text-align: center;
+}
+
+.hero__title {
+  font-size: var(--fs-hero);
+  margin-bottom: var(--space-md);
+}
+
+.hero__subtitle {
+  font-size: var(--fs-lg);
+  opacity: 0.9;
+  margin-bottom: var(--space-xl);
+  max-width: 600px;
+  margin-inline: auto;
+  font-weight: var(--fw-regular);
+}
+
+.hero__actions {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ---- Features Section ---- */
+.features__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl);
+}
+
+@media (min-width: 768px) {
+  .features__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .features__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

@@ -1,0 +1,35 @@
+/* Contact page specific styles */
+.contact__wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2xl);
+}
+
+@media (min-width: 768px) {
+  .contact__wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.contact__info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.contact__info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+}
+
+.contact__info-icon {
+  font-size: var(--fs-xl);
+  flex-shrink: 0;
+}

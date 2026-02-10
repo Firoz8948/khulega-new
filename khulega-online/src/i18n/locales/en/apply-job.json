@@ -1,0 +1,13 @@
+{
+  "page": {
+    "title": "Apply for Jobs",
+    "subtitle": "Find your dream career opportunity",
+    "breadcrumb": "Apply Job"
+  },
+  "jobs": [
+    { "title": "Delivery Executive", "location": "Multiple Cities", "type": "Full-time" },
+    { "title": "Customer Support", "location": "Remote", "type": "Part-time" },
+    { "title": "Sales Associate", "location": "Mumbai", "type": "Full-time" },
+    { "title": "Marketing Intern", "location": "Delhi", "type": "Internship" }
+  ]
+}
