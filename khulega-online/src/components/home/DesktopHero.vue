@@ -67,12 +67,12 @@
     </div>
 
     <!-- ===== MOBILE LAYOUT ===== -->
-    <div class="hero__mobile">
+    <div class="hero__mobile" v-if="stories.length > 0">
       <!-- Active story image + overlay text -->
       <div class="hero__mobile-slide">
         <img
-          :src="stories[activeSlide].image"
-          :alt="stories[activeSlide].alt"
+          :src="stories[activeSlide]?.image"
+          :alt="stories[activeSlide]?.alt"
           class="hero__mobile-img"
         />
         <div class="hero__mobile-overlay"></div>
@@ -81,7 +81,7 @@
             <span>जब <strong>shop.khulega.online</strong></span>
             <span>तब <strong>sab.milega.online</strong></span>
           </h1>
-          <p class="hero__mobile-story">{{ stories[activeSlide].text }}</p>
+          <p class="hero__mobile-story">{{ stories[activeSlide]?.text }}</p>
         </div>
       </div>
 
@@ -139,7 +139,8 @@ function goToSlide (idx) {
 }
 
 function nextSlide () {
-  activeSlide.value = (activeSlide.value + 1) % stories.length
+  if (stories.value.length === 0) return
+  activeSlide.value = (activeSlide.value + 1) % stories.value.length
 }
 
 function restartTimer () {
@@ -148,7 +149,7 @@ function restartTimer () {
 }
 
 onMounted(() => {
-  restartTimer()
+  if (stories.value.length > 0) restartTimer()
 })
 
 onUnmounted(() => {

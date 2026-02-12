@@ -14,6 +14,9 @@
     "ctaServices": "Contact for Services",
     "ctaShopNow": "Shop Now",
     "ctaGetServices": "Get Services",
+    "ecosystem": {
+      "platforms": ["Amazon", "Flipkart", "Meesho", "ONDC", "Jiomart", "& More"]
+    },
     "stories": [
       {
         "name": "Village Women",
@@ -23,38 +26,38 @@
       {
         "name": "Ramesh — Makhana Seller",
         "text": "Ramesh used to sell Makhana from his village, only in the local market. With Khulega.online's help, he and his old friends now sell Makhana online across India.",
-        "alt": "Ramesh selling Makhana online"
+        "alt": "Makhana seller expanded online"
       },
       {
-        "name": "Usha — New Brand, New Identity",
-        "text": "Usha had no brand. We created a brand for her, designed the packaging, and listed her on all marketplaces. Today, Usha has her own identity.",
-        "alt": "Usha's brand created and selling everywhere"
+        "name": "Local Artisan",
+        "text": "From local market to national reach — Khulega.online helped artisans get online and reach customers everywhere.",
+        "alt": "Artisan selling online"
       }
     ]
   },
   "features": {
-    "title": "Why Choose Khulega?",
+    "title": "Why Choose Us",
     "items": [
       {
-        "icon": "\ud83d\uded2",
-        "title": "Online Shop",
-        "description": "Browse our wide range of products with amazing deals and offers."
+        "icon": "🛒",
+        "title": "Online Shopping",
+        "description": "Browse thousands of products with fast delivery and great prices."
       },
       {
-        "icon": "\ud83d\udcbc",
-        "title": "Job Opportunities",
-        "description": "Find and apply for the best career opportunities near you."
+        "icon": "💼",
+        "title": "Seller Support",
+        "description": "Get onboarded on Amazon, Flipkart, Meesho and more with document and listing help."
       },
       {
-        "icon": "\u26a1",
-        "title": "Fast Services",
-        "description": "Quick and reliable services delivered right at your doorstep."
+        "icon": "🚚",
+        "title": "Delivery & Logistics",
+        "description": "Fast and reliable delivery services across multiple cities."
       }
     ]
   },
   "cta": {
-    "title": "Ready to Get Started?",
-    "subtitle": "Join thousands of satisfied customers today.",
-    "button": "Get Started Now"
+    "title": "Ready to get started?",
+    "subtitle": "Join thousands of sellers and customers who trust Khulega.online.",
+    "button": "Explore Now"
   }
 }

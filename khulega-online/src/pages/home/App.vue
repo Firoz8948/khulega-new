@@ -44,5 +44,6 @@
 <script setup>
 import { useI18n } from '@/i18n/index.js'
 import DesktopHero from '@/components/home/DesktopHero.vue'
+
 const { t } = useI18n('home')
 </script>
