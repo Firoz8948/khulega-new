@@ -6,7 +6,7 @@
         <HamburgerButton />
         <a href="/" class="header__logo">
           <img
-            src="/assets/images/Khulega_logo.png"
+            :src="'/assets/images/Khulega_logo.png'"
             alt="Khulega.online"
             class="header__logo-img"
           />

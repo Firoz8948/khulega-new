@@ -3,9 +3,8 @@
     <div class="footer__container">
       <!-- Column 1: Brand -->
       <div class="footer__col">
-        <a href="/" class="footer__logo">
-          <img src="/assets/images/Khulega_logo.png" alt="Khulega" class="footer__logo-img" />
-          <span>Khulega.online</span>
+        <a href="/" class="footer__logo" aria-label="Khulega.online">
+          <img :src="'/assets/images/Khulega_logo.png'" alt="Khulega" class="footer__logo-img" />
         </a>
         <p class="footer__description">{{ t('footer.description') }}</p>
       </div>
@@ -41,7 +40,10 @@
     </div>
 
     <div class="footer__bottom">
-      <p>{{ t('footer.copyright', { year: currentYear }) }}</p>
+      <div class="footer__bottom-inner">
+        <p class="footer__bottom-left">© {{ currentYear }} Khulega.online - All rights reserved.</p>
+        <p class="footer__bottom-right">Sandhya Technology Solutions and Operations LLP. All rights reserved.</p>
+      </div>
     </div>
   </footer>
 </template>
