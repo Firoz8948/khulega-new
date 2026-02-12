@@ -2,7 +2,7 @@
   <footer class="footer">
     <div class="footer__container">
       <!-- Column 1: Brand -->
-      <div class="footer__col">
+      <div class="footer__col footer__col--brand">
         <a href="/" class="footer__logo" aria-label="Khulega.online">
           <img :src="'/assets/images/Khulega_logo.png'" alt="Khulega" class="footer__logo-img" />
         </a>
@@ -10,7 +10,7 @@
       </div>
 
       <!-- Column 2: Quick Links -->
-      <div class="footer__col">
+      <div class="footer__col footer__col--quick">
         <h4 class="footer__title">{{ t('footer.quickLinks') }}</h4>
         <a href="/" class="footer__link">{{ t('nav.home') }}</a>
         <a href="/shop.html" class="footer__link">{{ t('nav.shop') }}</a>
@@ -20,14 +20,14 @@
       </div>
 
       <!-- Column 3: Legal -->
-      <div class="footer__col">
+      <div class="footer__col footer__col--legal">
         <h4 class="footer__title">{{ t('footer.legal') }}</h4>
         <a href="/policy.html" class="footer__link">{{ t('footer.privacyPolicy') }}</a>
         <a href="/terms.html" class="footer__link">{{ t('footer.termsConditions') }}</a>
       </div>
 
       <!-- Column 4: Contact -->
-      <div class="footer__col">
+      <div class="footer__col footer__col--contact">
         <h4 class="footer__title">{{ t('footer.contactTitle') }}</h4>
         <p class="footer__text">{{ t('footer.email') }}</p>
         <p class="footer__text">{{ t('footer.phone') }}</p>

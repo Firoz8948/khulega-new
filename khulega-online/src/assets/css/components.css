@@ -21,6 +21,22 @@
   gap: var(--space-xl);
 }
 
+@media (max-width: 768px) {
+  /* Mobile: Quick Links left; Legal + Contact on right */
+  .footer__container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "quick legal"
+      "quick contact";
+    gap: var(--space-lg) var(--space-xl);
+  }
+
+  .footer__col--brand { display: none; }
+  .footer__col--quick { grid-area: quick; }
+  .footer__col--legal { grid-area: legal; }
+  .footer__col--contact { grid-area: contact; }
+}
+
 @media (min-width: 768px) {
   .footer__container {
     grid-template-columns: repeat(2, 1fr);
