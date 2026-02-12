@@ -4,23 +4,23 @@
     <div class="hero__desktop">
       <!-- Left: Static text -->
       <div class="hero__left">
-        <p class="hero__eyebrow">Khulega.online</p>
+        <p class="hero__eyebrow">{{ t('hero.eyebrow') }}</p>
 
         <h1 class="hero__tagline">
-          <span class="hero__tagline-line">जब <strong>shop.khulega.online</strong></span>
-          <span class="hero__tagline-line hero__tagline-line--highlight">तब <strong>sab.milega.online</strong></span>
+          <span class="hero__tagline-line">{{ t('hero.tagline1prefix') }} <strong>{{ t('hero.tagline1') }}</strong></span>
+          <span class="hero__tagline-line hero__tagline-line--highlight">{{ t('hero.tagline2prefix') }} <strong>{{ t('hero.tagline2') }}</strong></span>
         </h1>
 
         <p class="hero__desc">
-          ऑनलाइन बिज़नेस से जुड़ी हर ज़रूरत का एक समाधान
+          {{ t('hero.desc') }}
         </p>
 
         <div class="hero__ctas">
           <a href="/seller-register.html" class="hero__btn hero__btn--primary">
-            यहाँ रजिस्टर करें
+            {{ t('hero.ctaRegister') }}
           </a>
           <a href="/services.html" class="hero__btn hero__btn--outline">
-            सेवाओं के लिए संपर्क करें
+            {{ t('hero.ctaServices') }}
           </a>
         </div>
       </div>
@@ -99,10 +99,10 @@
       <!-- Mobile CTAs -->
       <div class="hero__mobile-ctas">
         <a href="/shop.html" class="hero__btn hero__btn--primary">
-          अभी खरीदें
+          {{ t('hero.ctaShopNow') }}
         </a>
         <a href="/services.html" class="hero__btn hero__btn--outline">
-          सेवाएँ प्राप्त करें
+          {{ t('hero.ctaGetServices') }}
         </a>
       </div>
     </div>
@@ -110,28 +110,25 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { useI18n } from '@/i18n/index.js'
 
-const stories = [
-  {
-    image: '/assets/images/image1.png',
-    alt: 'Women entrepreneurs onboarded on marketplaces',
-    name: 'गाँव की महिलाएँ',
-    text: 'एक छोटे से गाँव में महिलाओं का घरेलू कारोबार था, पर ऑनलाइन बेचने के लिए कोई दस्तावेज़ नहीं थे। Khulega.online ने उनकी मदद की — दस्तावेज़ बनवाए और Amazon, Flipkart, Meesho सब पर ऑनबोर्ड किया।'
-  },
-  {
-    image: '/assets/images/image2.png',
-    alt: 'Ramesh selling Makhana online',
-    name: 'रमेश — मखाना विक्रेता',
-    text: 'रमेश अपने गाँव से मखाना बेचते थे, बस लोकल मार्केट में। Khulega.online की मदद से अब वो अपने पुराने साथियों के साथ पूरे भारत में ऑनलाइन मखाना बेच रहे हैं।'
-  },
-  {
-    image: '/assets/images/image3.png',
-    alt: 'Usha\'s brand created and selling everywhere',
-    name: 'उषा — नई ब्रांड, नई पहचान',
-    text: 'उषा के पास कोई ब्रांड नहीं था। हमने उनके लिए ब्रांड बनाया, पैकेजिंग डिज़ाइन की, और सभी मार्केटप्लेस पर लिस्टिंग करवाई। आज उषा की अपनी पहचान है।'
-  }
+const { t } = useI18n('home')
+
+const storyImages = [
+  '/assets/images/image1.png',
+  '/assets/images/image2.png',
+  '/assets/images/image3.png'
 ]
+
+const stories = computed(() => {
+  const arr = t('hero.stories')
+  if (!Array.isArray(arr)) return []
+  return arr.map((story, i) => ({
+    ...story,
+    image: storyImages[i] || ''
+  }))
+})
 
 const activeSlide = ref(0)
 let timer = null
