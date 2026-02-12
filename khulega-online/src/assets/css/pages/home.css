@@ -12,8 +12,9 @@
 .hero__desktop {
   display: flex;
   align-items: stretch;
-  min-height: 520px;
-  max-width: 1400px;
+  justify-content: center;
+  min-height: 680px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 0 var(--space-lg);
   gap: 48px;
@@ -23,14 +24,16 @@
   display: none;
 }
 
-/* ---- Left column (text) ---- */
+/* ---- Left column (text) — equal width, content centered ---- */
 .hero__left {
-  flex: 1;
+  flex: 1 1 0;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  text-align: center;
   padding: 56px 0;
-  max-width: 520px;
 }
 
 .hero__eyebrow {
@@ -76,12 +79,14 @@
   color: rgba(255, 255, 255, 0.6);
   margin-bottom: 32px;
   max-width: 420px;
+  margin-inline: auto;
 }
 
 .hero__ctas {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 /* ---- Shared button styles ---- */
@@ -124,19 +129,20 @@
   transform: translateY(-2px);
 }
 
-/* ---- Right column (carousel) ---- */
+/* ---- Right column (carousel) — equal width, larger carousel ---- */
 .hero__right {
-  flex: 1;
+  flex: 1 1 0;
+  min-width: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 40px 0;
-  max-width: 560px;
 }
 
 .hero__carousel {
   position: relative;
   width: 100%;
+  max-width: 720px;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
@@ -163,6 +169,7 @@
   position: relative;
   width: 100%;
   aspect-ratio: 4 / 3;
+  min-height: 420px;
   overflow: hidden;
 }
 
