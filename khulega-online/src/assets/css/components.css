@@ -475,7 +475,7 @@
   align-items: center;
   gap: var(--space-sm);
   flex-shrink: 0;
-  margin-right: 10px; /* slightly move Shop/Job left */
+  margin-right: 18px; /* move desktop Shop/Apply Job slightly left */
 }
 
 .header__action-btn {
@@ -648,57 +648,128 @@
   box-shadow: var(--shadow-xl);
 }
 
-/* ---- Sidebar header (logo + rotating text) ---- */
+/* ---- Sidebar header (Sell On + brand cards) ---- */
 .sidebar__header {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: var(--space-lg) var(--space-lg) var(--space-md);
+  padding: 16px;
+  padding-top: 44px; /* room for close button */
   background: linear-gradient(160deg, #1e293b 0%, #0f172a 100%);
   color: var(--color-text-inverse);
   text-align: center;
 }
 
-.sidebar__logo {
-  display: inline-flex;
+/* "Sell On" label */
+.sidebar__sell-label {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 14px;
 }
 
-.sidebar__logo-img {
-  height: 76px;
-  width: auto;
-}
-
-.sidebar__tagline-wrapper {
-  min-height: 36px;
+/* Brand cards container */
+.sidebar__brands {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+/* Individual brand card */
+.sidebar__brand-card {
+  width: 80px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 4px;
-  overflow: hidden;
+  gap: 3px;
+  padding: 6px 6px 5px;
+  box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+  animation:
+    brandSlideIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) calc(var(--i) * 0.1s) both,
+    brandFloat   calc(2.8s + var(--i) * 0.35s) ease-in-out calc(0.7s + var(--i) * 0.55s) infinite;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  cursor: default;
 }
 
-.sidebar__tagline {
-  font-size: 11px;
-  font-weight: var(--fw-medium);
-  letter-spacing: 0.06em;
-  color: rgba(255, 255, 255, 0.6);
-  line-height: 1.45;
-  white-space: pre-line;
-  text-align: center;
+.sidebar__brand-card:hover {
+  transform: translateY(-4px) scale(1.08);
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.12);
 }
 
-.tagline-swap-enter-active,
-.tagline-swap-leave-active {
-  transition: opacity 0.35s ease, transform 0.35s ease;
+/* Brand logo image */
+.sidebar__brand-img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  border-radius: 4px;
 }
-.tagline-swap-enter-from {
-  opacity: 0;
-  transform: translateY(8px);
+
+/* Brand name under logo */
+.sidebar__brand-name {
+  font-size: 9px;
+  font-weight: 700;
+  color: #334155;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  white-space: nowrap;
 }
-.tagline-swap-leave-to {
-  opacity: 0;
-  transform: translateY(-8px);
+
+/* "& More" card */
+.sidebar__brand-more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #475569;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.sidebar__brand-card:last-child {
+  background: rgba(255, 255, 255, 0.97);
+  border: 2px dashed rgba(148, 163, 184, 0.5);
+}
+
+.sidebar__brand-card:last-child:hover {
+  border-color: rgba(148, 163, 184, 0.7);
+}
+
+/* ---- Brand card animations ---- */
+@keyframes brandSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(22px) scale(0.8) rotate(-3deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+}
+
+@keyframes brandFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
 .sidebar__close {

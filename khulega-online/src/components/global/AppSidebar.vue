@@ -25,22 +25,33 @@
           </svg>
         </button>
 
-        <!-- Centered brand block -->
-        <a href="/" class="sidebar__logo" @click="closeSidebar">
-          <img
-            src="/assets/images/Khulega_logo.png"
-            alt="Khulega"
-            class="sidebar__logo-img"
-          />
-        </a>
+        <!-- Sell On heading -->
+        <p class="sidebar__sell-label">Sell On</p>
 
-        <!-- Rotating Tagline -->
-        <div class="sidebar__tagline-wrapper">
-          <Transition name="tagline-swap" mode="out-in">
-            <p class="sidebar__tagline" :key="activeTagline">
-              {{ taglines[activeTagline] }}
-            </p>
-          </Transition>
+        <!-- Floating brand cards -->
+        <div class="sidebar__brands">
+          <div
+            v-for="(brand, i) in brands"
+            :key="brand.key"
+            class="sidebar__brand-card"
+            :style="{ '--i': i }"
+          >
+            <template v-if="brand.logo">
+              <img
+                :src="brand.logo"
+                :alt="brand.name"
+                class="sidebar__brand-img"
+              />
+              <span class="sidebar__brand-name">{{ brand.name }}</span>
+            </template>
+            <span v-else class="sidebar__brand-more">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                <line x1="12" y1="5" x2="12" y2="19"/>
+                <line x1="5" y1="12" x2="19" y2="12"/>
+              </svg>
+              More
+            </span>
+          </div>
         </div>
       </div>
 
@@ -261,7 +272,6 @@
 </template>
 
 <script setup>
-import { ref, watch, onUnmounted } from 'vue'
 import { useSidebar } from '@composables/useSidebar.js'
 import { useI18n } from '@/i18n/index.js'
 
@@ -269,38 +279,12 @@ const { isSidebarOpen, closeSidebar } = useSidebar()
 const { t } = useI18n()
 const currentYear = new Date().getFullYear()
 
-/* ---- Rotating taglines ---- */
-const taglines = [
-  'जब shop.khulega.online\nतब sab.milega.online',
-  'Your Online Marketplace',
-  'Amazon, ONDC, Flipkart, Meesho & More'
+/* ---- Brand cards shown in sidebar header ---- */
+const brands = [
+  { key: 'amazon',   name: 'Amazon',   logo: '/assets/images/brands/amazon.png'   },
+  { key: 'flipkart', name: 'Flipkart', logo: '/assets/images/brands/flipkart.png' },
+  { key: 'meesho',   name: 'Meesho',   logo: '/assets/images/brands/meesho.png'   },
+  { key: 'ondc',     name: 'ONDC',     logo: '/assets/images/brands/ondc.png'     },
+  { key: 'more',     name: 'More',     logo: null                                 },
 ]
-const activeTagline = ref(0)
-let taglineTimer = null
-
-function startTaglineRotation () {
-  stopTaglineRotation()
-  taglineTimer = setInterval(() => {
-    activeTagline.value = (activeTagline.value + 1) % taglines.length
-  }, 3000)
-}
-
-function stopTaglineRotation () {
-  if (taglineTimer) {
-    clearInterval(taglineTimer)
-    taglineTimer = null
-  }
-}
-
-// Start/stop rotation when sidebar opens/closes
-watch(isSidebarOpen, (open) => {
-  if (open) {
-    activeTagline.value = 0
-    startTaglineRotation()
-  } else {
-    stopTaglineRotation()
-  }
-})
-
-onUnmounted(stopTaglineRotation)
 </script>
