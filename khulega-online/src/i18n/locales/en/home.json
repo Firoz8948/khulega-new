@@ -3,7 +3,33 @@
     "title": "Welcome to Khulega.online",
     "subtitle": "Your one-stop destination for services, shopping, and career opportunities.",
     "cta1": "Explore Shop",
-    "cta2": "Our Services"
+    "cta2": "Our Services",
+    "tagline1prefix": "When",
+    "tagline1": "shop.khulega.online",
+    "tagline2prefix": "Then",
+    "tagline2": "sab.milega.online",
+    "desc": "One solution for every need of your online business",
+    "ctaRegister": "Register Here",
+    "ctaServices": "Contact for Services",
+    "ctaShopNow": "Shop Now",
+    "ctaGetServices": "Get Services",
+    "stories": [
+      {
+        "name": "Village Women",
+        "text": "A group of women in a small village had a home business but no documents to sell online. Khulega.online helped them — got their documents ready and onboarded them on Amazon, Flipkart, Meesho and more.",
+        "alt": "Women entrepreneurs onboarded on marketplaces"
+      },
+      {
+        "name": "Ramesh — Makhana Seller",
+        "text": "Ramesh used to sell Makhana from his village, only in the local market. With Khulega.online's help, he and his old friends now sell Makhana online across India.",
+        "alt": "Ramesh selling Makhana online"
+      },
+      {
+        "name": "Usha — New Brand, New Identity",
+        "text": "Usha had no brand. We created a brand for her, designed the packaging, and listed her on all marketplaces. Today, Usha has her own identity.",
+        "alt": "Usha's brand created and selling everywhere"
+      }
+    ]
   },
   "features": {
     "title": "Why Choose Khulega?",
