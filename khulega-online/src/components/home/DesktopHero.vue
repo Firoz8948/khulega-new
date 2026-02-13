@@ -15,6 +15,30 @@
           {{ t('hero.desc') }}
         </p>
 
+        <div class="hero__brands">
+          <div
+            v-for="(brand, i) in heroBrands"
+            :key="brand.key"
+            class="hero__brand-card"
+          >
+            <template v-if="brand.logo">
+              <img
+                :src="brand.logo"
+                :alt="brand.name"
+                class="hero__brand-img"
+              />
+              <span class="hero__brand-name">{{ brand.name }}</span>
+            </template>
+            <span v-else class="hero__brand-more">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                <line x1="12" y1="5" x2="12" y2="19"/>
+                <line x1="5" y1="12" x2="19" y2="12"/>
+              </svg>
+              More
+            </span>
+          </div>
+        </div>
+
         <div class="hero__ctas">
           <a href="/seller-register.html" class="hero__btn hero__btn--primary">
             {{ t('hero.ctaRegister') }}
@@ -114,6 +138,14 @@ import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useI18n } from '@/i18n/index.js'
 
 const { t } = useI18n('home')
+
+const heroBrands = [
+  { key: 'amazon', name: 'Amazon', logo: '/assets/images/brands/amazon.png' },
+  { key: 'flipkart', name: 'Flipkart', logo: '/assets/images/brands/flipkart.png' },
+  { key: 'meesho', name: 'Meesho', logo: '/assets/images/brands/meesho.png' },
+  { key: 'ondc', name: 'ONDC', logo: '/assets/images/brands/ondc.png' },
+  { key: 'more', name: 'More', logo: null }
+]
 
 const storyImages = [
   '/assets/images/image1.png',
