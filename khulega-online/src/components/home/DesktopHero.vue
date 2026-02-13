@@ -122,7 +122,7 @@
 
       <!-- Mobile CTAs -->
       <div class="hero__mobile-ctas">
-        <a href="/shop.html" class="hero__btn hero__btn--primary">
+        <a href="https://milega.online" target="_blank" rel="noopener noreferrer" class="hero__btn hero__btn--primary">
           {{ t('hero.ctaShopNow') }}
         </a>
         <a href="/services.html" class="hero__btn hero__btn--outline">

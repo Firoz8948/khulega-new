@@ -155,7 +155,7 @@
               </svg>
               {{ t('sidebar.wishlist') }}
             </a>
-            <a href="/shop.html" class="sidebar__link" @click="closeSidebar">
+            <a href="https://milega.online" target="_blank" rel="noopener noreferrer" class="sidebar__link" @click="closeSidebar">
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="9" cy="21" r="1"/>
                 <circle cx="20" cy="21" r="1"/>

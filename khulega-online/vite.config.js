@@ -19,7 +19,6 @@ export default defineConfig({
     rollupOptions: {
       input: {
         index: resolve(__dirname, 'index.html'),
-        shop: resolve(__dirname, 'shop.html'),
         'user-journey': resolve(__dirname, 'user-journey.html'),
         'apply-job': resolve(__dirname, 'apply-job.html'),
         policy: resolve(__dirname, 'policy.html'),

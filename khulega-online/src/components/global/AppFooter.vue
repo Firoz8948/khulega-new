@@ -13,7 +13,7 @@
       <div class="footer__col footer__col--quick">
         <h4 class="footer__title">{{ t('footer.quickLinks') }}</h4>
         <a href="/" class="footer__link">{{ t('nav.home') }}</a>
-        <a href="/shop.html" class="footer__link">{{ t('nav.shop') }}</a>
+        <a href="https://milega.online" target="_blank" rel="noopener noreferrer" class="footer__link">{{ t('nav.shop') }}</a>
         <a href="/services.html" class="footer__link">{{ t('nav.services') }}</a>
         <a href="/apply-job.html" class="footer__link">{{ t('nav.applyJob') }}</a>
         <a href="/user-journey.html" class="footer__link">{{ t('nav.userJourney') }}</a>

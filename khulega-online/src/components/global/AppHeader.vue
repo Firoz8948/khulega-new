@@ -52,7 +52,7 @@
       <!-- RIGHT: Action Buttons -->
       <div class="header__right">
         <!-- Shop Button -->
-        <a href="/shop.html" class="header__action-btn header__action-btn--shop">
+        <a href="https://milega.online" target="_blank" rel="noopener noreferrer" class="header__action-btn header__action-btn--shop">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
             <line x1="3" y1="6" x2="21" y2="6"/>
@@ -104,7 +104,10 @@ const searchQuery = ref('')
 
 const handleSearch = () => {
   if (searchQuery.value.trim()) {
-    window.location.href = `/shop.html?search=${encodeURIComponent(searchQuery.value.trim())}`
+    const q = encodeURIComponent(searchQuery.value.trim())
+    window.open(`https://milega.online?search=${q}`, '_blank', 'noopener,noreferrer')
+  } else {
+    window.open('https://milega.online', '_blank', 'noopener,noreferrer')
   }
 }
 </script>

@@ -7,7 +7,6 @@ import { ref, computed, watch } from 'vue'
 // English
 import enCommon from './locales/en/common.json'
 import enHome from './locales/en/home.json'
-import enShop from './locales/en/shop.json'
 import enUserJourney from './locales/en/user-journey.json'
 import enApplyJob from './locales/en/apply-job.json'
 import enPolicy from './locales/en/policy.json'
@@ -18,7 +17,6 @@ import enTerms from './locales/en/terms.json'
 // Hindi
 import hiCommon from './locales/hi/common.json'
 import hiHome from './locales/hi/home.json'
-import hiShop from './locales/hi/shop.json'
 import hiUserJourney from './locales/hi/user-journey.json'
 import hiApplyJob from './locales/hi/apply-job.json'
 import hiPolicy from './locales/hi/policy.json'
@@ -33,7 +31,6 @@ const messages = {
   en: {
     common: enCommon,
     home: enHome,
-    shop: enShop,
     userJourney: enUserJourney,
     applyJob: enApplyJob,
     policy: enPolicy,
@@ -44,7 +41,6 @@ const messages = {
   hi: {
     common: hiCommon,
     home: hiHome,
-    shop: hiShop,
     userJourney: hiUserJourney,
     applyJob: hiApplyJob,
     policy: hiPolicy,
