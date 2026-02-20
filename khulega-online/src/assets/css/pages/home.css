@@ -332,13 +332,13 @@
   .hero__mobile {
     display: block;
     position: relative;
-    min-height: 400px;
+    min-height: 520px;
   }
 
   .hero__mobile-slide {
     position: relative;
     width: 100%;
-    min-height: 400px;
+    min-height: 520px;
   }
 
   .hero__mobile-img {
