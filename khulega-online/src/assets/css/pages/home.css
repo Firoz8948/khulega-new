@@ -323,90 +323,334 @@
   }
 }
 
-/* ---------- RESPONSIVE: Mobile Hero ---------- */
+/* ==============================================
+   MOBILE HERO — Full Screen Two-Half Layout
+   ============================================== */
 @media (max-width: 767px) {
+  .hero {
+    background: #ffffff;
+    margin-top: -89px;
+  }
+
   .hero__desktop {
     display: none;
   }
 
   .hero__mobile {
-    display: block;
-    position: relative;
-    min-height: 520px;
-  }
-
-  .hero__mobile-slide {
-    position: relative;
-    width: 100%;
-    min-height: 520px;
-  }
-
-  .hero__mobile-img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .hero__mobile-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(15, 23, 42, 0.3) 0%,
-      rgba(15, 23, 42, 0.8) 100%
-    );
-  }
-
-  .hero__mobile-content {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: var(--space-xl);
-    z-index: 2;
-  }
-
-  .hero__mobile-tagline {
     display: flex;
     flex-direction: column;
-    gap: 4px;
-    font-size: 24px;
-    color: #fff;
-    margin-bottom: var(--space-md);
+    height: 100svh;
+    height: 100vh;
+    min-height: 620px;
+    position: relative;
+    overflow: hidden;
   }
 
-  .hero__mobile-tagline strong {
-    color: #60a5fa;
+  /* ---- TOP HALF: Image + Story ---- */
+  .hero__mob-top {
+    flex: 0 0 52%;
+    position: relative;
+    min-height: 320px;
   }
 
-  .hero__mobile-story {
+  .hero__mob-image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    overflow: hidden;
+  }
+
+  /* Stacked images with crossfade */
+  .hero__mob-image-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: scale(1.05);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    z-index: 0;
+  }
+
+  .hero__mob-image-slide--active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 1;
+  }
+
+  .hero__mob-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    background: #0f172a;
+  }
+
+  /* Dark gradient overlay from bottom */
+  .hero__mob-image-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: linear-gradient(
+      to bottom,
+      rgba(15, 23, 42, 0) 20%,
+      rgba(15, 23, 42, 0.4) 50%,
+      rgba(15, 23, 42, 0.85) 80%,
+      rgba(37, 99, 235, 0.9) 100%
+    );
+    pointer-events: none;
+  }
+
+  /* Story text positioned at bottom of image */
+  .hero__mob-story-content {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    padding: 0 20px;
+    z-index: 3;
+  }
+
+  .hero__mob-story-name {
     font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4px;
+    letter-spacing: 0.02em;
+  }
+
+  .hero__mob-story-text {
+    font-size: 13px;
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.9);
-    margin-bottom: var(--space-lg);
   }
 
-  .hero__mobile-dots {
+  /* Dots on image */
+  .hero__mob-image-dots {
     position: absolute;
-    bottom: 80px;
+    bottom: 14px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     gap: 8px;
-    z-index: 3;
+    z-index: 4;
   }
 
-  .hero__mobile-ctas {
-    position: absolute;
-    bottom: var(--space-lg);
-    left: 0;
-    right: 0;
+  .hero__mob-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.35);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+  }
+
+  .hero__mob-dot--active {
+    background: #fff;
+    width: 20px;
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+  }
+
+  /* ---- BOTTOM HALF: Content on white bg ---- */
+  .hero__mob-bottom {
+    flex: 1 1 48%;
+    min-height: 300px;
+    background: #ffffff;
     display: flex;
-    gap: 12px;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    padding: 0 var(--space-xl);
-    z-index: 3;
+    padding: 24px 20px 28px;
+    position: relative;
+    text-align: center;
+  }
+
+  /* Subtle blue accent line at top */
+  .hero__mob-bottom::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #2563eb, #60a5fa);
+    border-radius: 2px;
+  }
+
+  /* Tagline */
+  .hero__mob-tagline {
+    margin-bottom: 8px;
+  }
+
+  .hero__mob-tagline-line {
+    font-size: 22px;
+    font-weight: 500;
+    color: #1e293b;
+    line-height: 1.35;
+    display: block;
+  }
+
+  .hero__mob-tagline-line strong {
+    font-weight: 800;
+    color: #0f172a;
+  }
+
+  .hero__mob-tagline-line--blue {
+    color: #2563eb;
+  }
+
+  .hero__mob-tagline-line--blue strong {
+    color: #1d4ed8;
+  }
+
+  /* Description */
+  .hero__mob-desc {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #64748b;
+    margin-bottom: 20px;
+    max-width: 300px;
+  }
+
+  /* Brand logos row */
+  .hero__mob-brands {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .hero__mob-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .hero__mob-brand-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: #f8fafc;
+    border: 1.5px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  }
+
+  .hero__mob-brand-icon img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+  }
+
+  .hero__mob-brand-icon--more {
+    background: #f1f5f9;
+    border: 2px dashed #cbd5e1;
+    color: #64748b;
+  }
+
+  .hero__mob-brand-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: #475569;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+
+  /* CTA Buttons */
+  .hero__mob-ctas {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .hero__mob-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    letter-spacing: 0.01em;
+  }
+
+  .hero__mob-btn-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+
+  /* Primary: Blue solid */
+  .hero__mob-btn--primary {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    color: #fff;
+    border: none;
+    box-shadow:
+      0 4px 14px rgba(37, 99, 235, 0.35),
+      0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .hero__mob-btn--primary:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+  }
+
+  /* Secondary: Outlined */
+  .hero__mob-btn--secondary {
+    background: #fff;
+    color: #1e293b;
+    border: 2px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+
+  .hero__mob-btn--secondary:active {
+    transform: scale(0.98);
+    background: #f8fafc;
+  }
+}
+
+/* Extra small phones (iPhone SE, etc.) */
+@media (max-width: 374px) {
+  .hero__mob-tagline-line {
+    font-size: 19px;
+  }
+
+  .hero__mob-brand-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+  }
+
+  .hero__mob-brand-icon img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .hero__mob-brands {
+    gap: 8px;
+  }
+
+  .hero__mob-btn {
+    padding: 12px 20px;
+    font-size: 14px;
   }
 }
