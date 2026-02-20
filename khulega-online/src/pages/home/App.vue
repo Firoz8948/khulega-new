@@ -5,6 +5,7 @@
     <main class="main">
       <!-- Hero -->
       <DesktopHero />
+      <SellerJourney />
 
       <!-- Features -->
       <section class="section">
@@ -44,6 +45,7 @@
 <script setup>
 import { useI18n } from '@/i18n/index.js'
 import DesktopHero from '@/components/home/DesktopHero.vue'
+import SellerJourney from '@/components/home/SellerJourney.vue'
 
 const { t } = useI18n('home')
 </script>
