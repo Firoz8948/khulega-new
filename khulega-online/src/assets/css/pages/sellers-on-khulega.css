@@ -1,0 +1,269 @@
+/* ==============================================
+   SELLERS ON KHULEGA — Infinite Scroll Rows
+   ============================================== */
+
+/* --- Animations --- */
+@keyframes scrollRTL {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollLTR {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Section --- */
+.sok {
+  padding: 80px 0 88px;
+  background: #f8fafc;
+  position: relative;
+  overflow: hidden;
+}
+
+.sok__container {
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Header --- */
+.sok__header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 0 20px;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sok__header--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sok__label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #2563eb;
+  margin: 0 0 10px;
+}
+
+.sok__title {
+  font-size: 36px;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.2;
+  margin: 0 0 12px;
+  letter-spacing: -0.02em;
+}
+
+.sok__subtitle {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #64748b;
+  margin: 0 auto;
+  max-width: 460px;
+}
+
+/* --- Scrolling Rows --- */
+.sok__row-wrap {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.sok__row-wrap:last-of-type {
+  margin-bottom: 0;
+}
+
+.sok__row {
+  display: flex;
+  width: max-content;
+}
+
+.sok__track {
+  display: flex;
+  gap: 20px;
+  padding: 4px 0;
+}
+
+/* Right to Left movement */
+.sok__row--rtl .sok__track {
+  animation: scrollRTL 35s linear infinite;
+}
+
+/* Left to Right movement */
+.sok__row--ltr .sok__track {
+  animation: scrollLTR 35s linear infinite;
+}
+
+/* Pause on hover for all rows */
+.sok__row-wrap:hover .sok__track {
+  animation-play-state: paused;
+}
+
+/* --- Edge Fade Overlays --- */
+.sok__fade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.sok__fade--left {
+  left: 0;
+  background: linear-gradient(to right, #f8fafc 0%, transparent 100%);
+}
+
+.sok__fade--right {
+  right: 0;
+  background: linear-gradient(to left, #f8fafc 0%, transparent 100%);
+}
+
+/* ==============================================
+   RESPONSIVE — TABLET (768px+)
+   ============================================== */
+@media (min-width: 768px) {
+  .sok {
+    padding: 96px 0 104px;
+  }
+
+  .sok__header {
+    margin-bottom: 56px;
+  }
+
+  .sok__title {
+    font-size: 42px;
+  }
+
+  .sok__subtitle {
+    font-size: 17px;
+  }
+
+  .sok__row-wrap {
+    margin-bottom: 24px;
+  }
+
+  .sok__track {
+    gap: 24px;
+  }
+
+  .sok__fade {
+    width: 150px;
+  }
+}
+
+/* ==============================================
+   RESPONSIVE — LARGE DESKTOP (1024px+)
+   ============================================== */
+@media (min-width: 1024px) {
+  .sok {
+    padding: 100px 0 112px;
+  }
+
+  .sok__title {
+    font-size: 46px;
+  }
+
+  .sok__row-wrap {
+    margin-bottom: 28px;
+  }
+
+  .sok__track {
+    gap: 28px;
+  }
+
+  .sok__fade {
+    width: 200px;
+  }
+
+  /* Slightly different speeds per row for natural feel */
+  .sok__row--rtl .sok__track {
+    animation-duration: 40s;
+  }
+
+  .sok__row--ltr .sok__track {
+    animation-duration: 35s;
+  }
+}
+
+/* ==============================================
+   RESPONSIVE — MOBILE (< 768px)
+   ============================================== */
+@media (max-width: 767px) {
+  .sok {
+    padding: 56px 0 64px;
+  }
+
+  .sok__header {
+    margin-bottom: 32px;
+  }
+
+  .sok__title {
+    font-size: 26px;
+  }
+
+  .sok__subtitle {
+    font-size: 14px;
+    max-width: 300px;
+  }
+
+  .sok__row-wrap {
+    margin-bottom: 14px;
+  }
+
+  .sok__track {
+    gap: 14px;
+  }
+
+  /* Faster on mobile since cards are smaller */
+  .sok__row--rtl .sok__track {
+    animation-duration: 25s;
+  }
+
+  .sok__row--ltr .sok__track {
+    animation-duration: 22s;
+  }
+
+  .sok__fade {
+    width: 48px;
+  }
+}
+
+@media (max-width: 374px) {
+  .sok__title {
+    font-size: 22px;
+  }
+
+  .sok__track {
+    gap: 10px;
+  }
+
+  .sok__fade {
+    width: 32px;
+  }
+}
