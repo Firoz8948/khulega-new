@@ -67,7 +67,13 @@
             {{ t('sidebar.becomeASeller') }}
           </h3>
           <nav class="sidebar__nav">
-            <a href="/seller-register.html" class="sidebar__link" @click="closeSidebar">
+            <a
+              href="https://usc.khulega.online/auth/register"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="sidebar__link"
+              @click="closeSidebar"
+            >
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
                 <circle cx="8.5" cy="7" r="4"/>
@@ -76,7 +82,13 @@
               </svg>
               {{ t('sidebar.sellerRegistration') }}
             </a>
-            <a href="/seller-login.html" class="sidebar__link" @click="closeSidebar">
+            <a
+              href="https://usc.khulega.online/auth/login"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="sidebar__link"
+              @click="closeSidebar"
+            >
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4"/>
                 <polyline points="10 17 15 12 10 7"/>
@@ -123,7 +135,13 @@
             {{ t('sidebar.customer') }}
           </h3>
           <nav class="sidebar__nav">
-            <a href="/sign-in.html" class="sidebar__link" @click="closeSidebar">
+            <a
+              href="https://milega.online"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="sidebar__link"
+              @click="closeSidebar"
+            >
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4"/>
                 <polyline points="10 17 15 12 10 7"/>
@@ -131,7 +149,13 @@
               </svg>
               {{ t('sidebar.signIn') }}
             </a>
-            <a href="/register.html" class="sidebar__link" @click="closeSidebar">
+            <a
+              href="https://milega.online"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="sidebar__link"
+              @click="closeSidebar"
+            >
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
                 <circle cx="8.5" cy="7" r="4"/>
@@ -140,7 +164,13 @@
               </svg>
               {{ t('sidebar.register') }}
             </a>
-            <a href="/my-orders.html" class="sidebar__link" @click="closeSidebar">
+            <a
+              href="https://milega.online"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="sidebar__link"
+              @click="closeSidebar"
+            >
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="1" y="3" width="15" height="13"/>
                 <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/>
@@ -149,7 +179,13 @@
               </svg>
               {{ t('sidebar.myOrders') }}
             </a>
-            <a href="/wishlist.html" class="sidebar__link" @click="closeSidebar">
+            <a
+              href="https://milega.online"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="sidebar__link"
+              @click="closeSidebar"
+            >
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
               </svg>
@@ -163,7 +199,13 @@
               </svg>
               {{ t('sidebar.shopNow') }}
             </a>
-            <a href="/categories.html" class="sidebar__link" @click="closeSidebar">
+            <a
+              href="https://milega.online"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="sidebar__link"
+              @click="closeSidebar"
+            >
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="3" y="3" width="7" height="7"/>
                 <rect x="14" y="3" width="7" height="7"/>
@@ -172,7 +214,13 @@
               </svg>
               {{ t('sidebar.categories') }}
             </a>
-            <a href="/deals.html" class="sidebar__link" @click="closeSidebar">
+            <a
+              href="https://milega.online"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="sidebar__link"
+              @click="closeSidebar"
+            >
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="20 12 20 22 4 22 4 12"/>
                 <rect x="2" y="7" width="20" height="5"/>
@@ -182,7 +230,13 @@
               </svg>
               {{ t('sidebar.dealsAndOffers') }}
             </a>
-            <a href="/customer-support.html" class="sidebar__link" @click="closeSidebar">
+            <a
+              href="https://milega.online"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="sidebar__link"
+              @click="closeSidebar"
+            >
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
               </svg>
