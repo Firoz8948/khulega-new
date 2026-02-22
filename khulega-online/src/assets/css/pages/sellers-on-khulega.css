@@ -78,6 +78,18 @@
   letter-spacing: -0.02em;
 }
 
+.sok__title-highlight {
+  display: block;
+  background: linear-gradient(135deg, #2563eb, #6366f1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sok__title-br {
+  display: none;
+}
+
 .sok__subtitle {
   font-size: 16px;
   line-height: 1.6;
@@ -160,6 +172,10 @@
     font-size: 42px;
   }
 
+  .sok__title-br {
+    display: inline;
+  }
+
   .sok__subtitle {
     font-size: 17px;
   }
@@ -225,6 +241,10 @@
 
   .sok__title {
     font-size: 26px;
+  }
+
+  .sok__title-highlight {
+    display: inline;
   }
 
   .sok__subtitle {

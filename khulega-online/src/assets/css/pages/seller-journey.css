@@ -147,6 +147,14 @@
   letter-spacing: -0.02em;
 }
 
+.sj__title-highlight {
+  display: block;
+  background: linear-gradient(135deg, #2563eb, #6366f1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .sj__subtitle {
   font-size: 16px;
   line-height: 1.6;
@@ -597,6 +605,10 @@
 
   .sj__title {
     font-size: 26px;
+  }
+
+  .sj__title-highlight {
+    display: inline;
   }
 
   .sj__subtitle {

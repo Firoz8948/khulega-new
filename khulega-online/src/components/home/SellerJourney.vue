@@ -4,7 +4,10 @@
       <!-- Section Header -->
       <div class="sj__header" :class="{ 'sj__header--visible': isVisible }">
         <p class="sj__label">How It Works</p>
-        <h2 class="sj__title">Your Journey from Signup to Sales</h2>
+        <h2 class="sj__title">
+          Your Journey from
+          <span class="sj__title-highlight">Signup to Sales</span>
+        </h2>
         <p class="sj__subtitle">Six simple steps to launch your business across every major marketplace in India</p>
       </div>
 

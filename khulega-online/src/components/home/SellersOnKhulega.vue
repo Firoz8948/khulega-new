@@ -4,7 +4,11 @@
       <!-- Header -->
       <div class="sok__header" :class="{ 'sok__header--visible': isVisible }">
         <p class="sok__label">Our Sellers</p>
-        <h2 class="sok__title">Sellers on Khulega</h2>
+        <h2 class="sok__title">
+          Sellers on
+          <br class="sok__title-br" aria-hidden="true" />
+          <span class="sok__title-highlight">Khulega</span>
+        </h2>
         <p class="sok__subtitle">Trusted businesses across India growing with our platform</p>
       </div>
 

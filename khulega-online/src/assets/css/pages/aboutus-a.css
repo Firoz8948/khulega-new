@@ -658,6 +658,10 @@
     padding: 100px 0 112px;
   }
 
+  .au__title-highlight {
+    display: block;
+  }
+
   .au__container {
     display: flex;
     flex-direction: row;

@@ -8,6 +8,7 @@ import '@css/pages/seller-journey.css'
 import '@css/pages/sellers-on-khulega.css'
 import '@css/pages/aboutus-a.css'
 import '@css/pages/aboutus-brands.css'
+import '@css/pages/cta-section.css'
 import '@css/pages/youtubevideo.css'
 
 const app = createApp(App)
