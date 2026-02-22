@@ -6,6 +6,8 @@ import '@css/components.css'
 import '@css/pages/home.css'
 import '@css/pages/seller-journey.css'
 import '@css/pages/sellers-on-khulega.css'
+import '@css/pages/aboutus-a.css'
+import '@css/pages/aboutus-brands.css'
 
 const app = createApp(App)
 registerGlobalComponents(app)
