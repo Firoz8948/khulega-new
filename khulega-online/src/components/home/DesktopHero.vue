@@ -40,7 +40,12 @@
         </div>
 
         <div class="hero__ctas">
-          <a href="/seller-register.html" class="hero__btn hero__btn--primary">
+          <a
+            href="https://usc.khulega.online/auth/register"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hero__btn hero__btn--primary"
+          >
             {{ t('hero.ctaRegister') }}
           </a>
           <a href="/services.html" class="hero__btn hero__btn--outline">

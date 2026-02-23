@@ -271,13 +271,16 @@
 }
 
 .hero__dots {
-  position: absolute;
-  bottom: 16px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
+  left: auto;
+  bottom: auto;
+  transform: none;
   display: flex;
+  justify-content: center;
   gap: 8px;
   z-index: 3;
+  padding: 14px 0 16px;
+  background: rgba(15, 23, 42, 0.35);
 }
 
 .hero__dot {
