@@ -14,16 +14,16 @@
         <h4 class="footer__title">{{ t('footer.quickLinks') }}</h4>
         <a href="/" class="footer__link">{{ t('nav.home') }}</a>
         <a href="https://milega.online" target="_blank" rel="noopener noreferrer" class="footer__link">{{ t('nav.shop') }}</a>
-        <a href="/services.html" class="footer__link">{{ t('nav.services') }}</a>
-        <a href="/apply-job.html" class="footer__link">{{ t('nav.applyJob') }}</a>
-        <a href="/user-journey.html" class="footer__link">{{ t('nav.userJourney') }}</a>
+        <a href="/services/" class="footer__link">{{ t('nav.services') }}</a>
+        <a href="/apply-job/" class="footer__link">{{ t('nav.applyJob') }}</a>
+        <a href="/user-journey/" class="footer__link">{{ t('nav.userJourney') }}</a>
       </div>
 
       <!-- Column 3: Legal -->
       <div class="footer__col footer__col--legal">
         <h4 class="footer__title">{{ t('footer.legal') }}</h4>
-        <a href="/policy.html" class="footer__link">{{ t('footer.privacyPolicy') }}</a>
-        <a href="/terms.html" class="footer__link">{{ t('footer.termsConditions') }}</a>
+        <a href="/policy/" class="footer__link">{{ t('footer.privacyPolicy') }}</a>
+        <a href="/terms/" class="footer__link">{{ t('footer.termsConditions') }}</a>
       </div>
 
       <!-- Column 4: Contact -->

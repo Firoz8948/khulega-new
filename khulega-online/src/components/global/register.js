@@ -14,6 +14,7 @@ import BaseCard from '@shared/BaseCard.vue'
 import BaseInput from '@shared/BaseInput.vue'
 import BaseModal from '@shared/BaseModal.vue'
 import ResponsiveImage from '@shared/ResponsiveImage.vue'
+import HeroSection from '@shared/HeroSection.vue'
 
 export function registerGlobalComponents(app) {
   // Global layout components - available in ALL pages without importing
@@ -33,4 +34,5 @@ export function registerGlobalComponents(app) {
   app.component('BaseInput', BaseInput)
   app.component('BaseModal', BaseModal)
   app.component('ResponsiveImage', ResponsiveImage)
+  app.component('HeroSection', HeroSection)
 }

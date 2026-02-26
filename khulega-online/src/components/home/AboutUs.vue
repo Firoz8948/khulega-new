@@ -222,7 +222,7 @@
               <polyline points="12 5 19 12 12 19"/>
             </svg>
           </a>
-          <a href="/contact.html" class="au__btn au__btn--outline">
+          <a href="/contact/" class="au__btn au__btn--outline">
             Get in Touch
           </a>
         </div>

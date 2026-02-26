@@ -159,7 +159,7 @@
 
       <!-- ── CTA ── -->
       <div class="svc__cta" :class="{ 'svc__cta--in': isVisible }">
-        <a href="/services.html" class="svc__cta-btn">
+        <a href="/services/" class="svc__cta-btn">
           <span>View All Services &amp; Pricing</span>
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <line x1="5" y1="12" x2="19" y2="12" />

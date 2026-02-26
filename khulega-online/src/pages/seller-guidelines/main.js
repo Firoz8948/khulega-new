@@ -4,8 +4,9 @@ import { registerGlobalComponents } from '@/components/global/register.js'
 import '@css/global.css'
 import '@css/components.css'
 import '@css/components/hero-section.css'
-import '@css/pages/services.css'
+import '@css/pages/seller-guidelines.css'
 
 const app = createApp(App)
 registerGlobalComponents(app)
 app.mount('#app')
+
