@@ -56,7 +56,7 @@
       <!-- CTA Buttons -->
       <div class="cta__actions">
         <a
-          href="https://usc.khulega.online"
+          href="https://usc.khulega.online/auth/register"
           target="_blank"
           rel="noopener noreferrer"
           class="cta__btn cta__btn--primary"

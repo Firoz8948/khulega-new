@@ -369,7 +369,7 @@
               Register now and unlock the Unified Seller Console.
             </p>
             <div class="journey-cta__actions">
-              <a href="https://usc.khulega.online" target="_blank" rel="noopener" class="journey-cta__btn journey-cta__btn--primary">
+              <a href="https://usc.khulega.online/auth/register" target="_blank" rel="noopener" class="journey-cta__btn journey-cta__btn--primary">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -379,7 +379,7 @@
                 </svg>
                 Register Now
               </a>
-              <a href="/contact" class="journey-cta__btn journey-cta__btn--secondary">
+              <a href="/contact/" class="journey-cta__btn journey-cta__btn--secondary">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />

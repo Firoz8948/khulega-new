@@ -932,6 +932,32 @@
   color: var(--color-primary);
 }
 
+/* About Us (Techsandhya): mobile shows "About Us (Techsandhya)", desktop shows "About Us" with hover "Techsandhya" */
+.sidebar__link--about .sidebar__about-label--desktop,
+.sidebar__link--about .sidebar__about-label--desktop-hover {
+  display: none;
+}
+@media (min-width: 769px) {
+  .sidebar__link--about .sidebar__about-label--mobile {
+    display: none;
+  }
+  .sidebar__link--about .sidebar__about-label--desktop {
+    display: inline;
+  }
+  .sidebar__link--about:hover .sidebar__about-label--desktop {
+    display: none;
+  }
+  .sidebar__link--about:hover .sidebar__about-label--desktop-hover {
+    display: inline;
+  }
+}
+@media (max-width: 768px) {
+  .sidebar__link--about .sidebar__about-label--desktop,
+  .sidebar__link--about .sidebar__about-label--desktop-hover {
+    display: none;
+  }
+}
+
 .sidebar__divider {
   height: 1px;
   background: var(--color-border);

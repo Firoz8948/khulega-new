@@ -20,6 +20,7 @@ export default defineConfig({
       input: {
         index: resolve(__dirname, 'index.html'),
         'user-journey': resolve(__dirname, 'user-journey/index.html'),
+        about: resolve(__dirname, 'about/index.html'),
         'apply-job': resolve(__dirname, 'apply-job/index.html'),
         policy: resolve(__dirname, 'policy/index.html'),
         services: resolve(__dirname, 'services/index.html'),

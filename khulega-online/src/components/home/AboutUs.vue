@@ -215,7 +215,7 @@
 
         <!-- CTAs -->
         <div class="au__ctas" :class="{ 'au__ctas--visible': isVisible }">
-          <a href="/about.html" class="au__btn au__btn--primary">
+          <a href="https://techsandhya.com" target="_blank" rel="noopener noreferrer" class="au__btn au__btn--primary">
             <span>Learn More About Us</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"/>
