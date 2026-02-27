@@ -701,8 +701,18 @@
                         <path
                           d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                       </svg>
-                      <input type="tel" id="phone" v-model="form.phone" class="form-input"
-                        placeholder="Enter your phone number" required />
+                      <span class="form-phone-prefix">+91</span>
+                      <input
+                        type="tel"
+                        id="phone"
+                        v-model="form.phone"
+                        class="form-input"
+                        placeholder="XXXXXXXXXX"
+                        inputmode="numeric"
+                        pattern="[0-9]{10}"
+                        @input="handlePhoneInput"
+                        required
+                      />
                     </div>
                   </div>
 
@@ -884,6 +894,11 @@ const form = ref({
   message: ''
 })
 
+function handlePhoneInput() {
+  const raw = (form.value.phone || '').replace(/\D/g, '').slice(0, 10)
+  form.value.phone = raw
+}
+
 // ---- Toggle Job Details ----
 function toggleJob(id) {
   activeJob.value = activeJob.value === id ? null : id
@@ -901,29 +916,41 @@ function selectJobAndScroll(roleName) {
 }
 
 // ---- Submit via EmailJS ----
+// EmailJS: same service as Contact; template = New Job Application (Briefcase)
+const EMAILJS_PUBLIC_KEY = 'dLbCE5BH1XMiSd_03'
+const EMAILJS_SERVICE_ID = 'service_5bbk3zc'
+const EMAILJS_TEMPLATE_ID_APPLY_JOB = 'template_uynki98'
+
 async function submitApplication() {
   isSubmitting.value = true
   submitSuccess.value = false
   submitError.value = false
 
+  const now = new Date()
+  const dateStr = now.toLocaleDateString('en-IN', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric'
+  })
+
   const templateParams = {
-    full_name: form.value.fullName,
-    email: form.value.email,
-    phone: form.value.phone,
-    city: form.value.city,
-    preferred_role: form.value.preferredRole,
+    date: dateStr,
+    job_role: form.value.preferredRole,
     qualification: form.value.qualification,
     experience: form.value.experience || 'Not specified',
+    full_name: form.value.fullName,
+    email: form.value.email,
+    phone: form.value.phone ? `+91 ${form.value.phone}` : form.value.phone,
+    city: form.value.city,
     message: form.value.message || 'No message provided'
   }
 
   try {
-    // Replace with your EmailJS credentials
     await emailjs.send(
-      'YOUR_SERVICE_ID',     // e.g., 'service_xxxxx'
-      'YOUR_TEMPLATE_ID',    // e.g., 'template_xxxxx'
+      EMAILJS_SERVICE_ID,
+      EMAILJS_TEMPLATE_ID_APPLY_JOB,
       templateParams,
-      'YOUR_PUBLIC_KEY'      // e.g., 'xxxxxxxxxxxxxxx'
+      EMAILJS_PUBLIC_KEY
     )
 
     submitSuccess.value = true

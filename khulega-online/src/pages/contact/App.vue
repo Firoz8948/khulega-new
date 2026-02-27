@@ -98,12 +98,16 @@
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                       </svg>
+                      <span class="contact__phone-prefix">+91</span>
                       <input
                         id="phone"
                         v-model="form.phone"
                         type="tel"
                         class="contact__input"
-                        placeholder="+91-XXXXXXXXXX"
+                        placeholder="XXXXXXXXXX"
+                        inputmode="numeric"
+                        pattern="[0-9]{10}"
+                        @input="handlePhoneInput"
                         required
                       />
                     </div>
@@ -198,6 +202,20 @@
                   <div>
                     <strong>Message sent successfully!</strong>
                     <p>We'll get back to you within 24 hours.</p>
+                  </div>
+                </div>
+
+                <!-- Error Message -->
+                <div v-if="showError" class="contact__success" style="border-color: #ef4444; background: #fef2f2;">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ef4444"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="12" y1="8" x2="12" y2="12"/>
+                    <line x1="12" y1="16" x2="12.01" y2="16"/>
+                  </svg>
+                  <div>
+                    <strong>Something went wrong</strong>
+                    <p>Please try again or email us at admin@techsandhya.com</p>
                   </div>
                 </div>
               </div>
@@ -391,6 +409,12 @@
 
 <script setup>
 import { ref, reactive } from 'vue'
+import emailjs from '@emailjs/browser'
+
+// EmailJS: Public Key from https://dashboard.emailjs.com/admin
+const EMAILJS_PUBLIC_KEY = 'dLbCE5BH1XMiSd_03'
+const EMAILJS_SERVICE_ID = 'service_5bbk3zc'
+const EMAILJS_TEMPLATE_ID_CONTACT = 'template_fzlcbov'
 
 const form = reactive({
   firstName: '',
@@ -404,24 +428,49 @@ const form = reactive({
 
 const isSubmitting = ref(false)
 const showSuccess = ref(false)
+const showError = ref(false)
+
+const handlePhoneInput = () => {
+  form.phone = (form.phone || '').replace(/\D/g, '').slice(0, 10)
+}
 
 const handleSubmit = async () => {
   isSubmitting.value = true
+  showError.value = false
 
-  // Simulate API call
-  await new Promise(resolve => setTimeout(resolve, 1500))
+  const templateParams = {
+    from_name: `${form.firstName} ${form.lastName}`.trim(),
+    first_name: form.firstName,
+    last_name: form.lastName,
+    name: `${form.firstName} ${form.lastName}`.trim(),
+    user_name: `${form.firstName} ${form.lastName}`.trim(),
+    from_email: form.email,
+    email: form.email,
+    user_email: form.email,
+    reply_to: form.email,
+    phone: form.phone ? `+91 ${form.phone}` : '',
+    business_name: form.businessName || '—',
+    subject: form.subject,
+    message: form.message
+  }
 
-  isSubmitting.value = false
-  showSuccess.value = true
+  try {
+    await emailjs.send(
+      EMAILJS_SERVICE_ID,
+      EMAILJS_TEMPLATE_ID_CONTACT,
+      templateParams,
+      EMAILJS_PUBLIC_KEY
+    )
 
-  // Reset form
-  Object.keys(form).forEach(key => {
-    form[key] = ''
-  })
-
-  // Hide success after 5 seconds
-  setTimeout(() => {
-    showSuccess.value = false
-  }, 5000)
+    showSuccess.value = true
+    Object.keys(form).forEach(key => { form[key] = '' })
+    setTimeout(() => { showSuccess.value = false }, 5000)
+  } catch (err) {
+    console.error('Contact form error:', err)
+    showError.value = true
+    setTimeout(() => { showError.value = false }, 5000)
+  } finally {
+    isSubmitting.value = false
+  }
 }
 </script>

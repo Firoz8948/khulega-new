@@ -588,6 +588,16 @@
     outline: none;
     font-family: inherit;
   }
+
+  .form-phone-prefix {
+    position: relative;
+    margin-left: 40px;
+    margin-right: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #0f172a;
+    white-space: nowrap;
+  }
   
   .form-input::placeholder {
     color: #94a3b8;
