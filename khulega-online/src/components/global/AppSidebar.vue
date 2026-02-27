@@ -5,6 +5,8 @@
       v-if="isSidebarOpen"
       class="sidebar-overlay"
       @click="closeSidebar"
+      @touchmove.prevent
+      @wheel.prevent
     ></div>
   </Transition>
 
