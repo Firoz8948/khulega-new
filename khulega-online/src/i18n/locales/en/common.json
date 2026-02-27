@@ -2,7 +2,7 @@
   "nav": {
     "home": "Home",
     "shop": "Shop",
-    "userJourney": "User Journey",
+    "userJourney": "Seller Journey",
     "applyJob": "Apply Job",
     "services": "Our Services",
     "policy": "Privacy Policy",
@@ -14,7 +14,7 @@
     "sellerRegistration": "Seller Registration",
     "sellerLogin": "Already a Seller? Login",
     "sellerGuidelines": "Seller Guidelines",
-    "userJourney": "User Journey",
+    "userJourney": "Seller Journey",
     "sellerSupport": "Seller Support",
     "customer": "Customer(Buyer)",
     "signIn": "Sign In",
