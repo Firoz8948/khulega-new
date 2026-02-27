@@ -71,19 +71,17 @@
         </a>
 
         <!-- ONDC Logo -->
-        <a
-          href="https://ondc.org"
-          target="_blank"
-          rel="noopener noreferrer"
+        <span
           class="header__ondc"
           title="ONDC Network"
+          aria-hidden="true"
         >
           <img
             src="/assets/images/ondc-logo.png"
             alt="ONDC"
             class="header__ondc-img"
           />
-        </a>
+        </span>
 
         <!-- Language Toggle -->
         <LanguageToggle />

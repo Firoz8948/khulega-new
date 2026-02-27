@@ -1,6 +1,8 @@
 {
   "page": {
     "title": "Apply for Jobs",
+    "titleMain": "Apply",
+    "titleHighlight": "for Jobs",
     "subtitle": "Find your dream career opportunity",
     "breadcrumb": "Apply Job"
   },

@@ -13,6 +13,7 @@
     "becomeASeller": "Become a Seller",
     "sellerRegistration": "Seller Registration",
     "sellerLogin": "Already a Seller? Login",
+    "sellerServices": "Seller Services",
     "sellerGuidelines": "Seller Guidelines",
     "userJourney": "Seller Journey",
     "sellerSupport": "Seller Support",
@@ -32,7 +33,8 @@
     "aboutSubtitle": "Learn about Khulega Online and our mission.",
     "privacyPolicy": "Privacy Policy",
     "termsAndConditions": "Terms & Conditions",
-    "contactUs": "Contact Us"
+    "contactUs": "Contact Us",
+    "career": "Career"
   },
   "footer": {
     "description": "When shop.khulega.online\nThen sab.milega.online",

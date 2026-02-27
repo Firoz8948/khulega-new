@@ -96,6 +96,15 @@
               </svg>
               {{ t('sidebar.sellerLogin') }}
             </a>
+            <a href="/services/" class="sidebar__link" @click="closeSidebar">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19.5A2.5 2.5 0 016.5 17H20"/>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>
+                <line x1="12" y1="9" x2="18" y2="9"/>
+                <line x1="12" y1="13" x2="18" y2="13"/>
+              </svg>
+              {{ t('sidebar.sellerServices') }}
+            </a>
             <a href="/user-journey/" class="sidebar__link" @click="closeSidebar">
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10"/>
@@ -118,6 +127,33 @@
                 <polyline points="10 9 9 9 8 9"/>
               </svg>
               {{ t('sidebar.sellerGuidelines') }}
+            </a>
+          </nav>
+        </div>
+
+        <!-- Divider -->
+        <div class="sidebar__divider"></div>
+
+        <!-- CAREER Section -->
+        <div class="sidebar__section">
+          <h3 class="sidebar__section-title">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+              <line x1="8" y1="21" x2="16" y2="21"/>
+              <line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+            {{ t('sidebar.career') }}
+          </h3>
+          <nav class="sidebar__nav">
+            <a href="/apply-job/" class="sidebar__link" @click="closeSidebar">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+                <circle cx="8.5" cy="7" r="4"/>
+                <line x1="20" y1="8" x2="20" y2="14"/>
+                <line x1="23" y1="11" x2="17" y2="11"/>
+              </svg>
+              {{ t('nav.applyJob') }}
             </a>
           </nav>
         </div>
