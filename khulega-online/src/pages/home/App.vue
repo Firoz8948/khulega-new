@@ -16,7 +16,7 @@
 
     <AppFooter />
     <BackToTop />
-    <WhatsAppButton phone="91XXXXXXXXXX" />
+    <WhatsAppButton phone="919226697740" />
   </div>
 </template>
 

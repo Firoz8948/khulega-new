@@ -16,7 +16,7 @@
 import { computed } from 'vue'
 
 const props = defineProps({
-  phone: { type: String, default: '91XXXXXXXXXX' },
+  phone: { type: String, default: '919226697740' },
   message: { type: String, default: 'Hello! I have a query about Khulega.online' }
 })
 
