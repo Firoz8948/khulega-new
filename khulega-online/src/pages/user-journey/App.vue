@@ -61,7 +61,7 @@
                 <span>01</span>
               </div>
               <div class="journey__step-image">
-                <img src="/assets/images/step1.png" alt="Register" class="journey__step-img" />
+                <img src="/assets/images/step1.webp" alt="Register" class="journey__step-img" />
               </div>
             </div>
           </div>
@@ -73,7 +73,7 @@
                 <span>02</span>
               </div>
               <div class="journey__step-image">
-                <img src="/assets/images/step2.png" alt="Apply" class="journey__step-img" />
+                <img src="/assets/images/step2.webp" alt="Apply" class="journey__step-img" />
               </div>
             </div>
             <div class="journey__step-content">
@@ -168,7 +168,7 @@
                 <span>03</span>
               </div>
               <div class="journey__step-image">
-                <img src="/assets/images/step3.png" alt="Unlock - Dashboard" class="journey__step-img" />
+                <img src="/assets/images/step3.webp" alt="Unlock - Dashboard" class="journey__step-img" />
               </div>
             </div>
           </div>
@@ -180,7 +180,7 @@
                 <span>04</span>
               </div>
               <div class="journey__step-image">
-                <img src="/assets/images/step4.png" alt="Assist - Support" class="journey__step-img" />
+                <img src="/assets/images/step4.webp" alt="Assist - Support" class="journey__step-img" />
               </div>
             </div>
             <div class="journey__step-content">
@@ -284,7 +284,7 @@
                 <span>05</span>
               </div>
               <div class="journey__step-image">
-                <img src="/assets/images/step5.png" alt="Connect - Marketplaces" class="journey__step-img" />
+                <img src="/assets/images/step5.webp" alt="Connect - Marketplaces" class="journey__step-img" />
               </div>
             </div>
           </div>
@@ -296,7 +296,7 @@
                 <span>06</span>
               </div>
               <div class="journey__step-image">
-                <img src="/assets/images/step6.png" alt="Scale - Grow" class="journey__step-img" />
+                <img src="/assets/images/step6.webp" alt="Scale - Grow" class="journey__step-img" />
               </div>
             </div>
             <div class="journey__step-content">

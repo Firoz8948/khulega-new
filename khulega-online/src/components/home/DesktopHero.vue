@@ -210,9 +210,9 @@ const heroBrands = [
 ]
 
 const storyImages = [
-  '/assets/images/image1.png',
-  '/assets/images/image2.png',
-  '/assets/images/image3.png'
+  '/assets/images/image1.webp',
+  '/assets/images/image2.webp',
+  '/assets/images/image3.webp'
 ]
 
 const stories = computed(() => {

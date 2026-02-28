@@ -10,7 +10,7 @@
             <div class="au__image-accent" aria-hidden="true"></div>
             <div class="au__image-wrap">
               <img
-                src="/assets/images/aboutus.png"
+                src="/assets/images/aboutus.webp"
                 alt="About Khulega Online — Empowering sellers across India"
                 class="au__image"
                 loading="lazy"
@@ -130,7 +130,7 @@
             <div class="au__image-accent" aria-hidden="true"></div>
             <div class="au__image-wrap">
               <img
-                src="/assets/images/aboutus.png"
+                src="/assets/images/aboutus.webp"
                 alt="About Khulega Online — Empowering sellers across India"
                 class="au__image"
                 loading="lazy"
