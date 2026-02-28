@@ -41,10 +41,12 @@
     align-items: center;
     text-decoration: none;
     margin-bottom: 16px;
+    margin-left: -65px;   /* shift logo left */
+    margin-top: -75px;
   }
   
   .footer__logo-img {
-    height: 80px;
+    height: 160px;  /* 2x desktop size */
     width: auto;
     filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
   }
@@ -53,6 +55,7 @@
     font-size: 14px;
     color: #9ca3af;
     line-height: 1.7;
+    margin-top: -65px;
     margin-bottom: 24px;
     white-space: pre-line;
     max-width: 320px;
@@ -293,7 +296,7 @@
     }
   
     .footer__logo-img {
-      height: 70px;
+      height: 140px;  /* 2x tablet */
     }
   }
   
@@ -420,7 +423,7 @@
     }
   
     .footer__logo-img {
-      height: 100px;
+      height: 200px;  /* 2x large desktop */
     }
   }
 
@@ -703,6 +706,7 @@
   display: flex;
   align-items: center;
   line-height: 0;
+  margin-left: -20px;  /* shift logo further left */
 }
 
 .header__logo-img {

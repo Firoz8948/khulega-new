@@ -7,7 +7,7 @@
         <div class="footer__col footer__col--brand">
           <a href="/" class="footer__logo" aria-label="Khulega.online">
             <img
-              :src="'/assets/images/Khulega_logo.png'"
+              :src="'/assets/images/khulega_logo.png'"
               alt="Khulega"
               class="footer__logo-img"
             />
