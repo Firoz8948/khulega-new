@@ -1,39 +1,130 @@
 {
-  "page": {
-    "title": "Our Services",
-    "subtitle": "We offer a wide range of professional services",
+  "hero": {
+    "badge": "Our Services",
+    "title": "Everything You Need to",
+    "highlightText": "Start, Manage & Scale",
+    "subtitle": "From compliance setup to marketplace operations, branding, and advisory support — we help you launch and grow with confidence. All services available through your Unified Seller Console.",
     "breadcrumb": "Services"
   },
-  "items": [
-    {
-      "icon": "\ud83d\uded2",
-      "title": "Online Shopping",
-      "description": "Browse thousands of products with fast delivery and great prices."
-    },
-    {
-      "icon": "\ud83d\udcbc",
-      "title": "Job Placement",
-      "description": "Find the perfect job opportunity tailored to your skills and experience."
-    },
-    {
-      "icon": "\ud83d\ude9a",
-      "title": "Delivery Services",
-      "description": "Fast and reliable delivery services across multiple cities."
-    },
-    {
-      "icon": "\ud83d\udcde",
-      "title": "Customer Support",
-      "description": "24/7 customer support to help you with any questions or concerns."
-    },
-    {
-      "icon": "\ud83d\udcb0",
-      "title": "Competitive Pricing",
-      "description": "Best prices guaranteed with regular deals and discount offers."
-    },
-    {
-      "icon": "\ud83d\udee1\ufe0f",
-      "title": "Secure Payments",
-      "description": "Safe and secure payment options for a worry-free experience."
-    }
-  ]
+  "intro": {
+    "text": "At Khulega Online, we don't just provide software — we provide",
+    "textBold": "complete seller enablement",
+    "textEnd": "All services are available through your Unified Seller Console at",
+    "tags": ["Unified Dashboard", "Multi-Marketplace Support", "Affordable Pricing", "Built for Indian Sellers"]
+  },
+  "compliance": {
+    "badgeLabel": "Compliance Services",
+    "title": "Start Your Business the Right Way",
+    "subtitle": "Before selling online, proper documentation and compliance are essential. Our compliance services ensure your business is legally ready and marketplace-approved.",
+    "cards": [
+      { "title": "e-PAN Card", "text": "Get assistance in applying for or updating your PAN quickly and smoothly." },
+      { "title": "Udyam Registration", "text": "Register your business under MSME and unlock government-recognized benefits." },
+      { "title": "Marketplace Account Setup", "text": "Complete account creation and onboarding assistance for each marketplace you choose." },
+      { "title": "GST Registration", "text": "End-to-end support for GST registration including documentation guidance." },
+      { "title": "FSSAI Food License", "text": "For food sellers, we help you obtain the required license to legally operate." }
+    ],
+    "pricingTitle": "Compliance Pricing",
+    "pricingType": "One-time Fee",
+    "tableService": "Service",
+    "tableFee": "Fee",
+    "tableDiscounted": "Discounted",
+    "tableValidUntil": "Valid Until",
+    "rows": [
+      { "service": "e-PAN Card" },
+      { "service": "Udyam Registration" },
+      { "service": "Marketplace Account Setup", "note": "Per Platform" },
+      { "service": "GST Registration" },
+      { "service": "FSSAI Food License", "note": "If applicable" }
+    ],
+    "highlights": ["Simple process", "Affordable one-time pricing", "Expert assistance"]
+  },
+  "subscription": {
+    "badgeLabel": "Subscription Services",
+    "title": "Ongoing Operational Support",
+    "subtitle": "Running an online business requires daily management. Our subscription packs simplify operations so you can focus on growth.",
+    "mostPopular": "Most Popular",
+    "packs": [
+      {
+        "title": "Payment & Account Pack",
+        "desc": "Settlement, Refund & Account Coordination",
+        "features": ["Settlement tracking", "Refund handling", "Basic account coordination"],
+        "ideal": "Ideal for sellers who want structured financial monitoring."
+      },
+      {
+        "title": "Operations Pack",
+        "desc": "Order, Shipping, Return & Inventory",
+        "features": ["Order management", "Shipping coordination", "Return handling", "Inventory management"],
+        "ideal": "Best suited for growing sellers who want end-to-end operational support."
+      },
+      {
+        "title": "Growth Pack",
+        "desc": "Ads, Reports & Performance Optimization",
+        "features": ["Advertising support", "Reports & analytics review", "Performance optimization guidance"],
+        "ideal": "Perfect for sellers who want to scale faster and increase visibility."
+      }
+    ],
+    "validity": "Valid until 31st December 2026",
+    "perMonth": "/month",
+    "bottomTags": ["Monthly plans", "Structured process", "Data-backed decisions"]
+  },
+  "product": {
+    "badgeLabel": "Product Services",
+    "title": "Make Your Products Stand Out",
+    "subtitle": "High-quality listings improve conversions and reduce returns. Our product services focus on presentation and branding.",
+    "cards": [
+      { "title": "Product Photo Editing", "text": "Enhance product images professionally to meet marketplace standards. Per product pricing." },
+      { "title": "Product Description & Title Writing", "text": "SEO-optimized, marketplace-compliant titles and descriptions that improve visibility and conversions." },
+      { "title": "Brand Name, Logo & Banner", "text": "Complete brand identity setup for sellers who want to build long-term recognition." }
+    ],
+    "pricingTitle": "Product Pricing",
+    "pricingType": "One-time Fee",
+    "rows": [
+      { "service": "Product Photo Editing", "note": "Per Product" },
+      { "service": "Description & Title Writing", "note": "Per Product" },
+      { "service": "Brand Name, Logo & Banner" }
+    ],
+    "highlights": ["Conversion-focused", "Marketplace compliant", "Professionally crafted"]
+  },
+  "advisory": {
+    "badgeLabel": "Advisory Services",
+    "title": "Expert Guidance for Smarter Decisions",
+    "subtitle": "Sometimes growth requires strategic input. Our advisory services provide focused guidance to help you make better business decisions.",
+    "cards": [
+      {
+        "title": "Pricing Advisory",
+        "text": "Understand competitive pricing, margin strategy, and marketplace positioning.",
+        "label": "one-time"
+      },
+      {
+        "title": "Packaging Advisory",
+        "text": "Improve packaging standards to reduce returns and improve customer experience.",
+        "label": "one-time"
+      }
+    ],
+    "validity": "Valid until 31st December 2026",
+    "bottomTags": ["Practical insights", "Data-backed recommendations", "Growth-oriented approach"]
+  },
+  "why": {
+    "title": "Why Choose Khulega Online?",
+    "subtitle": "Built specifically for Indian sellers with transparent, affordable pricing.",
+    "items": [
+      { "title": "Unified Seller Console", "text": "Manage everything from one dashboard at usc.khulega.online" },
+      { "title": "Multi-Marketplace Support", "text": "Connect to Amazon, Flipkart, Meesho, JioMart, ONDC & more" },
+      { "title": "Affordable Pricing", "text": "Transparent pricing with no hidden charges" },
+      { "title": "Dedicated Support Team", "text": "Expert assistance at every step of your journey" },
+      { "title": "Structured & Transparent", "text": "Clear service scope with well-defined processes" },
+      { "title": "Built for Indian Sellers", "text": "Designed specifically for the Indian e-commerce ecosystem" }
+    ]
+  },
+  "note": {
+    "title": "Transparent Pricing",
+    "desc": "All discounted prices are valid until the mentioned validity date. Service scope is clearly defined, and no hidden charges apply unless discussed separately."
+  },
+  "cta": {
+    "title": "Ready to Get Started?",
+    "text": "Register on Khulega Online, access your dashboard at",
+    "textEnd": "and choose the services you need to build and scale your online business.",
+    "registerNow": "Register Now",
+    "contactUs": "Contact Us"
+  }
 }
