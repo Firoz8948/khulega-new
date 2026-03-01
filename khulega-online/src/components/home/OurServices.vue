@@ -3,14 +3,13 @@
     <div class="svc__inner">
       <!-- ── Header ── -->
       <header class="svc__header" :class="{ 'svc__header--in': isVisible }">
-        <span class="svc__badge">What We Offer</span>
+        <span class="svc__badge">{{ t('ourServices.badge') }}</span>
         <h2 class="svc__heading">
-          Everything You Need to
-          <span class="svc__heading-em">Sell Online Successfully</span>
+          {{ t('ourServices.heading') }}
+          <span class="svc__heading-em">{{ t('ourServices.headingEm') }}</span>
         </h2>
         <p class="svc__intro">
-          From business registration to order management — we handle every
-          aspect of your online selling journey
+          {{ t('ourServices.intro') }}
         </p>
       </header>
 
@@ -69,7 +68,7 @@
                 }"
               ></div>
               <span class="svc__sm-title">{{ slide.title }}</span>
-              <span v-if="slide.isFree" class="svc__sm-free">Free</span>
+              <span v-if="slide.isFree" class="svc__sm-free">{{ t('ourServices.free') }}</span>
             </div>
 
             <!-- Big card -->
@@ -107,11 +106,11 @@
                   >
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  Included Free
+                  {{ t('ourServices.includedFree') }}
                 </span>
-                <span v-else class="svc__lg-paid">Premium Service</span>
+                <span v-else class="svc__lg-paid">{{ t('ourServices.premiumService') }}</span>
                 <a href="/services/" class="svc__lg-link" @click.stop>
-                  Learn more
+                  {{ t('ourServices.learnMore') }}
                   <svg
                     viewBox="0 0 24 24"
                     width="13"
@@ -158,7 +157,7 @@
     <div class="svc__inner">
       <div class="svc__cta" :class="{ 'svc__cta--in': isVisible }">
         <a href="/services/" class="svc__cta-btn">
-          <span>View All Services &amp; Pricing</span>
+          <span>{{ t('ourServices.viewAllServices') }}</span>
           <svg
             viewBox="0 0 24 24"
             width="16"
@@ -180,6 +179,9 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted, watch } from "vue";
+import { useI18n } from "@/i18n/index.js";
+
+const { t } = useI18n("home");
 
 const sectionRef = ref(null);
 const isVisible = ref(false);
@@ -202,30 +204,19 @@ const colorMap = {
   green: { main: "#16a34a", bg: "#f0fdf4", border: "#86efac" },
 };
 
-const categories = [
-  {
-    id: "registration",
-    label: "Registration",
-    icon: `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>`,
-  },
-  {
-    id: "branding",
-    label: "Branding",
-    icon: `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>`,
-  },
-  {
-    id: "marketplace",
-    label: "Marketplace",
-    icon: `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>`,
-  },
-  {
-    id: "operations",
-    label: "Operations",
-    icon: `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>`,
-  },
-];
+const categories = computed(() => {
+  const tr = t("ourServices.categories");
+  const meta = [
+    { id: "registration", icon: `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>` },
+    { id: "branding", icon: `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>` },
+    { id: "marketplace", icon: `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>` },
+    { id: "operations", icon: `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>` },
+  ];
+  if (!Array.isArray(tr) || tr.length !== meta.length) return meta.map((m) => ({ ...m, label: m.id }));
+  return meta.map((m, i) => ({ ...m, label: tr[i]?.label ?? m.id }));
+});
 
-const allServices = {
+const _allServicesStatic = {
   registration: [
     {
       title: "e-PAN Card",
@@ -455,14 +446,26 @@ const allServices = {
   ],
 };
 
+function mergeCategory(staticList, trList) {
+  if (!Array.isArray(trList) || trList.length !== staticList.length) return staticList;
+  return staticList.map((s, i) => ({ ...s, ...trList[i] }));
+}
+
+const allServices = computed(() => ({
+  registration: mergeCategory(_allServicesStatic.registration, t("ourServices.registration") || []),
+  branding: mergeCategory(_allServicesStatic.branding, t("ourServices.branding") || []),
+  marketplace: mergeCategory(_allServicesStatic.marketplace, t("ourServices.marketplace") || []),
+  operations: mergeCategory(_allServicesStatic.operations, t("ourServices.operations") || []),
+}));
+
 /* ── Computed ── */
 const activeServices = computed(
-  () => allServices[activeCategory.value] || []
+  () => allServices.value[activeCategory.value] || []
 );
 
 const progressWidth = computed(() => {
-  const t = activeServices.value.length;
-  return t === 0 ? 0 : ((currentIndex.value + 1) / t) * 100;
+  const len = activeServices.value.length;
+  return len === 0 ? 0 : ((currentIndex.value + 1) / len) * 100;
 });
 
 // How many side cards per side

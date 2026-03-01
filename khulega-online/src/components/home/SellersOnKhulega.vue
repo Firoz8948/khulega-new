@@ -3,13 +3,13 @@
     <div class="sok__container">
       <!-- Header -->
       <div class="sok__header" :class="{ 'sok__header--visible': isVisible }">
-        <p class="sok__label">Our Sellers</p>
+        <p class="sok__label">{{ t('sellersOnKhulega.label') }}</p>
         <h2 class="sok__title">
-          Sellers on
+          {{ t('sellersOnKhulega.title') }}
           <br class="sok__title-br" aria-hidden="true" />
-          <span class="sok__title-highlight">Khulega</span>
+          <span class="sok__title-highlight">{{ t('sellersOnKhulega.titleHighlight') }}</span>
         </h2>
-        <p class="sok__subtitle">Trusted businesses across India growing with our platform</p>
+        <p class="sok__subtitle">{{ t('sellersOnKhulega.subtitle') }}</p>
       </div>
 
       <!-- Row 1: Right to Left -->
@@ -37,25 +37,41 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { useI18n } from '@/i18n/index.js'
 import SellerCard from '@shared/SellerCard.vue'
+
+const { t } = useI18n('home')
 
 const sectionRef = ref(null)
 const isVisible = ref(false)
 let observer = null
 
-const sellers = [
-  { name: 'FiveStar', image: '/assets/images/sellers/fivestar.jpeg', state: 'Maharashtra' },
-  { name: 'FreshOKit', image: '/assets/images/sellers/freshokit.jpeg', state: 'Gujarat' },
-  { name: 'Millet', image: '/assets/images/sellers/millet.jpeg', state: 'Karnataka' },
-  { name: 'Mohraj', image: '/assets/images/sellers/mohraj.jpeg', state: 'Rajasthan' },
-  { name: 'OneIndia', image: '/assets/images/sellers/oneindia.jpeg', state: 'Delhi' },
-  { name: 'SafaltaSHG', image: '/assets/images/sellers/safaltashg.jpeg', state: 'Madhya Pradesh' },
-  { name: 'Swarajya', image: '/assets/images/sellers/swarajya.jpeg', state: 'Tamil Nadu' }
+const sellerImages = [
+  '/assets/images/sellers/fivestar.jpeg',
+  '/assets/images/sellers/freshokit.jpeg',
+  '/assets/images/sellers/millet.jpeg',
+  '/assets/images/sellers/mohraj.jpeg',
+  '/assets/images/sellers/oneindia.jpeg',
+  '/assets/images/sellers/safaltashg.jpeg',
+  '/assets/images/sellers/swarajya.jpeg'
 ]
+
+const sellers = computed(() => {
+  const tr = t('sellersOnKhulega.sellers')
+  if (!Array.isArray(tr) || tr.length !== sellerImages.length) {
+    return sellerImages.map((img, i) => ({ name: '', state: '', image: img }))
+  }
+  return tr.map((item, i) => ({
+    name: item.name || '',
+    state: item.state || '',
+    image: sellerImages[i]
+  }))
+})
 
 // Duplicate sellers 4 times to create seamless infinite loop
 const duplicatedSellers = computed(() => {
-  return [...sellers, ...sellers, ...sellers, ...sellers]
+  const list = sellers.value
+  return [...list, ...list, ...list, ...list]
 })
 
 onMounted(() => {

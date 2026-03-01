@@ -5,9 +5,9 @@
     "subtitle": "Your one-stop destination for services, shopping, and career opportunities.",
     "cta1": "Explore Shop",
     "cta2": "Our Services",
-    "tagline1prefix": "When",
+    "tagline1prefix": "Jab",
     "tagline1": "shop.khulega.online",
-    "tagline2prefix": "Then",
+    "tagline2prefix": "Tab",
     "tagline2": "sab.milega.online",
     "desc": "One solution for every need of your online business",
     "ctaRegister": "Register Here",
@@ -59,5 +59,133 @@
     "title": "Ready to get started?",
     "subtitle": "Join thousands of sellers and customers who trust Khulega.online.",
     "button": "Explore Now"
+  },
+  "youtubeVideo": {
+    "label": "Watch Our Story",
+    "title": "See How We're Helping Sellers",
+    "titleHighlight": "Build Their Online Business",
+    "subtitle": "From registration to revenue — watch how Khulega.online transforms offline businesses into thriving online sellers across every major marketplace in India",
+    "playAriaLabel": "Play video: Khulega.online — Empowering Sellers",
+    "thumbnailAlt": "Khulega.online — Watch how we help sellers go online",
+    "watchVideo": "Watch Video",
+    "thumbnailTitle": "Khulega.online — Empowering Sellers Across India",
+    "brandFilm": "Brand Film",
+    "easyOnboarding": "Easy Onboarding",
+    "registerMinutes": "Register in minutes",
+    "growRevenue": "Grow Revenue",
+    "sellPlatforms": "Sell on 5+ platforms"
+  },
+  "ctaSection": {
+    "eyebrow": "Start Your Online Business Today",
+    "title": "Ready to Sell on Every",
+    "titleHighlight": "Marketplace in India?",
+    "subtitle": "Join hundreds of sellers who manage Amazon, Flipkart, Meesho, ONDC & more from one single dashboard. Register now and start selling in minutes.",
+    "registerNow": "Register Now",
+    "talkToTeam": "Talk to Our Team",
+    "trust": "Free to register · No Advance payment required · Go live in 24 hours"
+  },
+  "aboutUs": {
+    "label": "About Us",
+    "title": "Empowering Every Seller to",
+    "titleHighlight": "Go Online & Grow",
+    "marketplaces": "Marketplaces",
+    "helpingSellersGrow": "Helping Sellers Grow",
+    "highlight1Title": "Multi-Marketplace Onboarding",
+    "highlight1Desc": "We register and set up your seller accounts across all major platforms",
+    "highlight2Title": "Unified Seller Console",
+    "highlight2Desc": "Manage orders, inventory, and listings for every marketplace from one dashboard",
+    "highlight3Title": "End-to-End Seller Support",
+    "highlight3Desc": "From documentation to branding — our team assists at every step",
+    "identityWeAre": "We are",
+    "identityPoweredBy": "powered by",
+    "desc1": "We believe every business deserves a place in the digital marketplace - regardless of size, technical knowledge, or resources. That's why we built a platform that takes the complexity out of online selling.",
+    "desc2": "From onboarding to operations, we help sellers list and sell their products across",
+    "desc2Link": "usc.khulega.online",
+    "desc2End": "and more — all managed from a single, unified dashboard at",
+    "desc3": "Whether you need help with product cataloguing, brand registration, compliance documentation, or marketplace account setup — our team handles it all so you can focus on what matters most:",
+    "desc3Bold": "your products and your customers",
+    "learnMoreAboutUs": "Learn More About Us",
+    "getInTouch": "Get in Touch",
+    "more": "More",
+    "imageAlt": "About Khulega Online — Empowering sellers across India"
+  },
+  "sellersOnKhulega": {
+    "label": "Our Sellers",
+    "title": "Sellers on",
+    "titleHighlight": "Khulega",
+    "subtitle": "Trusted businesses across India growing with our platform",
+    "sellers": [
+      { "name": "FiveStar", "state": "Maharashtra" },
+      { "name": "FreshOKit", "state": "Gujarat" },
+      { "name": "Millet", "state": "Karnataka" },
+      { "name": "Mohraj", "state": "Rajasthan" },
+      { "name": "OneIndia", "state": "Delhi" },
+      { "name": "SafaltaSHG", "state": "Madhya Pradesh" },
+      { "name": "Swarajya", "state": "Tamil Nadu" }
+    ]
+  },
+  "sellerJourney": {
+    "label": "How It Works",
+    "title": "Your Journey from",
+    "titleHighlight": "Signup to Sales",
+    "subtitle": "Six simple steps to launch your business across every major marketplace in India",
+    "cta": "See Complete Seller Journey",
+    "steps": [
+      { "title": "Register on Our Platform", "desc": "Click the Register button to visit usc.khulega.online and create your account in minutes. No complex paperwork — just a simple signup to get started." },
+      { "title": "Submit Your Seller Application", "desc": "Complete your seller profile with basic business details and submit your application for review. Our team verifies and approves applications promptly." },
+      { "title": "Access Your Seller Dashboard", "desc": "Once approved, your dashboard unlocks all seller tools — marketplace connectors, inventory management, order tracking, and analytics — all in one place." },
+      { "title": "Get Expert Assistance", "desc": "Need help with documentation, branding, or compliance? Request services directly from your dashboard. Our team will guide you through every requirement to go live." },
+      { "title": "Connect Your Marketplaces", "desc": "Link Amazon, Flipkart, Meesho, ONDC, JioMart, and more from a single dashboard. Upload your product catalogue once and publish across all platforms simultaneously." },
+      { "title": "Start Selling & Earning", "desc": "Your products are now live across every connected marketplace. Manage orders, track performance, and scale your business — all from one unified platform." }
+    ]
+  },
+  "ourServices": {
+    "badge": "What We Offer",
+    "heading": "Everything You Need to",
+    "headingEm": "Sell Online Successfully",
+    "intro": "From business registration to order management — we handle every aspect of your online selling journey",
+    "categories": [
+      { "id": "registration", "label": "Registration" },
+      { "id": "branding", "label": "Branding" },
+      { "id": "marketplace", "label": "Marketplace" },
+      { "id": "operations", "label": "Operations" }
+    ],
+    "free": "Free",
+    "premiumService": "Premium Service",
+    "learnMore": "Learn more",
+    "includedFree": "Included Free",
+    "viewAllServices": "View All Services & Pricing",
+    "registration": [
+      { "title": "e-PAN Card", "shortDesc": "Instant digital PAN card generation", "detail": "Get your business PAN card digitally without visiting any office. Required for GST and marketplace registration." },
+      { "title": "GST Registration", "shortDesc": "Mandatory for online selling on marketplaces", "detail": "Complete GST registration with ARN generation. Required to sell on Amazon, Flipkart, and other marketplaces." },
+      { "title": "Udyam Registration", "shortDesc": "MSME certificate for your business", "detail": "Register your business under MSME to avail government benefits, subsidies, and marketplace priority listing." },
+      { "title": "FSSAI License", "shortDesc": "Required for food & consumable products", "detail": "Mandatory food safety license for sellers dealing in food items, beverages, supplements, and consumable goods." },
+      { "title": "Taxation Support", "shortDesc": "GST filing & tax compliance assistance", "detail": "Regular GST return filing, tax computation, and compliance support to keep your business running smoothly." }
+    ],
+    "branding": [
+      { "title": "Brand Identity Design", "shortDesc": "Name, Logo, Banner & Tagline creation", "detail": "Professional brand identity package including business name suggestions, logo design, marketplace banners, and a compelling tagline." },
+      { "title": "Product Photography", "shortDesc": "Professional product images for listings", "detail": "High-quality product photography on white background, lifestyle shots, and infographic images optimized for marketplace listings." },
+      { "title": "AI Product Images", "shortDesc": "AI-generated professional product visuals", "detail": "Leverage AI technology to create stunning product images, background removal, lifestyle mockups, and A+ content visuals." },
+      { "title": "Product Metadata", "shortDesc": "Titles, descriptions & keyword optimization", "detail": "SEO-optimized product titles, bullet points, descriptions, and backend keywords to maximize your product visibility and search ranking." },
+      { "title": "AI Content Writing", "shortDesc": "AI-powered product descriptions & content", "detail": "Use AI to generate compelling product descriptions, bullet points, and A+ content that converts browsers into buyers." },
+      { "title": "Quality Check", "shortDesc": "Product quality verification & compliance", "detail": "Ensure your products meet marketplace quality standards and compliance requirements before listing." }
+    ],
+    "marketplace": [
+      { "title": "Marketplace Onboarding", "shortDesc": "Account setup on all major platforms", "detail": "Complete seller account creation and verification on Amazon, Flipkart, Meesho, JioMart, and ONDC marketplaces.", "platforms": ["Amazon", "Flipkart", "Meesho", "JioMart"] },
+      { "title": "Khulega.online Listing", "shortDesc": "List products on our own marketplace", "detail": "Get your products listed on Khulega.online powered by ONDC network, reaching customers across India." },
+      { "title": "Product Listing", "shortDesc": "Upload & list products across platforms", "detail": "Bulk product listing with optimized content across all connected marketplaces from one dashboard.", "platforms": ["Amazon", "Flipkart", "Meesho", "JioMart"] },
+      { "title": "Pricing Strategy", "shortDesc": "Competitive pricing across marketplaces", "detail": "Data-driven pricing recommendations considering marketplace fees, competition, and profit margins." },
+      { "title": "Seller Training", "shortDesc": "Learn to manage your online business", "detail": "Comprehensive training on dashboard usage, order management, inventory handling, and marketplace best practices." }
+    ],
+    "operations": [
+      { "title": "Order Management", "shortDesc": "Unified order tracking across platforms", "detail": "Track, process, and fulfill orders from all marketplaces in one dashboard. Never miss an order again." },
+      { "title": "Inventory Management", "shortDesc": "Real-time stock sync across marketplaces", "detail": "Automated inventory synchronization to prevent overselling and stockouts across all connected platforms." },
+      { "title": "Shipping & Logistics", "shortDesc": "End-to-end shipping management", "detail": "Integrated shipping solutions with label generation, tracking, and delivery management for all orders." },
+      { "title": "Returns & Refunds", "shortDesc": "Hassle-free return processing", "detail": "Streamlined return management with automated refund processing and return analytics across platforms." },
+      { "title": "Settlement & Payments", "shortDesc": "Track marketplace payments & settlements", "detail": "Monitor your earnings, settlement cycles, deductions, and payment reconciliation across all marketplaces." },
+      { "title": "Digital Marketing & Ads", "shortDesc": "Boost visibility with targeted advertising", "detail": "Marketplace ads management, social media marketing, and digital campaigns to drive traffic and increase sales." },
+      { "title": "Reporting & Analytics", "shortDesc": "Cross-marketplace performance insights", "detail": "Consolidated sales reports, performance analytics, and business intelligence across all connected platforms." },
+      { "title": "Marketplace Support", "shortDesc": "Dedicated support for all platforms", "detail": "Expert assistance for marketplace issues including account health, policy violations, and performance optimization.", "platforms": ["Amazon", "Flipkart", "Meesho", "JioMart"] }
+    ]
   }
 }

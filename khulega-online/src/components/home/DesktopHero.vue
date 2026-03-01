@@ -137,15 +137,15 @@
         <!-- Tagline -->
         <div class="hero__mob-tagline">
           <p class="hero__mob-tagline-line">
-            जब <strong>shop.khulega.online</strong>
+            {{ t('hero.tagline1prefix') }} <strong>shop.khulega.online</strong>
           </p>
           <p class="hero__mob-tagline-line hero__mob-tagline-line--blue">
-            तब <strong>sab.milega.online</strong>
+            {{ t('hero.tagline2prefix') }} <strong>sab.milega.online</strong>
           </p>
         </div>
 
         <!-- Description -->
-        <p class="hero__mob-desc">One solution for every need of your online business</p>
+        <p class="hero__mob-desc">{{ t('hero.desc') }}</p>
 
         <!-- Brand logos in a row -->
         <div class="hero__mob-brands">

@@ -128,7 +128,7 @@
                 <polyline points="9 22 9 12 15 12 15 22" />
               </svg>
             </span>
-            Become a Seller
+            {{ t('sidebar.becomeASeller') }}
           </h4>
           <ul class="footer__list">
             <li>
@@ -137,7 +137,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 class="footer__link"
-                >Seller Registration</a
+                >{{ t('sidebar.sellerRegistration') }}</a
               >
             </li>
             <li>
@@ -146,20 +146,20 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 class="footer__link"
-                >Already a Seller? Login</a
+                >{{ t('sidebar.sellerLogin') }}</a
               >
             </li>
             <li>
-              <a href="/services/" class="footer__link">Seller Services</a>
+              <a href="/services/" class="footer__link">{{ t('sidebar.sellerServices') }}</a>
             </li>
             <li>
-              <a href="/user-journey/" class="footer__link">Seller Journey</a>
+              <a href="/user-journey/" class="footer__link">{{ t('sidebar.userJourney') }}</a>
             </li>
             <li>
-              <a href="/contact/" class="footer__link">Seller Support</a>
+              <a href="/contact/" class="footer__link">{{ t('sidebar.sellerSupport') }}</a>
             </li>
             <li>
-              <a href="/seller-guidelines/" class="footer__link">Seller Guidelines</a>
+              <a href="/seller-guidelines/" class="footer__link">{{ t('sidebar.sellerGuidelines') }}</a>
             </li>
           </ul>
         </div>
@@ -173,11 +173,11 @@
                 <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16" />
               </svg>
             </span>
-            Career
+            {{ t('sidebar.career') }}
           </h4>
           <ul class="footer__list">
             <li>
-              <a href="/apply-job/" class="footer__link">Apply Job</a>
+              <a href="/apply-job/" class="footer__link">{{ t('nav.applyJob') }}</a>
             </li>
           </ul>
 
@@ -188,7 +188,7 @@
                 <circle cx="12" cy="7" r="4" />
               </svg>
             </span>
-            Customer (Buyer)
+            {{ t('sidebar.customer') }}
           </h4>
           <ul class="footer__list">
             <li>
@@ -197,7 +197,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 class="footer__link"
-                >Sign In</a
+                >{{ t('sidebar.signIn') }}</a
               >
             </li>
             <li>
@@ -206,7 +206,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 class="footer__link"
-                >Register</a
+                >{{ t('sidebar.register') }}</a
               >
             </li>
             <li>
@@ -215,7 +215,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 class="footer__link"
-                >My Orders</a
+                >{{ t('sidebar.myOrders') }}</a
               >
             </li>
             <li>
@@ -224,7 +224,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 class="footer__link"
-                >Wishlist</a
+                >{{ t('sidebar.wishlist') }}</a
               >
             </li>
           </ul>
@@ -240,7 +240,7 @@
                 <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6" />
               </svg>
             </span>
-            Shop Now
+            {{ t('sidebar.shopNow') }}
           </h4>
           <ul class="footer__list">
             <li>
@@ -249,7 +249,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 class="footer__link"
-                >Categories</a
+                >{{ t('sidebar.categories') }}</a
               >
             </li>
             <li>
@@ -258,7 +258,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 class="footer__link"
-                >Deals &amp; Offers</a
+                >{{ t('sidebar.dealsAndOffers') }}</a
               >
             </li>
             <li>
@@ -267,7 +267,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 class="footer__link"
-                >Customer Support</a
+                >{{ t('sidebar.customerSupport') }}</a
               >
             </li>
           </ul>
@@ -282,7 +282,7 @@
                 <path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" />
               </svg>
             </span>
-            Quick Links
+            {{ t('footer.quickLinks') }}
           </h4>
           <ul class="footer__list">
             <li>
@@ -291,17 +291,17 @@
                 target="_blank"
                 rel="noopener noreferrer"
                 class="footer__link footer__link--about"
-                ><span class="footer__link-default">About Us</span><span class="footer__link-hover">Techsandhya</span></a
+                ><span class="footer__link-default">{{ t('sidebar.aboutUs') }}</span><span class="footer__link-hover">{{ t('sidebar.techsandhya') }}</span></a
               >
             </li>
             <li>
-              <a href="/policy/" class="footer__link">Privacy Policy</a>
+              <a href="/policy/" class="footer__link">{{ t('sidebar.privacyPolicy') }}</a>
             </li>
             <li>
-              <a href="/terms/" class="footer__link">Terms &amp; Conditions</a>
+              <a href="/terms/" class="footer__link">{{ t('sidebar.termsAndConditions') }}</a>
             </li>
             <li>
-              <a href="/contact/" class="footer__link">Contact Us</a>
+              <a href="/contact/" class="footer__link">{{ t('sidebar.contactUs') }}</a>
             </li>
           </ul>
 
@@ -349,7 +349,7 @@
                   d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
                 />
               </svg>
-              WhatsApp Us
+              {{ t('footer.whatsappUs') }}
             </a>
           </div>
         </div>
@@ -360,10 +360,10 @@
     <div class="footer__bottom">
       <div class="footer__bottom-inner">
         <p class="footer__bottom-left">
-          © {{ currentYear }} <strong>Khulega.online</strong> — All rights reserved.
+          {{ t('footer.copyright', { year: currentYear }) }}
         </p>
         <p class="footer__bottom-right">
-          A product of
+          {{ t('footer.productOf') }}
           <strong>Sandhya Technology Solutions and Operations LLP.</strong>
         </p>
       </div>

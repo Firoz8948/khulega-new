@@ -3,13 +3,13 @@
     <div class="ytv__container">
       <!-- Header -->
       <div class="ytv__header" :class="{ 'ytv__header--visible': isVisible }">
-        <p class="ytv__label">Watch Our Story</p>
+        <p class="ytv__label">{{ t('youtubeVideo.label') }}</p>
         <h2 class="ytv__title">
-          See How We're Helping Sellers
-          <span class="ytv__title-highlight">Build Their Online Business</span>
+          {{ t('youtubeVideo.title') }}
+          <span class="ytv__title-highlight">{{ t('youtubeVideo.titleHighlight') }}</span>
         </h2>
         <p class="ytv__subtitle">
-          From registration to revenue — watch how Khulega.online transforms offline businesses into thriving online sellers across every major marketplace in India
+          {{ t('youtubeVideo.subtitle') }}
         </p>
       </div>
 
@@ -31,13 +31,13 @@
             @click="playVideo"
             role="button"
             tabindex="0"
-            aria-label="Play video: Khulega.online — Empowering Sellers"
+            :aria-label="t('youtubeVideo.playAriaLabel')"
             @keydown.enter.space.prevent="playVideo"
           >
             <!-- Thumbnail image -->
             <img
               :src="thumbnailUrl"
-              alt="Khulega.online — Watch how we help sellers go online"
+              :alt="t('youtubeVideo.thumbnailAlt')"
               class="ytv__thumbnail-img"
               loading="lazy"
             />
@@ -62,15 +62,15 @@
                   <path d="M23 7l-7 5 7 5V7z"/>
                   <rect x="1" y="5" width="15" height="14" rx="2" ry="2" fill="none" stroke="currentColor" stroke-width="2"/>
                 </svg>
-                <span>Watch Video</span>
+                <span>{{ t('youtubeVideo.watchVideo') }}</span>
               </div>
-              <p class="ytv__thumbnail-title">Khulega.online — Empowering Sellers Across India</p>
+              <p class="ytv__thumbnail-title">{{ t('youtubeVideo.thumbnailTitle') }}</p>
               <p class="ytv__thumbnail-duration">
                 <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <circle cx="12" cy="12" r="10"/>
                   <polyline points="12 6 12 12 16 14"/>
                 </svg>
-                Brand Film
+                {{ t('youtubeVideo.brandFilm') }}
               </p>
             </div>
           </div>
@@ -80,7 +80,7 @@
             v-if="isPlaying"
             :src="embedUrl"
             class="ytv__iframe"
-            title="Khulega.online — Empowering Sellers"
+            :title="t('youtubeVideo.thumbnailTitle')"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
@@ -98,8 +98,8 @@
             </svg>
           </div>
           <div>
-            <p class="ytv__float-title">Easy Onboarding</p>
-            <p class="ytv__float-desc">Register in minutes</p>
+            <p class="ytv__float-title">{{ t('youtubeVideo.easyOnboarding') }}</p>
+            <p class="ytv__float-desc">{{ t('youtubeVideo.registerMinutes') }}</p>
           </div>
         </div>
 
@@ -111,8 +111,8 @@
             </svg>
           </div>
           <div>
-            <p class="ytv__float-title">Grow Revenue</p>
-            <p class="ytv__float-desc">Sell on 5+ platforms</p>
+            <p class="ytv__float-title">{{ t('youtubeVideo.growRevenue') }}</p>
+            <p class="ytv__float-desc">{{ t('youtubeVideo.sellPlatforms') }}</p>
           </div>
         </div>
       </div>
@@ -122,6 +122,9 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { useI18n } from '@/i18n/index.js'
+
+const { t } = useI18n('home')
 
 const sectionRef = ref(null)
 const isVisible = ref(false)

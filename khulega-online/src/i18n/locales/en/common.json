@@ -37,7 +37,7 @@
     "career": "Career"
   },
   "footer": {
-    "description": "When shop.khulega.online\nThen sab.milega.online",
+    "description": "Jab shop.khulega.online\nTab sab.milega.online",
     "quickLinks": "Quick Links",
     "legal": "Legal",
     "contactTitle": "Contact",
@@ -45,7 +45,9 @@
     "phone": "+91-9226697740",
     "copyright": "\u00a9 {year} Khulega.online \u2014 All rights reserved.",
     "privacyPolicy": "Privacy Policy",
-    "termsConditions": "Terms & Conditions"
+    "termsConditions": "Terms & Conditions",
+    "productOf": "A product of",
+    "whatsappUs": "WhatsApp Us"
   },
   "buttons": {
     "readMore": "Read More",

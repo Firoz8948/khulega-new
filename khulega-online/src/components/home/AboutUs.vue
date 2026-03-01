@@ -11,14 +11,14 @@
             <div class="au__image-wrap">
               <img
                 src="/assets/images/aboutus.webp"
-                alt="About Khulega Online — Empowering sellers across India"
+                :alt="t('aboutUs.imageAlt')"
                 class="au__image"
                 loading="lazy"
               />
             </div>
             <div class="au__float-card au__float-card--top">
               <span class="au__float-number">5+</span>
-              <span class="au__float-label">Marketplaces</span>
+              <span class="au__float-label">{{ t('aboutUs.marketplaces') }}</span>
             </div>
             <div class="au__float-card au__float-card--bottom">
               <span class="au__float-icon">
@@ -27,7 +27,7 @@
                   <polyline points="17 6 23 6 23 12"/>
                 </svg>
               </span>
-              <span class="au__float-label">Helping Sellers Grow</span>
+              <span class="au__float-label">{{ t('aboutUs.helpingSellersGrow') }}</span>
             </div>
           </div>
         </div>
@@ -43,8 +43,8 @@
               </svg>
             </span>
             <div>
-              <p class="au__highlight-title">Multi-Marketplace Onboarding</p>
-              <p class="au__highlight-desc">We register and set up your seller accounts across all major platforms</p>
+              <p class="au__highlight-title">{{ t('aboutUs.highlight1Title') }}</p>
+              <p class="au__highlight-desc">{{ t('aboutUs.highlight1Desc') }}</p>
             </div>
           </div>
           <div class="au__highlight">
@@ -57,8 +57,8 @@
               </svg>
             </span>
             <div>
-              <p class="au__highlight-title">Unified Seller Console</p>
-              <p class="au__highlight-desc">Manage orders, inventory, and listings for every marketplace from one dashboard</p>
+              <p class="au__highlight-title">{{ t('aboutUs.highlight2Title') }}</p>
+              <p class="au__highlight-desc">{{ t('aboutUs.highlight2Desc') }}</p>
             </div>
           </div>
           <div class="au__highlight">
@@ -70,8 +70,8 @@
               </svg>
             </span>
             <div>
-              <p class="au__highlight-title">End-to-End Seller Support</p>
-              <p class="au__highlight-desc">From documentation to branding — our team assists at every step</p>
+              <p class="au__highlight-title">{{ t('aboutUs.highlight3Title') }}</p>
+              <p class="au__highlight-desc">{{ t('aboutUs.highlight3Desc') }}</p>
             </div>
           </div>
         </div>
@@ -81,10 +81,10 @@
       <div class="au__right">
         <!-- Header -->
         <div class="au__header" :class="{ 'au__header--visible': isVisible }">
-          <p class="au__label">About Us</p>
+          <p class="au__label">{{ t('aboutUs.label') }}</p>
           <h2 class="au__title">
-            Empowering Every Seller to
-            <span class="au__title-highlight">Go Online & Grow</span>
+            {{ t('aboutUs.title') }}
+            <span class="au__title-highlight">{{ t('aboutUs.titleHighlight') }}</span>
           </h2>
 
           <!-- Marketplace brand cards -->
@@ -108,16 +108,16 @@
                   <line x1="12" y1="5" x2="12" y2="19"/>
                   <line x1="5" y1="12" x2="19" y2="12"/>
                 </svg>
-                More
+                {{ t('aboutUs.more') }}
               </span>
             </div>
           </div>
 
           <div class="au__identity">
             <p class="au__identity-text">
-              We are
+              {{ t('aboutUs.identityWeAre') }}
               <strong class="au__brand">Khulega.online</strong>
-              - powered by
+              - {{ t('aboutUs.identityPoweredBy') }}
               <strong>Sandhya Technology Solutions & Operations LLP</strong>
             </p>
           </div>
@@ -131,14 +131,14 @@
             <div class="au__image-wrap">
               <img
                 src="/assets/images/aboutus.webp"
-                alt="About Khulega Online — Empowering sellers across India"
+                :alt="t('aboutUs.imageAlt')"
                 class="au__image"
                 loading="lazy"
               />
             </div>
             <div class="au__float-card au__float-card--top">
               <span class="au__float-number">5+</span>
-              <span class="au__float-label">Marketplaces</span>
+              <span class="au__float-label">{{ t('aboutUs.marketplaces') }}</span>
             </div>
             <div class="au__float-card au__float-card--bottom">
               <span class="au__float-icon">
@@ -147,7 +147,7 @@
                   <polyline points="17 6 23 6 23 12"/>
                 </svg>
               </span>
-              <span class="au__float-label">Helping Sellers Grow</span>
+              <span class="au__float-label">{{ t('aboutUs.helpingSellersGrow') }}</span>
             </div>
           </div>
         </div>
@@ -156,15 +156,16 @@
         <div class="au__desc-wrap" :class="{ 'au__desc-wrap--visible': isVisible }">
           <div class="au__desc">
             <p>
-              We believe every business deserves a place in the digital marketplace - regardless of size, technical knowledge, or resources. That's why we built a platform that takes the complexity out of online selling.
+              {{ t('aboutUs.desc1') }}
             </p>
             <p>
-              From onboarding to operations, we help sellers list and sell their products across
-              <strong>Amazon, Flipkart, Meesho, ONDC, JioMart</strong>, and more — all managed from a single, unified dashboard at
+              {{ t('aboutUs.desc2') }}
+              <strong>Amazon, Flipkart, Meesho, ONDC, JioMart</strong>,
+              {{ t('aboutUs.desc2End') }}
               <a href="https://usc.khulega.online" target="_blank" rel="noopener noreferrer" class="au__link">usc.khulega.online</a>.
             </p>
             <p>
-              Whether you need help with product cataloguing, brand registration, compliance documentation, or marketplace account setup — our team handles it all so you can focus on what matters most: <strong>your products and your customers</strong>.
+              {{ t('aboutUs.desc3') }} <strong>{{ t('aboutUs.desc3Bold') }}</strong>.
             </p>
           </div>
         </div>
@@ -180,8 +181,8 @@
               </svg>
             </span>
             <div>
-              <p class="au__highlight-title">Multi-Marketplace Onboarding</p>
-              <p class="au__highlight-desc">We register and set up your seller accounts across all major platforms</p>
+              <p class="au__highlight-title">{{ t('aboutUs.highlight1Title') }}</p>
+              <p class="au__highlight-desc">{{ t('aboutUs.highlight1Desc') }}</p>
             </div>
           </div>
           <div class="au__highlight">
@@ -194,8 +195,8 @@
               </svg>
             </span>
             <div>
-              <p class="au__highlight-title">Unified Seller Console</p>
-              <p class="au__highlight-desc">Manage orders, inventory, and listings for every marketplace from one dashboard</p>
+              <p class="au__highlight-title">{{ t('aboutUs.highlight2Title') }}</p>
+              <p class="au__highlight-desc">{{ t('aboutUs.highlight2Desc') }}</p>
             </div>
           </div>
           <div class="au__highlight">
@@ -207,8 +208,8 @@
               </svg>
             </span>
             <div>
-              <p class="au__highlight-title">End-to-End Seller Support</p>
-              <p class="au__highlight-desc">From documentation to branding — our team assists at every step</p>
+              <p class="au__highlight-title">{{ t('aboutUs.highlight3Title') }}</p>
+              <p class="au__highlight-desc">{{ t('aboutUs.highlight3Desc') }}</p>
             </div>
           </div>
         </div>
@@ -216,14 +217,14 @@
         <!-- CTAs -->
         <div class="au__ctas" :class="{ 'au__ctas--visible': isVisible }">
           <a href="https://techsandhya.com" target="_blank" rel="noopener noreferrer" class="au__btn au__btn--primary">
-            <span>Learn More About Us</span>
+            <span>{{ t('aboutUs.learnMoreAboutUs') }}</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"/>
               <polyline points="12 5 19 12 12 19"/>
             </svg>
           </a>
           <a href="/contact/" class="au__btn au__btn--outline">
-            Get in Touch
+            {{ t('aboutUs.getInTouch') }}
           </a>
         </div>
       </div>
@@ -233,6 +234,9 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import { useI18n } from '@/i18n/index.js'
+
+const { t } = useI18n('home')
 
 const sectionRef = ref(null)
 const isVisible = ref(false)
