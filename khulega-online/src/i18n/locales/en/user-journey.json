@@ -1,25 +1,55 @@
 {
-  "page": {
-    "title": "Seller Journey",
-    "subtitle": "See how sellers grow with Khulega Online",
-    "breadcrumb": "Seller Journey"
+  "hero": {
+    "badge": "User Journey",
+    "title": "Your Path to",
+    "highlightText": "Multi-Channel Success",
+    "subtitle": "From registration to scaling — discover how Khulega Online transforms your selling experience in six simple steps.",
+    "breadcrumb": "User Journey"
   },
   "steps": [
     {
-      "title": "Step 1: Discover",
-      "description": "Users find Khulega.online through search, social media, or word of mouth."
+      "label": "Register",
+      "title": "Create Your Account in Minutes",
+      "textBeforeLink": "Click the Register button and access the Unified Seller Console at",
+      "textAfterLink": "Sign up with basic details — no lengthy paperwork, no complicated onboarding. Just a smooth start to your seller journey.",
+      "highlights": ["No lengthy paperwork", "Quick & simple onboarding", "Instant console access"]
     },
     {
-      "title": "Step 2: Explore",
-      "description": "Browse our services, shop items, and job opportunities."
+      "label": "Apply",
+      "title": "Submit Your Business Profile for Approval",
+      "text": "Complete your seller profile by adding essential business information. Our team reviews every application carefully to ensure compliance and platform quality. Once verified, you're ready to unlock the full power of Khulega Online.",
+      "highlights": ["Easy profile setup", "Manual quality review", "Compliance assured"]
     },
     {
-      "title": "Step 3: Engage",
-      "description": "Sign up, make purchases, or apply for jobs that match their skills."
+      "label": "Unlock",
+      "title": "Access Your Unified Seller Dashboard",
+      "text": "After approval, your dashboard becomes fully active. From one centralized console, you can manage listings, track inventory, monitor orders, and view performance analytics — all in a single interface designed for growth.",
+      "features": ["Manage Listings", "Track Inventory", "Monitor Orders", "View Analytics"]
     },
     {
-      "title": "Step 4: Succeed",
-      "description": "Achieve their goals with our reliable platform and support."
+      "label": "Assist",
+      "title": "Get Professional Support When You Need It",
+      "text": "Need help with documentation, GST compliance, branding, or catalog optimization? Request expert assistance directly from your dashboard. Our team guides you step-by-step to ensure your business goes live smoothly and confidently.",
+      "highlights": ["Documentation assistance", "GST compliance support", "Branding & catalog optimization"]
+    },
+    {
+      "label": "Connect",
+      "title": "Integrate Multiple Marketplaces from One Console",
+      "text": "Link leading marketplaces and upload your product catalogue once. Publish across all connected platforms simultaneously — eliminating repetitive work and reducing errors.",
+      "marketplaces": ["Amazon", "Flipkart", "Meesho", "JioMart", "ONDC"],
+      "info": "Upload once, publish everywhere — no repetitive work."
+    },
+    {
+      "label": "Scale",
+      "title": "Start Selling, Track Performance & Grow",
+      "text": "Your products go live across every connected marketplace. Manage orders, analyze performance, optimize pricing, and scale your operations — all from one unified system. Khulega Online gives you complete control over your multi-channel growth.",
+      "features": ["Manage Orders", "Analyze Performance", "Optimize Pricing", "Scale Operations"]
     }
-  ]
+  ],
+  "cta": {
+    "title": "Ready to Start Your Journey?",
+    "text": "Join Khulega Online today and take control of your multi-channel selling. Register now and unlock the Unified Seller Console.",
+    "registerNow": "Register Now",
+    "contactUs": "Contact Us"
+  }
 }

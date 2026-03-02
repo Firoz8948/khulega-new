@@ -4,11 +4,11 @@
 
     <main class="main">
       <HeroSection
-        badge="User Journey"
-        title="Your Path to"
-        highlightText="Multi-Channel Success"
-        subtitle="From registration to scaling — discover how Khulega Online transforms your selling experience in six simple steps."
-        breadcrumb="User Journey"
+        :badge="t('hero.badge')"
+        :title="t('hero.title')"
+        :highlightText="t('hero.highlightText')"
+        :subtitle="t('hero.subtitle')"
+        :breadcrumb="t('hero.breadcrumb')"
       />
 
       <!-- Journey Section -->
@@ -23,36 +23,21 @@
             <div class="journey__step-content">
               <div class="journey__step-badge">
                 <span class="journey__step-number">01</span>
-                <span class="journey__step-label">Register</span>
+                <span class="journey__step-label">{{ steps[0]?.label }}</span>
               </div>
-              <h2 class="journey__step-title">Create Your Account in Minutes</h2>
+              <h2 class="journey__step-title">{{ steps[0]?.title }}</h2>
               <p class="journey__step-text">
-                Click the Register button and access the Unified Seller Console at
+                {{ steps[0]?.textBeforeLink }}
                 <a href="https://usc.khulega.online" target="_blank" rel="noopener">usc.khulega.online</a>.
-                Sign up with basic details — no lengthy paperwork, no complicated onboarding.
-                Just a smooth start to your seller journey.
+                {{ steps[0]?.textAfterLink }}
               </p>
               <div class="journey__step-highlights">
-                <div class="journey__step-highlight">
+                <div v-for="(h, i) in (steps[0]?.highlights || [])" :key="i" class="journey__step-highlight">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981"
                     stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span>No lengthy paperwork</span>
-                </div>
-                <div class="journey__step-highlight">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981"
-                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span>Quick & simple onboarding</span>
-                </div>
-                <div class="journey__step-highlight">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981"
-                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span>Instant console access</span>
+                  <span>{{ h }}</span>
                 </div>
               </div>
             </div>
@@ -79,35 +64,19 @@
             <div class="journey__step-content">
               <div class="journey__step-badge journey__step-badge--purple">
                 <span class="journey__step-number">02</span>
-                <span class="journey__step-label">Apply</span>
+                <span class="journey__step-label">{{ steps[1]?.label }}</span>
               </div>
-              <h2 class="journey__step-title">Submit Your Business Profile for Approval</h2>
+              <h2 class="journey__step-title">{{ steps[1]?.title }}</h2>
               <p class="journey__step-text">
-                Complete your seller profile by adding essential business information. Our team
-                reviews every application carefully to ensure compliance and platform quality.
-                Once verified, you're ready to unlock the full power of Khulega Online.
+                {{ steps[1]?.text }}
               </p>
               <div class="journey__step-highlights">
-                <div class="journey__step-highlight">
+                <div v-for="(h, i) in (steps[1]?.highlights || [])" :key="i" class="journey__step-highlight">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981"
                     stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span>Easy profile setup</span>
-                </div>
-                <div class="journey__step-highlight">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981"
-                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span>Manual quality review</span>
-                </div>
-                <div class="journey__step-highlight">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981"
-                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span>Compliance assured</span>
+                  <span>{{ h }}</span>
                 </div>
               </div>
             </div>
@@ -118,48 +87,21 @@
             <div class="journey__step-content">
               <div class="journey__step-badge journey__step-badge--emerald">
                 <span class="journey__step-number">03</span>
-                <span class="journey__step-label">Unlock</span>
+                <span class="journey__step-label">{{ steps[2]?.label }}</span>
               </div>
-              <h2 class="journey__step-title">Access Your Unified Seller Dashboard</h2>
+              <h2 class="journey__step-title">{{ steps[2]?.title }}</h2>
               <p class="journey__step-text">
-                After approval, your dashboard becomes fully active. From one centralized
-                console, you can manage listings, track inventory, monitor orders, and view
-                performance analytics — all in a single interface designed for growth.
+                {{ steps[2]?.text }}
               </p>
               <div class="journey__step-features">
-                <div class="journey__step-feature">
+                <div v-for="(f, i) in (steps[2]?.features || [])" :key="i" class="journey__step-feature">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6366f1"
                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M12 20V10" />
                     <path d="M18 20V4" />
                     <path d="M6 20v-4" />
                   </svg>
-                  <span>Manage Listings</span>
-                </div>
-                <div class="journey__step-feature">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6366f1"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-                  </svg>
-                  <span>Track Inventory</span>
-                </div>
-                <div class="journey__step-feature">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6366f1"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="9" cy="21" r="1" />
-                    <circle cx="20" cy="21" r="1" />
-                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-                  </svg>
-                  <span>Monitor Orders</span>
-                </div>
-                <div class="journey__step-feature">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6366f1"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="18" y1="20" x2="18" y2="10" />
-                    <line x1="12" y1="20" x2="12" y2="4" />
-                    <line x1="6" y1="20" x2="6" y2="14" />
-                  </svg>
-                  <span>View Analytics</span>
+                  <span>{{ f }}</span>
                 </div>
               </div>
             </div>
@@ -186,35 +128,19 @@
             <div class="journey__step-content">
               <div class="journey__step-badge journey__step-badge--amber">
                 <span class="journey__step-number">04</span>
-                <span class="journey__step-label">Assist</span>
+                <span class="journey__step-label">{{ steps[3]?.label }}</span>
               </div>
-              <h2 class="journey__step-title">Get Professional Support When You Need It</h2>
+              <h2 class="journey__step-title">{{ steps[3]?.title }}</h2>
               <p class="journey__step-text">
-                Need help with documentation, GST compliance, branding, or catalog optimization?
-                Request expert assistance directly from your dashboard. Our team guides you
-                step-by-step to ensure your business goes live smoothly and confidently.
+                {{ steps[3]?.text }}
               </p>
               <div class="journey__step-highlights">
-                <div class="journey__step-highlight">
+                <div v-for="(h, i) in (steps[3]?.highlights || [])" :key="i" class="journey__step-highlight">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981"
                     stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  <span>Documentation assistance</span>
-                </div>
-                <div class="journey__step-highlight">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981"
-                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span>GST compliance support</span>
-                </div>
-                <div class="journey__step-highlight">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981"
-                    stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  <span>Branding & catalog optimization</span>
+                  <span>{{ h }}</span>
                 </div>
               </div>
             </div>
@@ -225,48 +151,19 @@
             <div class="journey__step-content">
               <div class="journey__step-badge journey__step-badge--rose">
                 <span class="journey__step-number">05</span>
-                <span class="journey__step-label">Connect</span>
+                <span class="journey__step-label">{{ steps[4]?.label }}</span>
               </div>
-              <h2 class="journey__step-title">Integrate Multiple Marketplaces from One Console</h2>
+              <h2 class="journey__step-title">{{ steps[4]?.title }}</h2>
               <p class="journey__step-text">
-                Link leading marketplaces and upload your product catalogue once. Publish across
-                all connected platforms simultaneously — eliminating repetitive work and reducing errors.
+                {{ steps[4]?.text }}
               </p>
               <div class="journey__step-marketplaces">
-                <span class="journey__marketplace-tag">
+                <span v-for="(m, i) in (steps[4]?.marketplaces || [])" :key="i" class="journey__marketplace-tag">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
-                  Amazon
-                </span>
-                <span class="journey__marketplace-tag">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  Flipkart
-                </span>
-                <span class="journey__marketplace-tag">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  Meesho
-                </span>
-                <span class="journey__marketplace-tag">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  JioMart
-                </span>
-                <span class="journey__marketplace-tag">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  ONDC
+                  {{ m }}
                 </span>
               </div>
               <div class="journey__step-info">
@@ -276,7 +173,7 @@
                   <line x1="12" y1="16" x2="12" y2="12" />
                   <line x1="12" y1="8" x2="12.01" y2="8" />
                 </svg>
-                <span>Upload once, publish everywhere — no repetitive work.</span>
+                <span>{{ steps[4]?.info }}</span>
               </div>
             </div>
             <div class="journey__step-visual">
@@ -302,48 +199,21 @@
             <div class="journey__step-content">
               <div class="journey__step-badge journey__step-badge--green">
                 <span class="journey__step-number">06</span>
-                <span class="journey__step-label">Scale</span>
+                <span class="journey__step-label">{{ steps[5]?.label }}</span>
               </div>
-              <h2 class="journey__step-title">Start Selling, Track Performance & Grow</h2>
+              <h2 class="journey__step-title">{{ steps[5]?.title }}</h2>
               <p class="journey__step-text">
-                Your products go live across every connected marketplace. Manage orders, analyze
-                performance, optimize pricing, and scale your operations — all from one unified
-                system. Khulega Online gives you complete control over your multi-channel growth.
+                {{ steps[5]?.text }}
               </p>
               <div class="journey__step-features">
-                <div class="journey__step-feature">
+                <div v-for="(f, i) in (steps[5]?.features || [])" :key="i" class="journey__step-feature">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669"
                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="9" cy="21" r="1" />
                     <circle cx="20" cy="21" r="1" />
                     <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
                   </svg>
-                  <span>Manage Orders</span>
-                </div>
-                <div class="journey__step-feature">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="18" y1="20" x2="18" y2="10" />
-                    <line x1="12" y1="20" x2="12" y2="4" />
-                    <line x1="6" y1="20" x2="6" y2="14" />
-                  </svg>
-                  <span>Analyze Performance</span>
-                </div>
-                <div class="journey__step-feature">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="12" y1="1" x2="12" y2="23" />
-                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-                  </svg>
-                  <span>Optimize Pricing</span>
-                </div>
-                <div class="journey__step-feature">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
-                    <polyline points="17 6 23 6 23 12" />
-                  </svg>
-                  <span>Scale Operations</span>
+                  <span>{{ f }}</span>
                 </div>
               </div>
             </div>
@@ -363,10 +233,9 @@
                 <polyline points="17 6 23 6 23 12" />
               </svg>
             </div>
-            <h2 class="journey-cta__title">Ready to Start Your Journey?</h2>
+            <h2 class="journey-cta__title">{{ t('cta.title') }}</h2>
             <p class="journey-cta__text">
-              Join Khulega Online today and take control of your multi-channel selling.
-              Register now and unlock the Unified Seller Console.
+              {{ t('cta.text') }}
             </p>
             <div class="journey-cta__actions">
               <a href="https://usc.khulega.online/auth/register" target="_blank" rel="noopener" class="journey-cta__btn journey-cta__btn--primary">
@@ -377,14 +246,14 @@
                   <line x1="20" y1="8" x2="20" y2="14" />
                   <line x1="23" y1="11" x2="17" y2="11" />
                 </svg>
-                Register Now
+                {{ t('cta.registerNow') }}
               </a>
               <a href="/contact/" class="journey-cta__btn journey-cta__btn--secondary">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                   stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
                 </svg>
-                Contact Us
+                {{ t('cta.contactUs') }}
               </a>
             </div>
           </div>
@@ -399,4 +268,9 @@
 </template>
 
 <script setup>
+import { useI18n } from '@/i18n/index.js'
+import { computed } from 'vue'
+
+const { t } = useI18n('userJourney')
+const steps = computed(() => t('steps') || [])
 </script>

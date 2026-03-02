@@ -1,32 +1,61 @@
 {
-  "page": {
-    "title": "\u0938\u0902\u092a\u0930\u094d\u0915 \u0915\u0930\u0947\u0902",
-    "subtitle": "\u0939\u092e\u093e\u0930\u0940 \u091f\u0940\u092e \u0938\u0947 \u0938\u0902\u092a\u0930\u094d\u0915 \u0915\u0930\u0947\u0902",
-    "breadcrumb": "\u0938\u0902\u092a\u0930\u094d\u0915"
+  "hero": {
+    "badge": "संपर्क करें",
+    "title": "हमारी टीम से",
+    "highlightText": "जुड़ें",
+    "subtitle": "खुलेगा ऑनलाइन के बारे में कोई सवाल? हम आपसे सुनना चाहेंगे। संपर्क करें और हमारी टीम शीघ्र जवाब देगी।",
+    "breadcrumb": "संपर्क करें"
   },
   "form": {
-    "title": "\u0939\u092e\u0947\u0902 \u0938\u0902\u0926\u0947\u0936 \u092d\u0947\u091c\u0947\u0902",
-    "name": "\u092a\u0942\u0930\u093e \u0928\u093e\u092e",
-    "namePlaceholder": "\u0905\u092a\u0928\u093e \u0928\u093e\u092e \u0926\u0930\u094d\u091c \u0915\u0930\u0947\u0902",
-    "email": "\u0908\u092e\u0947\u0932 \u092a\u0924\u093e",
-    "emailPlaceholder": "\u0905\u092a\u0928\u093e \u0908\u092e\u0947\u0932 \u0926\u0930\u094d\u091c \u0915\u0930\u0947\u0902",
-    "phone": "\u092b\u093c\u094b\u0928 \u0928\u0902\u092c\u0930",
-    "phonePlaceholder": "\u0905\u092a\u0928\u093e \u092b\u093c\u094b\u0928 \u0928\u0902\u092c\u0930 \u0926\u0930\u094d\u091c \u0915\u0930\u0947\u0902",
-    "message": "\u0938\u0902\u0926\u0947\u0936",
-    "messagePlaceholder": "\u0905\u092a\u0928\u093e \u0938\u0902\u0926\u0947\u0936 \u092f\u0939\u093e\u0902 \u0932\u093f\u0916\u0947\u0902...",
-    "submit": "\u0938\u0902\u0926\u0947\u0936 \u092d\u0947\u091c\u0947\u0902",
-    "success": "\u0906\u092a\u0915\u0947 \u0938\u0902\u0926\u0947\u0936 \u0915\u0947 \u0932\u093f\u090f \u0927\u0928\u094d\u092f\u0935\u093e\u0926! \u0939\u092e \u091c\u0932\u094d\u0926 \u0939\u0940 \u0906\u092a\u0938\u0947 \u0938\u0902\u092a\u0930\u094d\u0915 \u0915\u0930\u0947\u0902\u0917\u0947\u0964",
-    "error": "\u0938\u0902\u0926\u0947\u0936 \u092d\u0947\u091c\u0928\u0947 \u092e\u0947\u0902 \u0935\u093f\u092b\u0932\u0964 \u0915\u0943\u092a\u092f\u093e \u092a\u0941\u0928\u0903 \u092a\u094d\u0930\u092f\u093e\u0938 \u0915\u0930\u0947\u0902\u0964"
+    "title": "हमें संदेश भेजें",
+    "subtitle": "नीचे फॉर्म भरें और हम 24 घंटे के भीतर जवाब देंगे।",
+    "firstName": "पहला नाम",
+    "firstNamePlaceholder": "अपना पहला नाम दर्ज करें",
+    "lastName": "उपनाम",
+    "lastNamePlaceholder": "अपना उपनाम दर्ज करें",
+    "email": "ईमेल पता",
+    "emailPlaceholder": "you@example.com",
+    "phone": "फ़ोन नंबर",
+    "phonePlaceholder": "XXXXXXXXXX",
+    "businessName": "व्यवसाय का नाम",
+    "businessNamePlaceholder": "आपके व्यवसाय का नाम (वैकल्पिक)",
+    "subject": "विषय",
+    "subjectPlaceholder": "विषय चुनें",
+    "subjectOptions": {
+      "general": "सामान्य पूछताछ",
+      "seller-onboarding": "विक्रेता ऑनबोर्डिंग",
+      "marketplace-integration": "मार्केटप्लेस एकीकरण",
+      "technical-support": "तकनीकी सहायता",
+      "billing": "बिलिंग और भुगतान",
+      "partnership": "साझेदारी",
+      "feedback": "फीडबैक",
+      "other": "अन्य"
+    },
+    "message": "संदेश",
+    "messagePlaceholder": "बताएं कि हम आपकी कैसे मदद कर सकते हैं...",
+    "submit": "संदेश भेजें",
+    "sending": "भेज रहे हैं...",
+    "successTitle": "संदेश सफलतापूर्वक भेजा गया!",
+    "successDesc": "हम 24 घंटे के भीतर आपसे संपर्क करेंगे।",
+    "errorTitle": "कुछ गलत हो गया",
+    "errorDesc": "कृपया पुनः प्रयास करें या हमें admin@techsandhya.com पर ईमेल करें"
   },
-  "info": {
-    "title": "\u0938\u0902\u092a\u0930\u094d\u0915 \u0915\u0930\u0947\u0902",
-    "address": "\u092a\u0924\u093e",
-    "addressValue": "123 \u092c\u093f\u091c\u0928\u0947\u0938 \u0938\u094d\u091f\u094d\u0930\u0940\u091f, \u0936\u0939\u0930, \u0930\u093e\u091c\u094d\u092f - 000000",
-    "emailLabel": "\u0908\u092e\u0947\u0932",
-    "emailValue": "info@khulega.online",
-    "phoneLabel": "\u092b\u093c\u094b\u0928",
-    "phoneValue": "+91-XXXXX-XXXXX",
-    "hours": "\u0915\u093e\u0930\u094d\u092f \u0938\u092e\u092f",
-    "hoursValue": "\u0938\u094b\u092e - \u0936\u0928\u093f: \u0938\u0941\u092c\u0939 9:00 - \u0936\u093e\u092e 6:00\n\u0930\u0935\u093f\u0935\u093e\u0930: \u092c\u0902\u0926"
+  "company": {
+    "name": "संध्या टेक्नोलॉजी सॉल्यूशंस एंड ऑपरेशंस LLP",
+    "desc": "खुलेगा ऑनलाइन के पीछे मूल कंपनी — भारत भर में विक्रेताओं को सशक्त बनाने वाले तकनीकी समाधान बनाना।"
+  },
+  "details": {
+    "email": "ईमेल",
+    "phone": "फ़ोन",
+    "website": "वेबसाइट",
+    "sellerConsole": "सेलर कंसोल"
+  },
+  "social": {
+    "title": "हमें फॉलो करें",
+    "text": "अपडेट और घोषणाओं के लिए सोशल मीडिया पर हमसे जुड़े रहें।",
+    "linkedIn": "LinkedIn",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "comingSoon": "जल्द आ रहा है"
   }
 }

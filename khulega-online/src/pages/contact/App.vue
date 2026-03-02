@@ -4,11 +4,11 @@
 
     <main class="main">
       <HeroSection
-        badge="Contact Us"
-        title="Get in Touch"
-        highlightText="With Our Team"
-        subtitle="Have questions about Khulega Online? We'd love to hear from you. Reach out and our team will get back to you promptly."
-        breadcrumb="Contact Us"
+        :badge="t('hero.badge')"
+        :title="t('hero.title')"
+        :highlightText="t('hero.highlightText')"
+        :subtitle="t('hero.subtitle')"
+        :breadcrumb="t('hero.breadcrumb')"
       />
 
       <!-- Contact Section -->
@@ -27,15 +27,15 @@
                     </svg>
                   </div>
                   <div>
-                    <h2 class="contact__form-title">Send Us a Message</h2>
-                    <p class="contact__form-subtitle">Fill the form below and we'll respond within 24 hours.</p>
+                    <h2 class="contact__form-title">{{ t('form.title') }}</h2>
+                    <p class="contact__form-subtitle">{{ t('form.subtitle') }}</p>
                   </div>
                 </div>
 
                 <form class="contact__form" @submit.prevent="handleSubmit">
                   <div class="contact__form-row">
                     <div class="contact__form-group">
-                      <label class="contact__label" for="firstName">First Name <span>*</span></label>
+                      <label class="contact__label" for="firstName">{{ t('form.firstName') }} <span>*</span></label>
                       <div class="contact__input-wrap">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -47,13 +47,13 @@
                           v-model="form.firstName"
                           type="text"
                           class="contact__input"
-                          placeholder="Enter your first name"
+                          :placeholder="t('form.firstNamePlaceholder')"
                           required
                         />
                       </div>
                     </div>
                     <div class="contact__form-group">
-                      <label class="contact__label" for="lastName">Last Name <span>*</span></label>
+                      <label class="contact__label" for="lastName">{{ t('form.lastName') }} <span>*</span></label>
                       <div class="contact__input-wrap">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -65,7 +65,7 @@
                           v-model="form.lastName"
                           type="text"
                           class="contact__input"
-                          placeholder="Enter your last name"
+                          :placeholder="t('form.lastNamePlaceholder')"
                           required
                         />
                       </div>
@@ -73,7 +73,7 @@
                   </div>
 
                   <div class="contact__form-group">
-                    <label class="contact__label" for="email">Email Address <span>*</span></label>
+                    <label class="contact__label" for="email">{{ t('form.email') }} <span>*</span></label>
                     <div class="contact__input-wrap">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -85,14 +85,14 @@
                         v-model="form.email"
                         type="email"
                         class="contact__input"
-                        placeholder="you@example.com"
+                        :placeholder="t('form.emailPlaceholder')"
                         required
                       />
                     </div>
                   </div>
 
                   <div class="contact__form-group">
-                    <label class="contact__label" for="phone">Phone Number <span>*</span></label>
+                    <label class="contact__label" for="phone">{{ t('form.phone') }} <span>*</span></label>
                     <div class="contact__input-wrap">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -114,7 +114,7 @@
                   </div>
 
                   <div class="contact__form-group">
-                    <label class="contact__label" for="businessName">Business Name</label>
+                    <label class="contact__label" for="businessName">{{ t('form.businessName') }}</label>
                     <div class="contact__input-wrap">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -125,13 +125,13 @@
                         v-model="form.businessName"
                         type="text"
                         class="contact__input"
-                        placeholder="Your business name (optional)"
+                        :placeholder="t('form.businessNamePlaceholder')"
                       />
                     </div>
                   </div>
 
                   <div class="contact__form-group">
-                    <label class="contact__label" for="subject">Subject <span>*</span></label>
+                    <label class="contact__label" for="subject">{{ t('form.subject') }} <span>*</span></label>
                     <div class="contact__select-wrap">
                       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -145,15 +145,15 @@
                         class="contact__select"
                         required
                       >
-                        <option value="" disabled>Select a subject</option>
-                        <option value="general">General Inquiry</option>
-                        <option value="seller-onboarding">Seller Onboarding</option>
-                        <option value="marketplace-integration">Marketplace Integration</option>
-                        <option value="technical-support">Technical Support</option>
-                        <option value="billing">Billing & Payments</option>
-                        <option value="partnership">Partnership</option>
-                        <option value="feedback">Feedback</option>
-                        <option value="other">Other</option>
+                        <option value="" disabled>{{ t('form.subjectPlaceholder') }}</option>
+                        <option value="general">{{ t('form.subjectOptions.general') }}</option>
+                        <option value="seller-onboarding">{{ t('form.subjectOptions.seller-onboarding') }}</option>
+                        <option value="marketplace-integration">{{ t('form.subjectOptions.marketplace-integration') }}</option>
+                        <option value="technical-support">{{ t('form.subjectOptions.technical-support') }}</option>
+                        <option value="billing">{{ t('form.subjectOptions.billing') }}</option>
+                        <option value="partnership">{{ t('form.subjectOptions.partnership') }}</option>
+                        <option value="feedback">{{ t('form.subjectOptions.feedback') }}</option>
+                        <option value="other">{{ t('form.subjectOptions.other') }}</option>
                       </select>
                       <svg class="contact__select-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                         stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -163,13 +163,13 @@
                   </div>
 
                   <div class="contact__form-group">
-                    <label class="contact__label" for="message">Message <span>*</span></label>
+                    <label class="contact__label" for="message">{{ t('form.message') }} <span>*</span></label>
                     <div class="contact__textarea-wrap">
                       <textarea
                         id="message"
                         v-model="form.message"
                         class="contact__textarea"
-                        placeholder="Tell us how we can help you..."
+                        :placeholder="t('form.messagePlaceholder')"
                         rows="5"
                         required
                       ></textarea>
@@ -183,11 +183,11 @@
                         <line x1="22" y1="2" x2="11" y2="13" />
                         <polygon points="22 2 15 22 11 13 2 9 22 2" />
                       </svg>
-                      Send Message
+                      {{ t('form.submit') }}
                     </template>
                     <template v-else>
                       <span class="contact__spinner"></span>
-                      Sending...
+                      {{ t('form.sending') }}
                     </template>
                   </button>
                 </form>
@@ -233,9 +233,9 @@
                     class="contact__company-logo-img"
                   />
                 </div>
-                <h3 class="contact__company-name">Sandhya Technology Solutions and Operations LLP</h3>
+                <h3 class="contact__company-name">{{ t('company.name') }}</h3>
                 <p class="contact__company-desc">
-                  The parent company behind Khulega Online — building technology solutions that empower sellers across India.
+                  {{ t('company.desc') }}
                 </p>
                 <div class="contact__company-links">
                   <a href="https://www.techsandhya.com" target="_blank" rel="noopener" class="contact__company-link">
@@ -272,7 +272,7 @@
                     </svg>
                   </div>
                   <div class="contact__detail-info">
-                    <span class="contact__detail-label">Email</span>
+                    <span class="contact__detail-label">{{ t('details.email') }}</span>
                     <span class="contact__detail-value">admin@techsandhya.com</span>
                   </div>
                   <svg class="contact__detail-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -291,7 +291,7 @@
                     </svg>
                   </div>
                   <div class="contact__detail-info">
-                    <span class="contact__detail-label">Phone</span>
+                    <span class="contact__detail-label">{{ t('details.phone') }}</span>
                     <span class="contact__detail-value">+91-9226697740</span>
                   </div>
                   <svg class="contact__detail-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -312,7 +312,7 @@
                     </svg>
                   </div>
                   <div class="contact__detail-info">
-                    <span class="contact__detail-label">Website</span>
+                    <span class="contact__detail-label">{{ t('details.website') }}</span>
                     <span class="contact__detail-value">www.techsandhya.com</span>
                   </div>
                   <svg class="contact__detail-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -333,7 +333,7 @@
                     </svg>
                   </div>
                   <div class="contact__detail-info">
-                    <span class="contact__detail-label">Seller Console</span>
+                    <span class="contact__detail-label">{{ t('details.sellerConsole') }}</span>
                     <span class="contact__detail-value">usc.khulega.online</span>
                   </div>
                   <svg class="contact__detail-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -346,8 +346,8 @@
 
               <!-- Social Links -->
               <div class="contact__social-card">
-                <h3 class="contact__social-title">Follow Us</h3>
-                <p class="contact__social-text">Stay connected with us on social media for updates and announcements.</p>
+                <h3 class="contact__social-title">{{ t('social.title') }}</h3>
+                <p class="contact__social-text">{{ t('social.text') }}</p>
                 <div class="contact__social-grid">
 
                   <!-- LinkedIn -->
@@ -373,7 +373,7 @@
                       </svg>
                     </div>
                     <div class="contact__social-info">
-                      <span class="contact__social-name">Facebook</span>
+                      <span class="contact__social-name">{{ t('social.facebook') }}</span>
                       <span class="contact__social-handle">@techsandhya</span>
                     </div>
                   </a>
@@ -387,8 +387,8 @@
                       </svg>
                     </div>
                     <div class="contact__social-info">
-                      <span class="contact__social-name">Instagram</span>
-                      <span class="contact__social-handle">Coming Soon</span>
+                      <span class="contact__social-name">{{ t('social.instagram') }}</span>
+                      <span class="contact__social-handle">{{ t('social.comingSoon') }}</span>
                     </div>
                   </a>
 
@@ -410,6 +410,9 @@
 <script setup>
 import { ref, reactive } from 'vue'
 import emailjs from '@emailjs/browser'
+import { useI18n } from '@/i18n/index.js'
+
+const { t } = useI18n('contact')
 
 // EmailJS: Public Key from https://dashboard.emailjs.com/admin
 const EMAILJS_PUBLIC_KEY = 'dLbCE5BH1XMiSd_03'

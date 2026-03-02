@@ -1,15 +1,101 @@
 {
-  "page": {
-    "title": "Apply for Jobs",
-    "titleMain": "Apply",
-    "titleHighlight": "for Jobs",
-    "subtitle": "Find your dream career opportunity",
-    "breadcrumb": "Apply Job"
+  "hero": {
+    "badge": "Careers",
+    "title": "Build the Future of",
+    "highlightText": "Multi-Marketplace Selling",
+    "subtitle": "We are looking for passionate, self-driven individuals who want to grow with a fast-scaling SaaS platform. If you believe in enabling small businesses and sellers across India — we would love to hear from you.",
+    "breadcrumb": "Careers"
+  },
+  "intro": {
+    "text": "At Khulega Online, we are building a unified ecosystem that empowers sellers to manage and grow across multiple marketplaces through our",
+    "textEnd": "at",
+    "tags": ["Fast-growing SaaS startup", "Performance-driven culture", "Skill development & exposure", "Real impact on small businesses"]
+  },
+  "listings": {
+    "title": "Open Positions",
+    "subtitle": "Click on a role to view complete details"
+  },
+  "labels": {
+    "objective": "Objective",
+    "roleOverview": "Role Overview",
+    "keyResponsibilities": "Key Responsibilities",
+    "minimalQualification": "Minimal Qualification",
+    "idealCandidate": "Ideal Candidate",
+    "applyForRole": "Apply for this Role"
   },
   "jobs": [
-    { "title": "Delivery Executive", "location": "Multiple Cities", "type": "Full-time" },
-    { "title": "Customer Support", "location": "Remote", "type": "Part-time" },
-    { "title": "Sales Associate", "location": "Mumbai", "type": "Full-time" },
-    { "title": "Marketing Intern", "location": "Delhi", "type": "Internship" }
-  ]
+    {
+      "value": "Lead Generator",
+      "title": "Lead Generator",
+      "role": "Field Sales & Seller Acquisition Executive",
+      "tags": ["Field Work", "Incentive Based"],
+      "objective": "To identify, approach, and onboard local sellers in assigned areas and help them register on the Khulega Online dashboard.",
+      "roleOverview": ["As a Lead Generator, you will work at the grassroots level — meeting small business owners, shopkeepers, and manufacturers in your local area. Your goal is to introduce them to Khulega Online and help them start their online selling journey.", "You will use the Lead Generator dashboard to register sellers and guide them through the onboarding process. You earn incentives once the registered seller successfully completes onboarding and starts selling across marketplaces."],
+      "keyResponsibilities": ["Identify potential sellers in your assigned area", "Educate them about Khulega Online and USC", "Assist them in account registration", "Collect required business details", "Coordinate with internal teams for onboarding", "Follow up until activation is completed", "Maintain accurate lead records"],
+      "minimalQual": ["12th Pass (Graduate preferred)", "Basic smartphone & internet knowledge", "Strong communication skills", "Self-motivated and field-ready"],
+      "idealCandidate": ["Local market understanding", "Good convincing ability", "Comfortable with field visits", "Performance-driven mindset"]
+    },
+    {
+      "value": "Compliance Manager",
+      "title": "Compliance Manager",
+      "role": "Seller Documentation & Regulatory Support Executive",
+      "tags": ["Remote", "Documentation"],
+      "objective": "To manage seller compliance tickets and coordinate documentation processes including GST, PAN, and FSSAI registrations.",
+      "roleOverview": ["As a Compliance Manager, you will handle seller support tickets related to documentation and registrations. You will coordinate with service providers, verify documents, communicate with sellers for missing information, and ensure smooth delivery of final documents.", "All communication will be managed through the ticket system inside USC."],
+      "keyResponsibilities": ["Handle compliance-related seller tickets", "Review documents submitted by sellers", "Identify missing or incorrect documentation", "Communicate with sellers via ticket system", "Coordinate with external service providers", "Ensure timely completion of registrations", "Deliver final documents to sellers via dashboard"],
+      "minimalQual": ["12th Pass (Graduate preferred)", "Basic understanding of GST, PAN, or FSSAI", "Strong attention to detail", "Professional communication skills"],
+      "idealCandidate": ["Organized and process-oriented", "Patient and detail-focused", "Comfortable handling documentation", "Good written communication skills"]
+    },
+    {
+      "value": "Catalogue Manager",
+      "title": "Catalogue Manager",
+      "role": "Marketplace Listing & Product Upload Specialist",
+      "tags": ["Remote", "E-commerce"],
+      "objective": "To assist assigned sellers in uploading and optimizing product catalogues across multiple marketplaces using the Unified Seller Console.",
+      "roleOverview": ["The Catalogue Manager ensures products are listed accurately and professionally across integrated marketplaces. You will manage product uploads, optimize titles and descriptions, verify image quality, and ensure compliance with platform requirements."],
+      "keyResponsibilities": ["Upload product catalogues through USC", "Ensure correct category mapping", "Optimize product titles and descriptions", "Coordinate with sellers for missing data", "Ensure listing compliance with marketplace standards", "Monitor listing approval status"],
+      "minimalQual": ["12th Pass (Graduate preferred)", "Basic knowledge of Excel", "Basic understanding of e-commerce", "Attention to detail"],
+      "idealCandidate": ["Familiar with online marketplaces", "Good written English skills", "Detail-oriented and structured", "Comfortable with repetitive tasks"]
+    },
+    {
+      "value": "Call Executive",
+      "title": "Call Executive",
+      "role": "Seller Outreach & Lead Qualification Executive",
+      "tags": ["Remote / Office", "Sales"],
+      "objective": "To generate and qualify leads by introducing potential sellers to Khulega Online and guiding them toward registration.",
+      "roleOverview": ["As a Call Executive, you will contact potential sellers, explain the benefits of Khulega Online and the Unified Seller Console, and encourage them to register. You will support the Lead Generation team by pre-qualifying interested businesses."],
+      "keyResponsibilities": ["Make outbound calls to potential sellers", "Explain Khulega Online services clearly", "Answer basic queries", "Qualify interested sellers", "Transfer verified leads to onboarding team", "Maintain call records and follow-ups"],
+      "minimalQual": ["12th Pass (Graduate preferred)", "Clear spoken communication", "Basic computer knowledge", "Confidence in handling calls"],
+      "idealCandidate": ["Confident communicator", "Goal-oriented", "Comfortable speaking to business owners", "Energetic and persuasive"]
+    }
+  ],
+  "why": {
+    "title": "Why Work with Khulega Online?",
+    "items": ["Fast-growing SaaS startup environment", "Opportunity to grow with the company", "Performance-driven culture", "Skill development & exposure to e-commerce", "Real impact on small business growth"]
+  },
+  "form": {
+    "title": "Apply Now",
+    "subtitle": "Fill in your details and we'll get back to you",
+    "fullName": "Full Name",
+    "fullNamePlaceholder": "Enter your full name",
+    "email": "Email Address",
+    "emailPlaceholder": "Enter your email address",
+    "phone": "Phone Number",
+    "city": "City / Location",
+    "cityPlaceholder": "Enter your city or location",
+    "preferredRole": "Preferred Job Role",
+    "rolePlaceholder": "Select a role",
+    "qualification": "Highest Qualification",
+    "qualificationPlaceholder": "Select qualification",
+    "qualOptions": ["10th Pass", "12th Pass", "Graduate", "Post Graduate", "Other"],
+    "experience": "Relevant Experience",
+    "experiencePlaceholder": "Select experience",
+    "experienceOptions": ["Fresher (No experience)", "Less than 1 year", "1–2 years", "2–5 years", "5+ years"],
+    "message": "Why should we consider you?",
+    "messagePlaceholder": "Tell us briefly about yourself and why you're interested...",
+    "submit": "Submit Application",
+    "submitting": "Submitting...",
+    "success": "Application submitted successfully! We'll review and get back to you soon.",
+    "error": "Something went wrong. Please try again or contact us directly."
+  }
 }

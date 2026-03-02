@@ -1,32 +1,172 @@
 {
-  "page": {
-    "title": "Privacy Policy",
-    "subtitle": "How we protect your data and privacy",
-    "breadcrumb": "Privacy Policy",
-    "lastUpdated": "Last updated: February 2026"
+  "hero": {
+    "badge": "Privacy Policy",
+    "title": "Khulega Online",
+    "highlightText": "Privacy Policy",
+    "subtitle": "Your privacy matters. Learn how we collect, use, and protect your information.",
+    "breadcrumb": "Privacy Policy"
+  },
+  "intro": {
+    "heading": "1. Introduction",
+    "welcome": "Welcome to",
+    "para1": "This Privacy Policy explains how we collect, use, store, process, and protect your information when you access:",
+    "linkWebsite": "Website",
+    "linkUSC": "Unified Seller Console",
+    "notice": "By using Khulega Online, you agree to the practices described in this Privacy Policy.",
+    "lastUpdated": "Last Updated:"
   },
   "sections": [
     {
-      "title": "1. Information We Collect",
-      "content": "We collect information you provide directly to us, including your name, email address, phone number, and any other information you choose to provide."
+      "num": 2,
+      "title": "Who We Are",
+      "intro": "Khulega Online is a SaaS-enabled platform that helps sellers integrate and manage multiple marketplaces from a centralized dashboard (USC).",
+      "intro2": "We act as:",
+      "roleItems": [
+        "A technology service provider",
+        "A data processor for marketplace integrations",
+        "A service provider for optional seller support services"
+      ],
+      "highlight": "We are not a marketplace and do not directly sell products to customers."
     },
     {
-      "title": "2. How We Use Your Information",
-      "content": "We use the information we collect to provide, maintain, and improve our services, and to communicate with you.",
-      "list": [
-        "To process your transactions",
-        "To send you technical notices and support messages",
-        "To respond to your comments and questions",
-        "To provide customer service"
+      "num": 3,
+      "title": "Information We Collect",
+      "intro": "We collect information in the following categories:",
+      "subsections": [
+        {
+          "badge": "3.1",
+          "title": "Personal & Business Information",
+          "intro": "When you register or contact us, we may collect:",
+          "dataItems": ["Full name", "Business name", "Email address", "Phone number", "GST details (if applicable)", "Bank account details (if required)", "Business registration documents", "KYC documents"]
+        },
+        {
+          "badge": "3.2",
+          "title": "Account & Usage Information",
+          "intro": "When using the Unified Seller Console (usc.khulega.online), we may collect:",
+          "list": ["Login credentials (encrypted)", "IP address", "Device information", "Browser type", "Login timestamps", "Platform activity logs", "API integration details"],
+          "listType": "check"
+        },
+        {
+          "badge": "3.3",
+          "title": "Marketplace Integration Data",
+          "intro": "When you connect marketplaces such as:",
+          "intro2": "We may process:",
+          "marketplaces": ["Amazon", "Flipkart", "Meesho", "JioMart", "ONDC"],
+          "list": ["Product listings", "Inventory data", "Order data", "Pricing information", "Sales analytics"],
+          "listType": "arrow",
+          "highlight": "This data is processed strictly for platform functionality."
+        },
+        {
+          "badge": "3.4",
+          "title": "Website Data",
+          "intro": "When visiting khulega.online:",
+          "list": ["Cookies", "Analytics data", "Page visits", "Traffic source", "Device/browser details"],
+          "listType": "check"
+        }
       ]
     },
     {
-      "title": "3. Data Security",
-      "content": "We take reasonable measures to help protect your personal information from loss, theft, misuse, and unauthorized access."
+      "num": 4,
+      "title": "How We Use Your Information",
+      "intro": "We use collected information to:",
+      "list": ["Provide and maintain platform services", "Enable marketplace integrations", "Manage seller accounts", "Provide customer support", "Improve platform performance", "Send service-related communication", "Comply with legal obligations", "Prevent fraud or misuse"],
+      "listType": "check",
+      "alertDanger": "We do not sell your personal or business data."
     },
     {
-      "title": "4. Contact Us",
-      "content": "If you have any questions about this Privacy Policy, please contact us at our contact page."
+      "num": 5,
+      "title": "Legal Basis for Processing",
+      "intro": "We process your data based on:",
+      "basisItems": ["Your consent", "Performance of a contract", "Legal compliance requirements", "Legitimate business interests"]
+    },
+    {
+      "num": 6,
+      "title": "Data Sharing & Disclosure",
+      "intro": "We may share information with:",
+      "subsections": [
+        { "badge": "6.1", "title": "Third-Party Marketplaces", "highlight": "For integration functionality only." },
+        {
+          "badge": "6.2",
+          "title": "Service Providers",
+          "intro": "Including:",
+          "list": ["Cloud hosting providers", "Payment processors", "Technical service vendors", "Analytics providers"],
+          "listType": "arrow"
+        },
+        { "badge": "6.3", "title": "Legal Authorities", "intro": "If required by law, court order, or government request." }
+      ],
+      "alertDanger": "We do not sell or rent your data to advertisers."
+    },
+    {
+      "num": 7,
+      "title": "Data Storage & Security",
+      "intro": "We implement reasonable technical and organizational safeguards, including:",
+      "securityItems": ["Encrypted data transmission (SSL)", "Role-based access controls", "Secure hosting infrastructure", "Access monitoring", "Firewall and security protocols"],
+      "alert": "However, no system can guarantee absolute security."
+    },
+    {
+      "num": 8,
+      "title": "Data Retention",
+      "intro": "We retain your data:",
+      "list": ["For as long as your account remains active", "As required for legal or regulatory compliance", "As necessary to resolve disputes"],
+      "listType": "arrow",
+      "highlight": "Upon account termination, we may delete or anonymize data, except where legally required to retain it."
+    },
+    {
+      "num": 9,
+      "title": "Cookies & Tracking Technologies",
+      "intro": "Khulega Online uses cookies to:",
+      "list": ["Improve website functionality", "Analyze traffic patterns", "Enhance user experience", "Remember login sessions"],
+      "listType": "check",
+      "alert": "You may disable cookies in your browser settings, but certain features may not function properly."
+    },
+    {
+      "num": 10,
+      "title": "Your Rights",
+      "intro": "Depending on applicable laws, you may have the right to:",
+      "rightsItems": ["Access your data", "Request correction", "Request deletion (subject to legal limitations)", "Withdraw consent", "Object to processing"],
+      "infoBox": "Requests can be sent to:"
+    },
+    {
+      "num": 11,
+      "title": "Third-Party Links",
+      "intro": "Our website or USC dashboard may contain links to third-party websites.",
+      "list": ["We are not responsible for the privacy practices of external platforms.", "You are advised to review their privacy policies separately."],
+      "listType": "warning"
+    },
+    {
+      "num": 12,
+      "title": "Children's Privacy",
+      "intro": "Khulega Online is intended for business users.",
+      "alertDanger": "We do not knowingly collect data from individuals under 18 years of age."
+    },
+    {
+      "num": 13,
+      "title": "International Data Transfers",
+      "intro": "If data is stored or processed outside India:",
+      "list": ["We ensure appropriate safeguards are in place", "Data protection standards are maintained"],
+      "listType": "check"
+    },
+    {
+      "num": 14,
+      "title": "Updates to This Privacy Policy",
+      "intro": "We may update this Privacy Policy periodically. Updated versions will be posted on khulega.online.",
+      "highlight": "Continued use of the platform indicates acceptance of revised policies."
+    },
+    {
+      "num": 15,
+      "title": "Contact Information",
+      "intro": "For any privacy-related concerns:",
+      "contactLabelEmail": "Email",
+      "contactLabelWebsite": "Website"
     }
-  ]
+  ],
+  "consent": {
+    "title": "Consent",
+    "text": "By using khulega.online and the Unified Seller Console (usc.khulega.online), you consent to:",
+    "list": [
+      "The collection of information as described in this Privacy Policy",
+      "The use of information as described in this Privacy Policy",
+      "The processing and storage practices outlined herein"
+    ]
+  }
 }

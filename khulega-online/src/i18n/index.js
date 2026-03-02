@@ -13,6 +13,7 @@ import enPolicy from './locales/en/policy.json'
 import enServices from './locales/en/services.json'
 import enContact from './locales/en/contact.json'
 import enTerms from './locales/en/terms.json'
+import enSellerGuidelines from './locales/en/seller-guidelines.json'
 
 // Hindi
 import hiCommon from './locales/hi/common.json'
@@ -23,6 +24,7 @@ import hiPolicy from './locales/hi/policy.json'
 import hiServices from './locales/hi/services.json'
 import hiContact from './locales/hi/contact.json'
 import hiTerms from './locales/hi/terms.json'
+import hiSellerGuidelines from './locales/hi/seller-guidelines.json'
 
 // ============================================
 // Merge translations by locale
@@ -36,7 +38,8 @@ const messages = {
     policy: enPolicy,
     services: enServices,
     contact: enContact,
-    terms: enTerms
+    terms: enTerms,
+    sellerGuidelines: enSellerGuidelines
   },
   hi: {
     common: hiCommon,
@@ -46,7 +49,8 @@ const messages = {
     policy: hiPolicy,
     services: hiServices,
     contact: hiContact,
-    terms: hiTerms
+    terms: hiTerms,
+    sellerGuidelines: hiSellerGuidelines
   }
 }
 

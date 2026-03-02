@@ -1,0 +1,40 @@
+{
+  "hero": {
+    "badge": "Seller Guidelines",
+    "title": "Manage and Grow Across",
+    "highlightText": "Multiple Marketplaces",
+    "subtitle": "Follow these guidelines to ensure compliance, accuracy, and smooth marketplace operations.",
+    "breadcrumb": "Seller Guidelines"
+  },
+  "intro": {
+    "text": "Khulega Online is a SaaS-enabled platform that helps sellers connect, manage, and grow across multiple marketplaces from a unified system called the",
+    "usc": "Unified Seller Commerce (USC)",
+    "text2": "available at:",
+    "linkText": "usc.khulega.online",
+    "text3": "Through Khulega Online, sellers can integrate and manage their business across leading marketplaces:",
+    "marketplaces": ["Amazon", "Flipkart", "Meesho", "JioMart", "ONDC"],
+    "text4": "These Seller Guidelines define the operational standards, compliance requirements, and performance expectations for all sellers using Khulega Online and the USC dashboard.",
+    "notice": "By registering or using our services, you agree to comply with these guidelines."
+  },
+  "sections": [
+    { "title": "Seller Eligibility & Account Requirements", "intro": "To sell using Khulega Online and access USC, sellers must:", "listCheck": ["Provide valid business registration details", "Submit accurate KYC documentation", "Share GST details (if applicable)", "Maintain updated bank account information", "Comply with applicable Indian laws and taxation norms"], "intro2": "Khulega Online reserves the right to:", "listArrow": ["Approve or reject onboarding applications", "Request additional documentation", "Suspend accounts for incomplete or misleading information"] },
+    { "title": "Unified Seller Commerce (USC) Usage Policy", "intro": "The Unified Seller Commerce (usc.khulega.online) allows sellers to manage:", "features": ["Product Listings", "Inventory", "Pricing", "Orders", "Marketplace Integrations", "Reports & Analytics"], "intro2": "Sellers are responsible for:", "listCheck": ["Maintaining valid marketplace credentials", "Ensuring API access remains active", "Protecting login credentials", "Not sharing access with unauthorized parties"], "alert": "Any misuse of the USC platform may result in immediate account review." },
+    { "title": "Marketplace Integration Responsibilities", "intro": "Khulega Online enables integration with multiple marketplaces. However:", "listWarning": ["Each marketplace has its own policies.", "Sellers must comply individually with marketplace rules.", "Violations on one marketplace may impact seller performance across integrations.", "Khulega Online does not override marketplace compliance policies."] },
+    { "title": "Product Listing Guidelines", "intro": "Accurate listings are critical to long-term growth.", "subsections": [{ "title": "5.1 Product Titles", "listCheck": ["Must be clear and accurate", "No misleading claims", "No prohibited keywords", "No false brand usage"] }, { "title": "5.2 Product Images", "listCheck": ["Clear and high resolution", "Actual product images", "No unauthorized watermarks", "No misleading visual representation"] }, { "title": "5.3 Product Descriptions", "listCheck": ["Honest and transparent", "Mention specifications, materials, dimensions", "Avoid exaggerated marketing claims", "Clearly define usage and limitations"] }], "alert": "Incorrect listings may lead to suppression or marketplace penalties." },
+    { "title": "Inventory Management Standards", "intro": "Sellers must:", "listCheck": ["Maintain real-time stock accuracy", "Avoid overselling", "Immediately update unavailable inventory", "Monitor stock sync across marketplaces"], "alert": "High cancellation rates due to stock issues may lead to account warnings." },
+    { "title": "Pricing & Transparency Policy", "intro": "All pricing must be:", "listCheck": ["Transparent", "Competitive", "Legally compliant"], "intro2": "Sellers must avoid:", "listCross": ["Fake MRP inflation", "Artificial discount manipulation", "Pricing mismatch across connected marketplaces", "Misleading promotional tactics"], "highlight": "Khulega Online promotes ethical and fair selling practices." },
+    { "title": "Order Fulfillment & Logistics", "intro": "Timely order processing is mandatory. Sellers must:", "listCheck": ["Dispatch within defined SLA timelines", "Use reliable logistics partners", "Share accurate tracking details", "Ensure secure packaging"], "alert": "Consistent delays or high return-to-origin (RTO) rates may trigger account evaluation." },
+    { "title": "Returns & Refund Policy Compliance", "intro": "Sellers must adhere to marketplace return policies. This includes:", "listCheck": ["Accepting valid returns", "Processing refunds within defined timelines", "Avoiding unjustified return rejections", "Responding to disputes professionally"], "alert": "Return abuse or non-cooperation may lead to suspension." },
+    { "title": "Prohibited & Restricted Products", "intro": "Sellers must not list:", "listCross": ["Counterfeit products", "Trademark-infringing items", "Illegal or restricted goods", "Hazardous products without required certification"], "alert": "Sellers are fully responsible for regulatory compliance including FSSAI, BIS, and other applicable authorities." },
+    { "title": "Performance Expectations", "intro": "Khulega Online expects sellers to maintain:", "metrics": ["Low cancellation rate", "Low return rate", "High fulfillment rate", "Positive customer feedback", "Policy compliance across marketplaces"], "alert": "Repeated underperformance may lead to review or suspension." },
+    { "title": "Managed Seller Services", "intro": "If sellers opt for additional services offered by Khulega Online (such as listing management, catalog optimization, account management, or advertising support):", "listArrow": ["Service scope will be defined separately", "Sellers must provide accurate product information", "Khulega Online is not liable for incorrect data provided by sellers"] },
+    { "title": "Data Security & System Integrity", "intro": "Sellers must:", "listCheck": ["Protect USC login credentials", "Not attempt system manipulation", "Avoid unauthorized data extraction", "Not misuse reporting or analytics tools"], "intro2": "Any attempt to:", "listCross": ["Hack", "Reverse engineer", "Interfere with system performance"], "alertDanger": "Will result in immediate termination." },
+    { "title": "Account Suspension & Termination", "intro": "Khulega Online may suspend or terminate seller access in cases of:", "listCross": ["Fraudulent activity", "Policy violations", "Repeated compliance failures", "Legal complaints", "Payment defaults (if applicable)"], "alertDanger": "Serious violations may lead to permanent restriction." },
+    { "title": "Updates to Guidelines", "intro": "Khulega Online may update these Seller Guidelines periodically. Continued use of the platform and USC dashboard constitutes acceptance of updated policies." }
+  ],
+  "acknowledgment": {
+    "title": "Seller Acknowledgment",
+    "text": "By registering on Khulega Online and accessing the Unified Seller Commerce (usc.khulega.online), you confirm that:",
+    "list": ["You have read and understood these guidelines", "You agree to comply with all platform standards", "You accept responsibility for marketplace compliance"]
+  }
+}
