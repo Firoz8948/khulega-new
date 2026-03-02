@@ -409,12 +409,13 @@ const { isSidebarOpen, closeSidebar } = useSidebar()
 const { t } = useI18n()
 const currentYear = new Date().getFullYear()
 
+const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '') + '/'
 /* ---- Brand cards shown in sidebar header ---- */
 const brands = [
-  { key: 'amazon',   name: 'Amazon',   logo: '/assets/images/brands/amazon.png'   },
-  { key: 'flipkart', name: 'Flipkart', logo: '/assets/images/brands/flipkart.png' },
-  { key: 'meesho',   name: 'Meesho',   logo: '/assets/images/brands/meesho.png'   },
-  { key: 'ondc',     name: 'ONDC',     logo: '/assets/images/brands/ondc.png'     },
+  { key: 'amazon',   name: 'Amazon',   logo: base + 'assets/images/brands/amazon.png'   },
+  { key: 'flipkart', name: 'Flipkart', logo: base + 'assets/images/brands/flipkart.png' },
+  { key: 'meesho',   name: 'Meesho',   logo: base + 'assets/images/brands/meesho.png'   },
+  { key: 'ondc',     name: 'ONDC',     logo: base + 'assets/images/brands/ondc.png'     },
   { key: 'more',     name: 'More',     logo: null                                 },
 ]
 </script>

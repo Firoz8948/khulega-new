@@ -3,6 +3,8 @@ import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 
 export default defineConfig({
+  // For subpath deployment (e.g. GitHub Pages: example.com/repo-name/), set base: '/repo-name/'
+  base: '/',
   plugins: [vue()],
   resolve: {
     alias: {

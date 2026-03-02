@@ -6,7 +6,7 @@
         <HamburgerButton />
         <a href="/" class="header__logo">
           <img
-            :src="'/assets/images/khulega_logo.png'"
+            :src="logoUrl"
             alt="Khulega.online"
             class="header__logo-img"
           />
@@ -77,7 +77,7 @@
           aria-hidden="true"
         >
           <img
-            src="/assets/images/ondc-logo.png"
+            :src="ondcLogoUrl"
             alt="ONDC"
             class="header__ondc-img"
           />
@@ -96,6 +96,10 @@
 <script setup>
 import { useI18n } from '@/i18n/index.js'
 import { ref } from 'vue'
+
+const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '') + '/'
+const logoUrl = `${base}assets/images/khulega_logo.png`
+const ondcLogoUrl = `${base}assets/images/ondc-logo.png`
 
 const { t } = useI18n()
 const searchQuery = ref('')

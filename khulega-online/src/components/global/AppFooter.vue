@@ -7,7 +7,7 @@
         <div class="footer__col footer__col--brand">
           <a href="/" class="footer__logo" aria-label="Khulega.online">
             <img
-              :src="'/assets/images/khulega_logo.png'"
+              :src="logoUrl"
               alt="Khulega"
               class="footer__logo-img"
             />
@@ -373,6 +373,10 @@
 
 <script setup>
 import { useI18n } from '@/i18n/index.js'
+
+const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '') + '/'
+const logoUrl = `${base}assets/images/khulega_logo.png`
+
 const { t } = useI18n()
 const currentYear = new Date().getFullYear()
 </script>
