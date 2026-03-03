@@ -333,19 +333,14 @@
     max-width: 300px;
   }
   
-  /* Mobile: hide logo, show tagline */
+  /* Mobile: hide logo, description and tagline */
   .footer__logo--desktop {
     display: none !important;
   }
   
-  .footer__mob-tagline {
-    display: block;
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--color-text-primary, #fff);
-    margin: 0 0 12px 0;
-    line-height: 1.35;
-    text-align: center;
+  .footer__mob-tagline,
+  .footer__col--brand .footer__description {
+    display: none !important;
   }
   
   .footer__logo-img {
