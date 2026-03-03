@@ -45,6 +45,11 @@
     margin-top: -75px;
   }
   
+  /* Mobile-only tagline: hidden on desktop */
+  .footer__mob-tagline {
+    display: none;
+  }
+  
   .footer__logo-img {
     height: 160px;  /* 2x desktop size */
     width: auto;
@@ -324,15 +329,30 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
   
-    .footer__col--brand .footer__description {
-      max-width: 300px;
-    }
+  .footer__col--brand .footer__description {
+    max-width: 300px;
+  }
   
-    .footer__logo-img {
-      height: 60px;
-    }
+  /* Mobile: hide logo, show tagline */
+  .footer__logo--desktop {
+    display: none !important;
+  }
   
-    .footer__title {
+  .footer__mob-tagline {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-primary, #fff);
+    margin: 0 0 12px 0;
+    line-height: 1.35;
+    text-align: center;
+  }
+  
+  .footer__logo-img {
+    height: 60px;
+  }
+  
+  .footer__title {
       font-size: 13px;
       margin-bottom: 14px;
       padding-bottom: 10px;

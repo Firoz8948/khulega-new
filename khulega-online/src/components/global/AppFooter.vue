@@ -5,13 +5,14 @@
       <div class="footer__container">
         <!-- Column 1: Brand -->
         <div class="footer__col footer__col--brand">
-          <a href="/" class="footer__logo" aria-label="Khulega.online">
+          <a href="/" class="footer__logo footer__logo--desktop" aria-label="Khulega.online">
             <img
               :src="logoImg"
               alt="Khulega"
               class="footer__logo-img"
             />
           </a>
+          <p class="footer__mob-tagline">{{ t('footer.mobTagline') }}</p>
           <p class="footer__description">{{ t('footer.description') }}</p>
           <div class="footer__social">
             <a
