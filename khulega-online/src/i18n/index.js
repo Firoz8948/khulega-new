@@ -60,7 +60,7 @@ const messages = {
 const STORAGE_KEY = 'khulega-lang'
 
 function getInitialLocale() {
-  // 1. Check localStorage
+  // 1. Check localStorage (user preference from previous visit or toggle)
   try {
     const saved = localStorage.getItem(STORAGE_KEY)
     if (saved && messages[saved]) return saved
@@ -68,11 +68,7 @@ function getInitialLocale() {
     // localStorage may not be available
   }
 
-  // 2. Check browser language
-  const browserLang = navigator.language.slice(0, 2)
-  if (browserLang === 'hi') return 'hi'
-
-  // 3. Default to English
+  // 2. Default to English for first-time visitors
   return 'en'
 }
 
