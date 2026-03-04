@@ -174,7 +174,7 @@
 
         <!-- CTA buttons -->
         <div class="hero__mob-ctas">
-          <a href="/seller-register.html" class="hero__mob-btn hero__mob-btn--primary">
+          <a href="https://usc.khulega.online/auth/register" target="_blank" rel="noopener noreferrer" class="hero__mob-btn hero__mob-btn--primary">
             <svg class="hero__mob-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/>
               <circle cx="9" cy="7" r="4"/>

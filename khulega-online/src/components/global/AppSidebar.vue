@@ -4,7 +4,7 @@
     <div
       v-if="isSidebarOpen"
       class="sidebar-overlay"
-      @click="closeSidebar"
+      @click="handleNavClick"
       @touchmove.prevent
       @wheel.prevent
     ></div>
@@ -18,7 +18,7 @@
         <!-- Close button -->
         <button
           class="sidebar__close"
-          @click="closeSidebar"
+          @click="handleNavClick"
           aria-label="Close menu"
         >
           <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
@@ -74,7 +74,7 @@
               target="_blank"
               rel="noopener noreferrer"
               class="sidebar__link"
-              @click="closeSidebar"
+              @click="handleNavClick"
             >
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
@@ -89,7 +89,7 @@
               target="_blank"
               rel="noopener noreferrer"
               class="sidebar__link"
-              @click="closeSidebar"
+              @click="handleNavClick"
             >
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4"/>
@@ -98,7 +98,7 @@
               </svg>
               {{ t('sidebar.sellerLogin') }}
             </a>
-            <a href="/services/" class="sidebar__link" @click="closeSidebar">
+            <a href="/services/" class="sidebar__link" @click="handleNavClick">
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M4 19.5A2.5 2.5 0 016.5 17H20"/>
                 <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>
@@ -107,20 +107,20 @@
               </svg>
               {{ t('sidebar.sellerServices') }}
             </a>
-            <a href="/user-journey/" class="sidebar__link" @click="closeSidebar">
+            <a href="/user-journey/" class="sidebar__link" @click="handleNavClick">
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10"/>
                 <polyline points="12 6 12 12 16 14"/>
               </svg>
               {{ t('sidebar.userJourney') }}
             </a>
-            <a href="/contact/" class="sidebar__link" @click="closeSidebar">
+            <a href="/contact/" class="sidebar__link" @click="handleNavClick">
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197"/>
               </svg>
               {{ t('sidebar.sellerSupport') }}
             </a>
-            <a href="/seller-guidelines/" class="sidebar__link" @click="closeSidebar">
+            <a href="/seller-guidelines/" class="sidebar__link" @click="handleNavClick">
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
                 <polyline points="14 2 14 8 20 8"/>
@@ -148,7 +148,7 @@
             {{ t('sidebar.career') }}
           </h3>
           <nav class="sidebar__nav">
-            <a href="/apply-job/" class="sidebar__link" @click="closeSidebar">
+            <a href="/apply-job/" class="sidebar__link" @click="handleNavClick">
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
                 <circle cx="8.5" cy="7" r="4"/>
@@ -178,7 +178,7 @@
               target="_blank"
               rel="noopener noreferrer"
               class="sidebar__link"
-              @click="closeSidebar"
+              @click="handleNavClick"
             >
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4"/>
@@ -192,7 +192,7 @@
               target="_blank"
               rel="noopener noreferrer"
               class="sidebar__link"
-              @click="closeSidebar"
+              @click="handleNavClick"
             >
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
@@ -207,7 +207,7 @@
               target="_blank"
               rel="noopener noreferrer"
               class="sidebar__link"
-              @click="closeSidebar"
+              @click="handleNavClick"
             >
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="1" y="3" width="15" height="13"/>
@@ -222,14 +222,14 @@
               target="_blank"
               rel="noopener noreferrer"
               class="sidebar__link"
-              @click="closeSidebar"
+              @click="handleNavClick"
             >
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
               </svg>
               {{ t('sidebar.wishlist') }}
             </a>
-            <a href="https://milega.online" target="_blank" rel="noopener noreferrer" class="sidebar__link" @click="closeSidebar">
+            <a href="https://milega.online" target="_blank" rel="noopener noreferrer" class="sidebar__link" @click="handleNavClick">
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="9" cy="21" r="1"/>
                 <circle cx="20" cy="21" r="1"/>
@@ -242,7 +242,7 @@
               target="_blank"
               rel="noopener noreferrer"
               class="sidebar__link"
-              @click="closeSidebar"
+              @click="handleNavClick"
             >
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="3" y="3" width="7" height="7"/>
@@ -257,7 +257,7 @@
               target="_blank"
               rel="noopener noreferrer"
               class="sidebar__link"
-              @click="closeSidebar"
+              @click="handleNavClick"
             >
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="20 12 20 22 4 22 4 12"/>
@@ -273,7 +273,7 @@
               target="_blank"
               rel="noopener noreferrer"
               class="sidebar__link"
-              @click="closeSidebar"
+              @click="handleNavClick"
             >
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
@@ -296,7 +296,7 @@
             {{ t('sidebar.quickLinks') }}
           </h3>
           <nav class="sidebar__nav">
-            <a href="https://techsandhya.com" target="_blank" rel="noopener noreferrer" class="sidebar__link sidebar__link--about" @click="closeSidebar">
+            <a href="https://techsandhya.com" target="_blank" rel="noopener noreferrer" class="sidebar__link sidebar__link--about" @click="handleNavClick">
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10"/>
                 <line x1="12" y1="16" x2="12" y2="12"/>
@@ -306,14 +306,14 @@
               <span class="sidebar__about-label sidebar__about-label--desktop">{{ t('sidebar.aboutUs') }}</span>
               <span class="sidebar__about-label sidebar__about-label--desktop-hover">{{ t('sidebar.techsandhya') }}</span>
             </a>
-            <a href="/policy/" class="sidebar__link" @click="closeSidebar">
+            <a href="/policy/" class="sidebar__link" @click="handleNavClick">
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
                 <path d="M7 11V7a5 5 0 0110 0v4"/>
               </svg>
               {{ t('sidebar.privacyPolicy') }}
             </a>
-            <a href="/terms/" class="sidebar__link" @click="closeSidebar">
+            <a href="/terms/" class="sidebar__link" @click="handleNavClick">
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
                 <polyline points="14 2 14 8 20 8"/>
@@ -322,7 +322,7 @@
               </svg>
               {{ t('sidebar.termsAndConditions') }}
             </a>
-            <a href="/contact/" class="sidebar__link" @click="closeSidebar">
+            <a href="/contact/" class="sidebar__link" @click="handleNavClick">
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
               </svg>
@@ -408,6 +408,23 @@ import { useI18n } from '@/i18n/index.js'
 const { isSidebarOpen, closeSidebar } = useSidebar()
 const { t } = useI18n()
 const currentYear = new Date().getFullYear()
+
+/** One-tap mobile fix: close sidebar then navigate so first tap both closes and goes. */
+function handleNavClick(e) {
+  const link = e.currentTarget
+  const href = link.getAttribute && link.getAttribute('href')
+  if (href) {
+    e.preventDefault()
+    closeSidebar()
+    const target = link.getAttribute('target')
+    setTimeout(() => {
+      if (target === '_blank') window.open(href)
+      else window.location.href = href
+    }, 50)
+  } else {
+    closeSidebar()
+  }
+}
 
 const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '') + '/'
 /* ---- Brand cards shown in sidebar header ---- */
