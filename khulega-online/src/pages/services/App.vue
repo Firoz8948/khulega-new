@@ -32,27 +32,114 @@
       </section>
 
       <!-- ============================================ -->
-      <!-- SECTION 1 — Compliance Services -->
+      <!-- SECTION 1 — Marketplace Account Setup -->
+      <!-- ============================================ -->
+      <section class="svc-section svc-section--marketplace" id="marketplace">
+        <div class="svc-section__container">
+
+          <div class="svc-section__header">
+            <div class="svc-section__badge svc-section__badge--orange">
+              <span class="svc-section__badge-number">01</span>
+              <span class="svc-section__badge-label">{{ t('marketplace.badgeLabel') }}</span>
+            </div>
+            <h2 class="svc-section__title">{{ t('marketplace.title') }}</h2>
+            <p class="svc-section__subtitle">{{ t('marketplace.subtitle') }}</p>
+          </div>
+
+          <!-- Pricing Strip -->
+          <div class="mp-price-strip">
+            <div class="mp-price-strip__left">
+              <span class="mp-price-strip__original">₹99</span>
+              <span class="mp-price-strip__current">₹49</span>
+              <span class="mp-price-strip__per">{{ t('marketplace.perMarketplace') }}</span>
+            </div>
+            <span class="mp-price-strip__validity">{{ t('marketplace.validUntil') }}</span>
+          </div>
+
+          <!-- 4 Marketplace Cards -->
+          <div class="mp-grid">
+
+            <!-- Amazon -->
+            <div class="mp-card">
+              <div class="mp-card__icon mp-card__icon--amazon">
+                <img :src="mpLogos.amazon" alt="Amazon" class="mp-card__brand-img" />
+              </div>
+              <h3 class="mp-card__title">Amazon</h3>
+              <p class="mp-card__text">{{ t('marketplace.amazon.text') }}</p>
+              <div class="mp-card__price">
+                <span class="mp-card__price-old">₹99</span>
+                <span class="mp-card__price-now">₹49</span>
+              </div>
+            </div>
+
+            <!-- Flipkart -->
+            <div class="mp-card">
+              <div class="mp-card__icon mp-card__icon--flipkart">
+                <img :src="mpLogos.flipkart" alt="Flipkart" class="mp-card__brand-img" />
+              </div>
+              <h3 class="mp-card__title">Flipkart</h3>
+              <p class="mp-card__text">{{ t('marketplace.flipkart.text') }}</p>
+              <div class="mp-card__price">
+                <span class="mp-card__price-old">₹99</span>
+                <span class="mp-card__price-now">₹49</span>
+              </div>
+            </div>
+
+            <!-- Meesho -->
+            <div class="mp-card">
+              <div class="mp-card__icon mp-card__icon--meesho">
+                <img :src="mpLogos.meesho" alt="Meesho" class="mp-card__brand-img" />
+              </div>
+              <h3 class="mp-card__title">Meesho</h3>
+              <p class="mp-card__text">{{ t('marketplace.meesho.text') }}</p>
+              <div class="mp-card__price">
+                <span class="mp-card__price-old">₹99</span>
+                <span class="mp-card__price-now">₹49</span>
+              </div>
+            </div>
+
+            <!-- ONDC -->
+            <div class="mp-card">
+              <div class="mp-card__icon mp-card__icon--ondc">
+                <img :src="mpLogos.ondc" alt="ONDC" class="mp-card__brand-img" />
+              </div>
+              <h3 class="mp-card__title">ONDC</h3>
+              <p class="mp-card__text">{{ t('marketplace.ondc.text') }}</p>
+              <div class="mp-card__price">
+                <span class="mp-card__price-old">₹99</span>
+                <span class="mp-card__price-now">₹49</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Bottom Highlights -->
+          <div class="svc-section__bottom-highlights">
+            <span v-for="(tag, i) in t('marketplace.bottomTags')" :key="i" class="svc-section__bottom-tag">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              {{ tag }}
+            </span>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SECTION 2 — Compliance Services -->
       <!-- ============================================ -->
       <section class="svc-section svc-section--compliance" id="compliance">
         <div class="svc-section__container">
 
-          <!-- Section Header -->
           <div class="svc-section__header">
             <div class="svc-section__badge svc-section__badge--blue">
-              <span class="svc-section__badge-number">01</span>
+              <span class="svc-section__badge-number">02</span>
               <span class="svc-section__badge-label">{{ t('compliance.badgeLabel') }}</span>
             </div>
             <h2 class="svc-section__title">{{ t('compliance.title') }}</h2>
-            <p class="svc-section__subtitle">
-              {{ t('compliance.subtitle') }}
-            </p>
+            <p class="svc-section__subtitle">{{ t('compliance.subtitle') }}</p>
           </div>
 
-          <!-- Service Cards + Pricing Table Layout -->
           <div class="svc-section__body">
-
-            <!-- Left: Service Detail Cards -->
             <div class="svc-cards">
               <div v-for="(card, i) in t('compliance.cards')" :key="i" class="svc-card">
                 <div class="svc-card__icon svc-card__icon--blue">
@@ -67,7 +154,6 @@
               </div>
             </div>
 
-            <!-- Right: Pricing Table -->
             <div class="svc-pricing">
               <div class="svc-pricing__header">
                 <h3 class="svc-pricing__title">{{ t('compliance.pricingTitle') }}</h3>
@@ -102,31 +188,26 @@
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>
 
       <!-- ============================================ -->
-      <!-- SECTION 2 — Subscription Services -->
+      <!-- SECTION 3 — Subscription Services -->
       <!-- ============================================ -->
       <section class="svc-section svc-section--subscription" id="subscription">
         <div class="svc-section__container">
 
           <div class="svc-section__header">
             <div class="svc-section__badge svc-section__badge--purple">
-              <span class="svc-section__badge-number">02</span>
+              <span class="svc-section__badge-number">03</span>
               <span class="svc-section__badge-label">{{ t('subscription.badgeLabel') }}</span>
             </div>
             <h2 class="svc-section__title">{{ t('subscription.title') }}</h2>
-            <p class="svc-section__subtitle">
-              {{ t('subscription.subtitle') }}
-            </p>
+            <p class="svc-section__subtitle">{{ t('subscription.subtitle') }}</p>
           </div>
 
-          <!-- Subscription Packs -->
           <div class="svc-packs">
-
             <div v-for="(pack, i) in t('subscription.packs')" :key="i" class="svc-pack" :class="{ 'svc-pack--featured': i === 1 }">
               <div v-if="i === 1" class="svc-pack__ribbon">{{ t('subscription.mostPopular') }}</div>
               <div class="svc-pack__header" :class="['svc-pack__header--indigo', 'svc-pack__header--blue', 'svc-pack__header--emerald'][i]">
@@ -157,10 +238,8 @@
                 <div class="svc-pack__validity">{{ t('subscription.validity') }}</div>
               </div>
             </div>
-
           </div>
 
-          <!-- Subscription Highlights -->
           <div class="svc-section__bottom-highlights">
             <span v-for="(tag, i) in t('subscription.bottomTags')" :key="i" class="svc-section__bottom-tag">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
@@ -172,24 +251,21 @@
       </section>
 
       <!-- ============================================ -->
-      <!-- SECTION 3 — Product Services -->
+      <!-- SECTION 4 — Product Services -->
       <!-- ============================================ -->
       <section class="svc-section svc-section--product" id="product">
         <div class="svc-section__container">
 
           <div class="svc-section__header">
             <div class="svc-section__badge svc-section__badge--emerald">
-              <span class="svc-section__badge-number">03</span>
+              <span class="svc-section__badge-number">04</span>
               <span class="svc-section__badge-label">{{ t('product.badgeLabel') }}</span>
             </div>
             <h2 class="svc-section__title">{{ t('product.title') }}</h2>
-            <p class="svc-section__subtitle">
-              {{ t('product.subtitle') }}
-            </p>
+            <p class="svc-section__subtitle">{{ t('product.subtitle') }}</p>
           </div>
 
           <div class="svc-section__body">
-
             <div class="svc-cards">
               <div v-for="(card, i) in t('product.cards')" :key="i" class="svc-card">
                 <div class="svc-card__icon svc-card__icon--emerald">
@@ -238,30 +314,26 @@
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </section>
 
       <!-- ============================================ -->
-      <!-- SECTION 4 — Advisory Services -->
+      <!-- SECTION 5 — Advisory Services -->
       <!-- ============================================ -->
       <section class="svc-section svc-section--advisory" id="advisory">
         <div class="svc-section__container">
 
           <div class="svc-section__header">
             <div class="svc-section__badge svc-section__badge--amber">
-              <span class="svc-section__badge-number">04</span>
+              <span class="svc-section__badge-number">05</span>
               <span class="svc-section__badge-label">{{ t('advisory.badgeLabel') }}</span>
             </div>
             <h2 class="svc-section__title">{{ t('advisory.title') }}</h2>
-            <p class="svc-section__subtitle">
-              {{ t('advisory.subtitle') }}
-            </p>
+            <p class="svc-section__subtitle">{{ t('advisory.subtitle') }}</p>
           </div>
 
           <div class="svc-advisory-grid">
-
             <div v-for="(card, i) in t('advisory.cards')" :key="i" class="svc-advisory-card">
               <div class="svc-advisory-card__icon">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -269,9 +341,7 @@
                 </svg>
               </div>
               <h3 class="svc-advisory-card__title">{{ card.title }}</h3>
-              <p class="svc-advisory-card__text">
-                {{ card.text }}
-              </p>
+              <p class="svc-advisory-card__text">{{ card.text }}</p>
               <div class="svc-advisory-card__price">
                 <span class="svc-advisory-card__original">₹59</span>
                 <span class="svc-advisory-card__discounted">₹29</span>
@@ -279,7 +349,6 @@
               </div>
               <div class="svc-advisory-card__validity">{{ t('advisory.validity') }}</div>
             </div>
-
           </div>
 
           <div class="svc-section__bottom-highlights">
@@ -292,9 +361,7 @@
         </div>
       </section>
 
-      <!-- ============================================ -->
       <!-- WHY CHOOSE US -->
-      <!-- ============================================ -->
       <section class="svc-why" id="why-choose">
         <div class="svc-why__container">
           <div class="svc-why__header">
@@ -316,7 +383,6 @@
       </section>
 
       <!-- TRANSPARENT PRICING NOTE -->
-      <!-- ============================================ -->
       <section class="svc-note">
         <div class="svc-note__container">
           <div class="svc-note__content">
@@ -327,17 +393,13 @@
             </div>
             <div class="svc-note__text">
               <h4 class="svc-note__title">{{ t('note.title') }}</h4>
-              <p class="svc-note__desc">
-                {{ t('note.desc') }}
-              </p>
+              <p class="svc-note__desc">{{ t('note.desc') }}</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ============================================ -->
       <!-- CTA SECTION -->
-      <!-- ============================================ -->
       <section class="svc-cta">
         <div class="svc-cta__container">
           <div class="svc-cta__content">
@@ -388,6 +450,14 @@
 import { useI18n } from '@/i18n/index.js'
 
 const { t } = useI18n('services')
+
+const base = (import.meta.env.BASE_URL || '/').replace(/\/$/, '') + '/'
+const mpLogos = {
+  amazon: base + 'assets/images/brands/amazon.png',
+  flipkart: base + 'assets/images/brands/flipkart.png',
+  meesho: base + 'assets/images/brands/meesho.png',
+  ondc: base + 'assets/images/brands/ondc.png'
+}
 
 const compliancePrices = [
   { fee: '₹89', discounted: '₹49', validity: '31 Dec 2026' },

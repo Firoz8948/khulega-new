@@ -76,6 +76,10 @@
     position: relative;
   }
   
+  .svc-section--marketplace {
+    background: #f8fafc;
+  }
+  
   .svc-section--compliance {
     background: #ffffff;
   }
@@ -109,7 +113,7 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 6px 6px 6px 6px;
+    padding: 6px;
     border-radius: 40px;
     margin-bottom: 20px;
   }
@@ -188,6 +192,19 @@
     color: #d97706;
   }
   
+  .svc-section__badge--orange {
+    background: rgba(234, 88, 12, 0.06);
+    border: 1px solid rgba(234, 88, 12, 0.12);
+  }
+  
+  .svc-section__badge--orange .svc-section__badge-number {
+    background: linear-gradient(135deg, #9a3412, #ea580c);
+  }
+  
+  .svc-section__badge--orange .svc-section__badge-label {
+    color: #ea580c;
+  }
+  
   .svc-section__title {
     font-size: 32px;
     font-weight: 800;
@@ -201,6 +218,157 @@
     line-height: 1.7;
     color: #64748b;
     margin: 0;
+  }
+  
+  /* ==============================================
+     MARKETPLACE — Price Strip
+     ============================================== */
+  
+  .mp-price-strip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 28px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #fff7ed, #ffedd5);
+    border: 1px solid rgba(234, 88, 12, 0.15);
+    margin-bottom: 32px;
+  }
+  
+  .mp-price-strip__left {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  
+  .mp-price-strip__original {
+    text-decoration: line-through;
+    color: #94a3b8;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  .mp-price-strip__current {
+    font-size: 36px;
+    font-weight: 900;
+    color: #9a3412;
+    line-height: 1;
+  }
+  
+  .mp-price-strip__per {
+    font-size: 15px;
+    color: #78350f;
+    font-weight: 600;
+  }
+  
+  .mp-price-strip__validity {
+    font-size: 13px;
+    font-weight: 600;
+    color: #9a3412;
+    padding: 6px 16px;
+    border-radius: 8px;
+    background: rgba(234, 88, 12, 0.08);
+    border: 1px solid rgba(234, 88, 12, 0.12);
+  }
+  
+  /* ==============================================
+     MARKETPLACE — Cards Grid
+     ============================================== */
+  
+  .mp-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  
+  .mp-card {
+    padding: 28px 22px;
+    border-radius: 16px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  }
+  
+  .mp-card:hover {
+    border-color: #cbd5e1;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    transform: translateY(-4px);
+  }
+  
+  .mp-card__icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+  }
+  
+  .mp-card__icon--amazon {
+    background: rgba(255, 153, 0, 0.08);
+    border: 1px solid rgba(255, 153, 0, 0.15);
+  }
+  
+  .mp-card__icon--flipkart {
+    background: rgba(40, 116, 240, 0.08);
+    border: 1px solid rgba(40, 116, 240, 0.15);
+  }
+  
+  .mp-card__icon--meesho {
+    background: rgba(87, 10, 87, 0.08);
+    border: 1px solid rgba(87, 10, 87, 0.15);
+  }
+  
+  .mp-card__icon--ondc {
+    background: rgba(11, 94, 215, 0.08);
+    border: 1px solid rgba(11, 94, 215, 0.15);
+  }
+
+  .mp-card__brand-img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    display: block;
+  }
+  
+  .mp-card__title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 8px;
+  }
+  
+  .mp-card__text {
+    font-size: 13.5px;
+    line-height: 1.65;
+    color: #64748b;
+    margin: 0 0 20px;
+  }
+  
+  .mp-card__price {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 8px;
+    padding-top: 16px;
+    border-top: 1px solid #f1f5f9;
+  }
+  
+  .mp-card__price-old {
+    text-decoration: line-through;
+    color: #94a3b8;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  
+  .mp-card__price-now {
+    font-size: 28px;
+    font-weight: 900;
+    color: #059669;
+    line-height: 1;
   }
   
   /* ==============================================
@@ -1054,6 +1222,11 @@
       position: static;
     }
   
+    .mp-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+  
     .svc-packs {
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
@@ -1094,6 +1267,22 @@
      ============================================== */
   
   @media (max-width: 768px) {
+    .mp-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+  
+    .mp-price-strip {
+      flex-direction: column;
+      text-align: center;
+      gap: 12px;
+      padding: 18px 22px;
+    }
+  
+    .mp-price-strip__left {
+      justify-content: center;
+    }
+  
     .svc-packs {
       grid-template-columns: 1fr;
       gap: 20px;
@@ -1171,6 +1360,70 @@
   
     .svc-section__body {
       gap: 24px;
+    }
+  
+    /* Marketplace */
+    .mp-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+  
+    .mp-card {
+      padding: 20px 16px;
+      border-radius: 14px;
+    }
+  
+    .mp-card__icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      margin-bottom: 12px;
+    }
+  
+    .mp-card__icon svg {
+      width: 24px;
+      height: 24px;
+    }
+  
+    .mp-card__title {
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+  
+    .mp-card__text {
+      font-size: 12.5px;
+      margin-bottom: 14px;
+    }
+  
+    .mp-card__price-now {
+      font-size: 24px;
+    }
+  
+    .mp-card__price-old {
+      font-size: 13px;
+    }
+  
+    .mp-price-strip {
+      border-radius: 12px;
+      margin-bottom: 24px;
+      padding: 16px 18px;
+    }
+  
+    .mp-price-strip__current {
+      font-size: 28px;
+    }
+  
+    .mp-price-strip__original {
+      font-size: 15px;
+    }
+  
+    .mp-price-strip__per {
+      font-size: 13px;
+    }
+  
+    .mp-price-strip__validity {
+      font-size: 12px;
+      padding: 5px 12px;
     }
   
     /* Cards */
@@ -1469,6 +1722,63 @@
       padding-right: 12px;
     }
   
+    .mp-grid {
+      gap: 10px;
+    }
+  
+    .mp-card {
+      padding: 18px 14px;
+    }
+  
+    .mp-card__icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+  
+    .mp-card__icon svg {
+      width: 22px;
+      height: 22px;
+    }
+  
+    .mp-card__title {
+      font-size: 14px;
+    }
+  
+    .mp-card__text {
+      font-size: 11.5px;
+      margin-bottom: 12px;
+    }
+  
+    .mp-card__price-now {
+      font-size: 22px;
+    }
+  
+    .mp-card__price-old {
+      font-size: 12px;
+    }
+  
+    .mp-card__price {
+      padding-top: 12px;
+    }
+  
+    .mp-price-strip {
+      padding: 14px 16px;
+    }
+  
+    .mp-price-strip__current {
+      font-size: 26px;
+    }
+  
+    .mp-price-strip__per {
+      font-size: 12px;
+    }
+  
+    .mp-price-strip__validity {
+      font-size: 11px;
+    }
+  
     .svc-card {
       padding: 14px 16px;
       gap: 14px;
@@ -1493,7 +1803,6 @@
       font-size: 12.5px;
     }
   
-    /* Pricing table — make it scroll nicely */
     .svc-pricing__table {
       min-width: 400px;
     }
@@ -1611,6 +1920,32 @@
   
     .svc-section__subtitle {
       font-size: 13px;
+    }
+  
+    .mp-grid {
+      grid-template-columns: 1fr;
+      max-width: 280px;
+      margin: 0 auto;
+    }
+  
+    .mp-card {
+      padding: 22px 18px;
+    }
+  
+    .mp-card__title {
+      font-size: 16px;
+    }
+  
+    .mp-card__text {
+      font-size: 13px;
+    }
+  
+    .mp-card__price-now {
+      font-size: 26px;
+    }
+  
+    .mp-price-strip__current {
+      font-size: 24px;
     }
   
     .svc-card {

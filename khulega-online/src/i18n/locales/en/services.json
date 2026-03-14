@@ -12,6 +12,31 @@
     "textEnd": "All services are available through your Unified Seller Console at",
     "tags": ["Unified Dashboard", "Multi-Marketplace Support", "Affordable Pricing", "Built for Indian Sellers"]
   },
+  "marketplace": {
+    "badgeLabel": "Marketplace Setup",
+    "title": "Marketplace Account Setup & Integration",
+    "subtitle": "Get your seller accounts created, verified, and ready to sell on India's top e-commerce platforms.",
+    "perMarketplace": "per marketplace",
+    "validUntil": "Valid till 31 Dec 2026",
+    "amazon": {
+      "text": "Complete Seller Central setup with brand registry and listing optimization."
+    },
+    "flipkart": {
+      "text": "Full Seller Hub registration with brand approval, catalog upload, and shipping configuration."
+    },
+    "meesho": {
+      "text": "Supplier account setup with catalog management, pricing configuration, and order workflows."
+    },
+    "ondc": {
+      "text": "Seller node onboarding with buyer app integration, catalog publishing, and compliance setup."
+    },
+    "bottomTags": [
+      "Expert-Handled Setup",
+      "Same-Day Processing",
+      "100% Compliant",
+      "Post-Setup Support"
+    ]
+  },
   "compliance": {
     "badgeLabel": "Compliance Services",
     "title": "Start Your Business the Right Way",
