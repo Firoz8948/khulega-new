@@ -75,12 +75,45 @@
     },
     {
       "num": 5,
+      "title": "Amazon Data Access",
+      "list": [
+        "We do not collect Amazon data from any third-party or unofficial sources."
+      ],
+      "listType": "warning",
+      "subsections": [
+        {
+          "badge": "5.1",
+          "title": "Data Usage",
+          "intro": "Amazon information collected through our platform is used only to:",
+          "list": [
+            "Provide platform functionality",
+            "Improve user experience",
+            "Support seller operations",
+            "Maintain system security and integrity"
+          ],
+          "listType": "check",
+          "alertDanger": "We do not sell, rent, or trade Amazon seller data or personal information to third parties."
+        },
+        {
+          "badge": "5.2",
+          "title": "Data Sharing",
+          "intro": "Khulega Online does not resell Amazon data or aggregate data from multiple sellers for commercial distribution.",
+          "list": [
+            "Amazon data is accessible only to the seller who authorized the connection and is used solely for the services provided through the platform.",
+            "Limited data may be processed by secure infrastructure providers (such as cloud hosting services) solely for the purpose of operating the platform."
+          ],
+          "listType": "arrow"
+        }
+      ]
+    },
+    {
+      "num": 6,
       "title": "Legal Basis for Processing",
       "intro": "We process your data based on:",
       "basisItems": ["Your consent", "Performance of a contract", "Legal compliance requirements", "Legitimate business interests"]
     },
     {
-      "num": 6,
+      "num": 7,
       "title": "Data Sharing & Disclosure",
       "intro": "We may share information with:",
       "subsections": [
@@ -97,14 +130,14 @@
       "alertDanger": "We do not sell or rent your data to advertisers."
     },
     {
-      "num": 7,
+      "num": 8,
       "title": "Data Storage & Security",
       "intro": "We implement reasonable technical and organizational safeguards, including:",
       "securityItems": ["Encrypted data transmission (SSL)", "Role-based access controls", "Secure hosting infrastructure", "Access monitoring", "Firewall and security protocols"],
       "alert": "However, no system can guarantee absolute security."
     },
     {
-      "num": 8,
+      "num": 9,
       "title": "Data Retention",
       "intro": "We retain your data:",
       "list": ["For as long as your account remains active", "As required for legal or regulatory compliance", "As necessary to resolve disputes"],
@@ -112,7 +145,7 @@
       "highlight": "Upon account termination, we may delete or anonymize data, except where legally required to retain it."
     },
     {
-      "num": 9,
+      "num": 10,
       "title": "Cookies & Tracking Technologies",
       "intro": "Khulega Online uses cookies to:",
       "list": ["Improve website functionality", "Analyze traffic patterns", "Enhance user experience", "Remember login sessions"],
@@ -120,40 +153,40 @@
       "alert": "You may disable cookies in your browser settings, but certain features may not function properly."
     },
     {
-      "num": 10,
+      "num": 11,
       "title": "Your Rights",
       "intro": "Depending on applicable laws, you may have the right to:",
       "rightsItems": ["Access your data", "Request correction", "Request deletion (subject to legal limitations)", "Withdraw consent", "Object to processing"],
       "infoBox": "Requests can be sent to:"
     },
     {
-      "num": 11,
+      "num": 12,
       "title": "Third-Party Links",
       "intro": "Our website or USC dashboard may contain links to third-party websites.",
       "list": ["We are not responsible for the privacy practices of external platforms.", "You are advised to review their privacy policies separately."],
       "listType": "warning"
     },
     {
-      "num": 12,
+      "num": 13,
       "title": "Children's Privacy",
       "intro": "Khulega Online is intended for business users.",
       "alertDanger": "We do not knowingly collect data from individuals under 18 years of age."
     },
     {
-      "num": 13,
+      "num": 14,
       "title": "International Data Transfers",
       "intro": "If data is stored or processed outside India:",
       "list": ["We ensure appropriate safeguards are in place", "Data protection standards are maintained"],
       "listType": "check"
     },
     {
-      "num": 14,
+      "num": 15,
       "title": "Updates to This Privacy Policy",
       "intro": "We may update this Privacy Policy periodically. Updated versions will be posted on khulega.online.",
       "highlight": "Continued use of the platform indicates acceptance of revised policies."
     },
     {
-      "num": 15,
+      "num": 16,
       "title": "Contact Information",
       "intro": "For any privacy-related concerns:",
       "contactLabelEmail": "Email",

@@ -90,7 +90,7 @@
       "intro": "Khulega Online shall not be liable for:",
       "list": ["Marketplace account suspension", "Revenue loss", "Data inaccuracies from third-party APIs", "Indirect or consequential damages", "Downtime due to external services"],
       "listType": "cross",
-      "alert": "Use of the platform is at your own risk. Maximum liability, if applicable, shall not exceed the fees paid by you in the last 3 months."
+      "alert": "Use of the platform is at your own risk. Maximum liability, if applicable, shall not exceed the fees paid by you in the last 3 months. Khulega Online is not affiliated with or endorsed by Amazon. Amazon is a third-party marketplace platform with its own policies and operational controls."
     },
     {
       "num": 11,
@@ -114,6 +114,7 @@
       "num": 13,
       "title": "Data & Privacy",
       "intro": "Your data will be handled as per our Privacy Policy. Sellers consent to:",
+      "intro2": "Amazon information obtained through the Amazon Selling Partner API is used only to provide functionality to the authorized seller account. Khulega Online does not sell, share, or distribute such Amazon information to third parties. Access to such information is limited to the seller who granted authorization through Amazon’s OAuth process.",
       "list": ["Storage of business data", "Processing for platform functionality", "Integration with third-party marketplaces"],
       "listType": "check",
       "highlight": "We implement reasonable security safeguards but do not guarantee absolute security."
