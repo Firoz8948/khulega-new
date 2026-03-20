@@ -12,6 +12,13 @@
     "textEnd": "All services are available through your Unified Seller Console at",
     "tags": ["Unified Dashboard", "Multi-Marketplace Support", "Affordable Pricing", "Built for Indian Sellers"]
   },
+  "fees": {
+    "badgeLabel": "Platform Access Fees",
+    "title": "Platform access fees",
+    "subtitle": "Platform is free to access. Base plan is free.",
+    "noteTitle": "Free Platform Access",
+    "noteDesc": "Platform is free to access, and the base plan is free."
+  },
   "marketplace": {
     "badgeLabel": "Marketplace Setup",
     "title": "Marketplace Account Setup & Integration",

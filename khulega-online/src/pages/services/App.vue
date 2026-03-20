@@ -32,6 +32,36 @@
       </section>
 
       <!-- ============================================ -->
+      <!-- SECTION 1 — Platform Access Fees -->
+      <!-- ============================================ -->
+      <section class="svc-section svc-section--fees" id="fees">
+        <div class="svc-section__container">
+          <div class="svc-section__header">
+            <div class="svc-section__badge svc-section__badge--orange">
+              <span class="svc-section__badge-number">01</span>
+              <span class="svc-section__badge-label">{{ t('fees.badgeLabel') }}</span>
+            </div>
+            <h2 class="svc-section__title">{{ t('fees.title') }}</h2>
+            <p class="svc-section__subtitle">{{ t('fees.subtitle') }}</p>
+          </div>
+
+          <div class="svc-note__container">
+            <div class="svc-note__content">
+              <div class="svc-note__icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 12h-4l-2 7-4-14-2 7H2" />
+                </svg>
+              </div>
+              <div class="svc-note__text">
+                <h4 class="svc-note__title">{{ t('fees.noteTitle') }}</h4>
+                <p class="svc-note__desc">{{ t('fees.noteDesc') }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
       <!-- SECTION 1 — Marketplace Account Setup -->
       <!-- ============================================ -->
       <section class="svc-section svc-section--marketplace" id="marketplace">
@@ -39,7 +69,7 @@
 
           <div class="svc-section__header">
             <div class="svc-section__badge svc-section__badge--orange">
-              <span class="svc-section__badge-number">01</span>
+              <span class="svc-section__badge-number">02</span>
               <span class="svc-section__badge-label">{{ t('marketplace.badgeLabel') }}</span>
             </div>
             <h2 class="svc-section__title">{{ t('marketplace.title') }}</h2>
@@ -132,7 +162,7 @@
 
           <div class="svc-section__header">
             <div class="svc-section__badge svc-section__badge--blue">
-              <span class="svc-section__badge-number">02</span>
+              <span class="svc-section__badge-number">03</span>
               <span class="svc-section__badge-label">{{ t('compliance.badgeLabel') }}</span>
             </div>
             <h2 class="svc-section__title">{{ t('compliance.title') }}</h2>
@@ -200,7 +230,7 @@
 
           <div class="svc-section__header">
             <div class="svc-section__badge svc-section__badge--purple">
-              <span class="svc-section__badge-number">03</span>
+              <span class="svc-section__badge-number">04</span>
               <span class="svc-section__badge-label">{{ t('subscription.badgeLabel') }}</span>
             </div>
             <h2 class="svc-section__title">{{ t('subscription.title') }}</h2>
@@ -258,7 +288,7 @@
 
           <div class="svc-section__header">
             <div class="svc-section__badge svc-section__badge--emerald">
-              <span class="svc-section__badge-number">04</span>
+              <span class="svc-section__badge-number">05</span>
               <span class="svc-section__badge-label">{{ t('product.badgeLabel') }}</span>
             </div>
             <h2 class="svc-section__title">{{ t('product.title') }}</h2>
@@ -326,7 +356,7 @@
 
           <div class="svc-section__header">
             <div class="svc-section__badge svc-section__badge--amber">
-              <span class="svc-section__badge-number">05</span>
+              <span class="svc-section__badge-number">06</span>
               <span class="svc-section__badge-label">{{ t('advisory.badgeLabel') }}</span>
             </div>
             <h2 class="svc-section__title">{{ t('advisory.title') }}</h2>
