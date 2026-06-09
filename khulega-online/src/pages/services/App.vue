@@ -494,7 +494,8 @@ const compliancePrices = [
   { fee: '₹89', discounted: '₹49', validity: '31 Dec 2026' },
   { fee: '₹99', discounted: '₹49', validity: '31 Dec 2026' },
   { fee: '₹499', discounted: '₹249', validity: '31 Dec 2026' },
-  { fee: '₹999', discounted: '₹899', validity: '31 Dec 2026' }
+  { fee: '₹999', discounted: '₹899', validity: '31 Dec 2026' },
+  { fee: '₹1299', discounted: '₹999', validity: '31 Dec 2026' }
 ]
 const productPrices = [
   { fee: '₹39', discounted: '₹20', validity: '31 Dec 2026' },

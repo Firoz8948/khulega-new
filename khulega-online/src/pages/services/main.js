@@ -7,5 +7,6 @@ import '@css/components/hero-section.css'
 import '@css/pages/services.css'
 
 const app = createApp(App)
+
 registerGlobalComponents(app)
 app.mount('#app')
