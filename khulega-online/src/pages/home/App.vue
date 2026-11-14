@@ -6,6 +6,7 @@
       <!-- Hero -->
       <DesktopHero />
       <OurServices />
+      <Capacity />
       <SellerJourney />
       <SellersOnKhulega />
       <AboutUs />
@@ -23,6 +24,7 @@
 <script setup>
 import DesktopHero from '@/components/home/DesktopHero.vue'
 import OurServices from '@/components/home/OurServices.vue'
+import Capacity from '@/components/home/Capacity.vue'
 import SellerJourney from '@/components/home/SellerJourney.vue'
 import SellersOnKhulega from '@/components/home/SellersOnKhulega.vue'
 import AboutUs from '@/components/home/AboutUs.vue'

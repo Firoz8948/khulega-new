@@ -29,6 +29,8 @@ export default defineConfig({
         contact: resolve(__dirname, 'contact/index.html'),
         terms: resolve(__dirname, 'terms/index.html'),
         'seller-guidelines': resolve(__dirname, 'seller-guidelines/index.html'),
+        'capacity-building': resolve(__dirname, 'capacity-building/index.html'),
+        'success-stories': resolve(__dirname, 'success-stories/index.html'),
       }
     }
   }

@@ -28,51 +28,29 @@
       </div>
     </div>
 
-    <!-- ── Carousel — FULL WIDTH ── -->
+    <!-- ── Equal-width card row ── -->
     <div
       class="svc__carousel-wrap"
       :class="{ 'svc__carousel-wrap--in': isVisible }"
     >
-      <div class="svc__progress">
-        <div
-          class="svc__progress-bar"
-          :style="{ width: progressWidth + '%' }"
-        ></div>
-      </div>
-
       <div
-        class="svc__carousel"
-        @mouseenter="pauseAuto"
-        @mouseleave="resumeAuto"
+        ref="viewportRef"
+        class="svc__viewport"
         @touchstart.passive="onTouchStart"
         @touchmove.passive="onTouchMove"
         @touchend="onTouchEnd"
       >
-        <div class="svc__track">
-          <div
-            v-for="slide in renderedSlides"
-            :key="slide.uniqueKey"
+        <div
+          class="svc__track"
+          :style="{ transform: `translate3d(${offsetX}px, 0, 0)` }"
+        >
+          <article
+            v-for="(slide, idx) in activeServices"
+            :key="`${activeCategory}-${idx}`"
             class="svc__slide"
-            :class="{ 'svc__slide--center': slide.relPos === 0 }"
-            :style="calcSlideStyle(slide.relPos)"
-            @click="onSlideClick(slide.relPos, slide.originalIndex)"
+            :style="{ width: cardWidth + 'px' }"
           >
-            <!-- Small card -->
-            <div class="svc__sm">
-              <div
-                class="svc__sm-icon"
-                v-html="slide.icon"
-                :style="{
-                  '--ac': colorMap[slide.color]?.main,
-                  '--ac-bg': colorMap[slide.color]?.bg,
-                }"
-              ></div>
-              <span class="svc__sm-title">{{ slide.title }}</span>
-              <span v-if="slide.isFree" class="svc__sm-free">{{ t('ourServices.free') }}</span>
-            </div>
-
-            <!-- Big card -->
-            <div class="svc__lg">
+            <div class="svc__card">
               <div class="svc__lg-top">
                 <div
                   class="svc__lg-icon"
@@ -89,10 +67,29 @@
                 </div>
               </div>
               <p class="svc__lg-detail">{{ slide.detail }}</p>
-              <div v-if="slide.platforms" class="svc__lg-platforms">
-                <span v-for="p in slide.platforms" :key="p" class="svc__lg-tag">
-                  {{ p }}
-                </span>
+              <div
+                v-if="slide.platforms"
+                class="svc__lg-platforms"
+                role="list"
+                aria-label="Marketplaces"
+              >
+                <div
+                  v-for="brand in marketplaceBrands"
+                  :key="brand.key"
+                  class="svc__lg-brand"
+                  :class="{ 'svc__lg-brand--more': brand.isMore }"
+                  role="listitem"
+                >
+                  <img
+                    v-if="brand.logo"
+                    :src="brand.logo"
+                    :alt="brand.name"
+                    class="svc__lg-brand-img"
+                    loading="lazy"
+                    @error="onBrandLogoError(brand.key)"
+                  >
+                  <span v-else class="svc__lg-brand-fallback">{{ brand.fallback }}</span>
+                </div>
               </div>
               <div class="svc__lg-foot">
                 <span v-if="slide.isFree" class="svc__lg-free">
@@ -109,7 +106,7 @@
                   {{ t('ourServices.includedFree') }}
                 </span>
                 <span v-else class="svc__lg-paid">{{ t('ourServices.premiumService') }}</span>
-                <a href="/services/" class="svc__lg-link" @click.stop>
+                <a href="/services/" class="svc__lg-link">
                   {{ t('ourServices.learnMore') }}
                   <svg
                     viewBox="0 0 24 24"
@@ -127,29 +124,53 @@
                 </a>
               </div>
             </div>
-          </div>
+          </article>
         </div>
       </div>
 
-      <!-- Dots -->
-      <div class="svc__dots">
+      <div
+        v-if="pageCount > 1"
+        class="svc__nav"
+        role="group"
+        :aria-label="t('ourServices.badge')"
+      >
         <button
-          v-for="(_, idx) in activeServices"
-          :key="idx"
-          class="svc__dot"
-          :class="{ 'svc__dot--active': idx === currentIndex }"
-          @click="goTo(idx)"
-        ></button>
-      </div>
+          type="button"
+          class="svc__arrow"
+          aria-label="Previous"
+          :disabled="activeServices.length <= cardsPerView"
+          @click="prev"
+        >
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
 
-      <div class="svc__counter">
-        <span class="svc__counter-now">{{
-          String(currentIndex + 1).padStart(2, "0")
-        }}</span>
-        <span class="svc__counter-div">/</span>
-        <span class="svc__counter-total">{{
-          String(activeServices.length).padStart(2, "0")
-        }}</span>
+        <div v-if="pageCount > 1" class="svc__dots">
+          <button
+            v-for="page in pageCount"
+            :key="page"
+            type="button"
+            class="svc__dot"
+            :class="{ 'svc__dot--active': page - 1 === currentIndex }"
+            :aria-label="`Go to page ${page}`"
+            @click="goTo(page - 1)"
+          ></button>
+        </div>
+
+        <button
+          type="button"
+          class="svc__arrow"
+          aria-label="Next"
+          :disabled="activeServices.length <= cardsPerView"
+          @click="next"
+        >
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </button>
       </div>
     </div>
 
@@ -184,16 +205,57 @@ import { useI18n } from "@/i18n/index.js";
 const { t } = useI18n("home");
 
 const sectionRef = ref(null);
+const viewportRef = ref(null);
 const isVisible = ref(false);
 const activeCategory = ref("registration");
 const currentIndex = ref(0);
 const isTransitioning = ref(false);
 const winW = ref(1200);
+const layoutWidth = ref(1200);
+
+const CAROUSEL_GAP = 16;
 
 let observer = null;
-let autoTimer = null;
-let isPaused = false;
-const AUTO_INTERVAL = 3500;
+let resizeObserver = null;
+
+const marketplaceBrands = ref([
+  {
+    key: "amazon",
+    name: "Amazon",
+    logo: "/assets/images/brands/amazon.png",
+    fallback: "Amazon",
+  },
+  {
+    key: "flipkart",
+    name: "Flipkart",
+    logo: "/assets/images/brands/flipkart.png",
+    fallback: "Flipkart",
+  },
+  {
+    key: "meesho",
+    name: "Meesho",
+    logo: "/assets/images/brands/meesho.png",
+    fallback: "Meesho",
+  },
+  {
+    key: "ondc",
+    name: "ONDC",
+    logo: "/assets/images/brands/ondc.png",
+    fallback: "ONDC",
+  },
+  {
+    key: "more",
+    name: "More",
+    logo: null,
+    fallback: "+",
+    isMore: true,
+  },
+]);
+
+function onBrandLogoError(key) {
+  const b = marketplaceBrands.value.find((x) => x.key === key);
+  if (b) b.logo = null;
+}
 
 const colorMap = {
   blue: { main: "#2563eb", bg: "#eff6ff", border: "#bfdbfe" },
@@ -463,157 +525,77 @@ const activeServices = computed(
   () => allServices.value[activeCategory.value] || []
 );
 
-const progressWidth = computed(() => {
-  const len = activeServices.value.length;
-  return len === 0 ? 0 : ((currentIndex.value + 1) / len) * 100;
-});
-
-// How many side cards per side
-const sideCount = computed(() => (winW.value >= 768 ? 4 : 2));
-
-const totalVisible = computed(() => 1 + sideCount.value * 2);
-
-// Layout dimensions
-const dims = computed(() => {
+const cardsPerView = computed(() => {
   const w = winW.value;
-  if (w >= 1400)
-    return { cw: 520, ch: 390, sw: 140, sh: 180, gap: 20 };
-  if (w >= 1200)
-    return { cw: 480, ch: 370, sw: 130, sh: 170, gap: 18 };
-  if (w >= 1024)
-    return { cw: 420, ch: 350, sw: 120, sh: 160, gap: 16 };
-  if (w >= 768)
-    return { cw: 360, ch: 330, sw: 110, sh: 150, gap: 14 };
-  if (w >= 480)
-    return {
-      cw: Math.min(w * 0.52, 290),
-      ch: 280,
-      sw: 68,
-      sh: 92,
-      gap: 10,
-    };
-  return {
-    cw: Math.min(w * 0.55, 250),
-    ch: 260,
-    sw: 56,
-    sh: 78,
-    gap: 8,
-  };
+  if (w >= 1280) return 4;
+  if (w >= 1024) return 3;
+  if (w >= 768) return 2;
+  return 1;
 });
 
-// Build visible slides array
-const renderedSlides = computed(() => {
-  const list = activeServices.value;
-  const len = list.length;
-  if (!len) return [];
-  const half = sideCount.value;
-  const out = [];
-  for (let off = -half; off <= half; off++) {
-    const idx = ((currentIndex.value + off) % len + len) % len;
-    out.push({
-      ...list[idx],
-      uniqueKey: `${activeCategory.value}-${idx}-${off}-${currentIndex.value}`,
-      originalIndex: idx,
-      relPos: off,
-    });
-  }
-  return out;
+const maxIndex = computed(() => {
+  const len = activeServices.value.length;
+  const per = cardsPerView.value;
+  return Math.max(0, len - per);
 });
 
-/* ── Slide style calculator ── */
-function calcSlideStyle(relPos) {
-  const d = dims.value;
-  const abs = Math.abs(relPos);
-  const sc = sideCount.value;
+/** One dot per scroll position (not per card) */
+const pageCount = computed(() => maxIndex.value + 1);
 
-  if (relPos === 0) {
-    return {
-      width: d.cw + "px",
-      height: d.ch + "px",
-      transform: "translate(-50%,-50%) scale(1)",
-      opacity: "1",
-      zIndex: 20,
-      cursor: "default",
-      filter: "none",
-    };
+const cardWidth = computed(() => {
+  const per = cardsPerView.value;
+  const gaps = CAROUSEL_GAP * (per - 1);
+  let width = Math.max(0, (layoutWidth.value - gaps) / per);
+  if (winW.value < 768 && per === 1) {
+    width = Math.min(width, layoutWidth.value * 0.82);
   }
+  return width;
+});
 
-  // Offset: half center + gap + half small for pos1, then (small+gap) per step
-  const base = d.cw / 2 + d.gap + d.sw / 2;
-  const step = d.sw + d.gap;
-  const px = (relPos > 0 ? 1 : -1) * (base + (abs - 1) * step);
+const offsetX = computed(() => {
+  return -currentIndex.value * (cardWidth.value + CAROUSEL_GAP);
+});
 
-  // Opacity fades from 0.85 → 0.2
-  const opRange = 0.65;
-  const op = Math.max(0.2, 0.85 - ((abs - 1) / Math.max(1, sc - 1)) * opRange);
+function measureViewport() {
+  layoutWidth.value = viewportRef.value?.clientWidth ?? layoutWidth.value;
+}
 
-  // Scale fades from 0.92 → 0.7
-  const scRange = 0.22;
-  const s = Math.max(0.7, 0.92 - ((abs - 1) / Math.max(1, sc - 1)) * scRange);
-
-  const blur = abs >= sc ? 1.5 : abs >= sc - 1 ? 0.5 : 0;
-
-  return {
-    width: d.sw + "px",
-    height: d.sh + "px",
-    transform: `translate(calc(-50% + ${px}px),-50%) scale(${s})`,
-    opacity: String(op),
-    zIndex: String(20 - abs),
-    cursor: "pointer",
-    filter: blur ? `blur(${blur}px)` : "none",
-  };
+function clampIndex() {
+  currentIndex.value = Math.min(currentIndex.value, maxIndex.value);
 }
 
 /* ── Interaction ── */
-function onSlideClick(relPos, origIdx) {
-  if (relPos === 0 || isTransitioning.value) return;
+function next() {
+  if (isTransitioning.value || activeServices.value.length <= cardsPerView.value)
+    return;
   isTransitioning.value = true;
-  currentIndex.value = origIdx;
-  resetAuto();
-  setTimeout(() => (isTransitioning.value = false), 500);
+  const max = maxIndex.value;
+  if (currentIndex.value < max) currentIndex.value += 1;
+  else currentIndex.value = 0;
+  setTimeout(() => (isTransitioning.value = false), 450);
 }
 
-function next() {
-  if (isTransitioning.value) return;
+function prev() {
+  if (isTransitioning.value || activeServices.value.length <= cardsPerView.value)
+    return;
   isTransitioning.value = true;
-  const len = activeServices.value.length;
-  currentIndex.value = (currentIndex.value + 1) % len;
-  resetAuto();
-  setTimeout(() => (isTransitioning.value = false), 500);
+  const max = maxIndex.value;
+  if (currentIndex.value > 0) currentIndex.value -= 1;
+  else currentIndex.value = max;
+  setTimeout(() => (isTransitioning.value = false), 450);
 }
 
 function goTo(idx) {
-  if (isTransitioning.value || idx === currentIndex.value) return;
+  if (isTransitioning.value || idx < 0 || idx > maxIndex.value) return;
+  if (idx === currentIndex.value) return;
   isTransitioning.value = true;
   currentIndex.value = idx;
-  resetAuto();
-  setTimeout(() => (isTransitioning.value = false), 500);
+  setTimeout(() => (isTransitioning.value = false), 450);
 }
 
 function setCategory(id) {
   activeCategory.value = id;
   currentIndex.value = 0;
-  resetAuto();
-}
-
-function startAuto() {
-  stopAuto();
-  autoTimer = setInterval(() => {
-    if (!isPaused) next();
-  }, AUTO_INTERVAL);
-}
-function stopAuto() {
-  if (autoTimer) clearInterval(autoTimer);
-}
-function resetAuto() {
-  stopAuto();
-  startAuto();
-}
-function pauseAuto() {
-  isPaused = true;
-}
-function resumeAuto() {
-  isPaused = false;
 }
 
 /* ── Touch / Swipe ── */
@@ -625,7 +607,6 @@ function onTouchStart(e) {
   tx0 = e.changedTouches[0].clientX;
   tx1 = tx0;
   touching = true;
-  pauseAuto();
 }
 
 function onTouchMove(e) {
@@ -638,25 +619,16 @@ function onTouchEnd() {
   touching = false;
   const diff = tx1 - tx0;
   if (Math.abs(diff) > 40) {
-    if (isTransitioning.value) return;
-    isTransitioning.value = true;
-    const len = activeServices.value.length;
-    if (diff < 0) {
-      // swipe left → next
-      currentIndex.value = (currentIndex.value + 1) % len;
-    } else {
-      // swipe right → prev
-      currentIndex.value = (currentIndex.value - 1 + len) % len;
-    }
-    resetAuto();
-    setTimeout(() => (isTransitioning.value = false), 500);
+    if (diff < 0) next();
+    else prev();
   }
-  resumeAuto();
 }
 
 /* ── Resize ── */
 function onResize() {
   winW.value = window.innerWidth;
+  measureViewport();
+  clampIndex();
 }
 
 /* ── Lifecycle ── */
@@ -668,22 +640,38 @@ onMounted(() => {
     ([entry]) => {
       if (entry.isIntersecting) {
         isVisible.value = true;
-        startAuto();
       }
     },
     { threshold: 0.06 }
   );
   if (sectionRef.value) observer.observe(sectionRef.value);
+
+  requestAnimationFrame(() => {
+    measureViewport();
+    clampIndex();
+  });
+
+  if (viewportRef.value && typeof ResizeObserver !== "undefined") {
+    resizeObserver = new ResizeObserver(() => {
+      measureViewport();
+      clampIndex();
+    });
+    resizeObserver.observe(viewportRef.value);
+  }
 });
 
 onUnmounted(() => {
   if (observer) observer.disconnect();
-  stopAuto();
+  if (resizeObserver) resizeObserver.disconnect();
   window.removeEventListener("resize", onResize);
 });
 
 watch(activeCategory, () => {
   currentIndex.value = 0;
+});
+
+watch(cardsPerView, () => {
+  clampIndex();
 });
 </script>
 
@@ -693,7 +681,7 @@ watch(activeCategory, () => {
    ══════════════════════════════════════════════ */
 .svc {
   padding: 100px 0 110px;
-  background: linear-gradient(180deg, #fff 0%, #f7f8fc 100%);
+  background: #fff;
   position: relative;
   overflow: hidden;
 }
@@ -839,142 +827,48 @@ watch(activeCategory, () => {
   transform: translateY(0);
 }
 
-/* ── Progress ── */
-.svc__progress {
-  max-width: 400px;
-  height: 3px;
-  background: #e2e8f0;
-  border-radius: 10px;
-  margin: 0 auto 36px;
+/* ── Equal card row ── */
+.svc__viewport {
   overflow: hidden;
-}
-.svc__progress-bar {
-  height: 100%;
-  background: linear-gradient(90deg, #2563eb, #7c3aed);
-  border-radius: 10px;
-  transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* ── Carousel — full viewport ── */
-.svc__carousel {
-  position: relative;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  height: 430px;
-  overflow: hidden;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 28px;
   -webkit-user-select: none;
   user-select: none;
+  touch-action: pan-y;
 }
 
 .svc__track {
-  position: relative;
-  width: 100%;
-  height: 100%;
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
 }
 
-/* ── Slide ── */
 .svc__slide {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transition: all 0.55s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform, opacity, filter;
-}
-
-/* ── Small card ── */
-.svc__sm {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  background: #fff;
-  border-radius: 16px;
-  border: 1.5px solid #e8ecf2;
-  padding: 18px 14px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-  transition: all 0.35s ease;
-}
-
-.svc__slide:not(.svc__slide--center):hover .svc__sm {
-  border-color: #c7d0dd;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.09);
-  transform: translateY(-3px);
-}
-
-.svc__sm-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--ac-bg, #eff6ff);
   flex-shrink: 0;
-}
-.svc__sm-icon svg {
-  stroke: var(--ac, #2563eb);
-  width: 22px;
-  height: 22px;
+  min-width: 0;
 }
 
-.svc__sm-title {
-  font-size: 13px;
-  font-weight: 700;
-  color: #334155;
-  text-align: center;
-  line-height: 1.25;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.svc__sm-free {
-  padding: 2px 10px;
-  border-radius: 100px;
-  font-size: 10px;
-  font-weight: 700;
-  background: #dcfce7;
-  color: #15803d;
-  border: 1px solid #86efac;
-}
-
-/* ── Center: swap cards ── */
-.svc__slide--center .svc__sm {
-  opacity: 0;
-  pointer-events: none;
-  transform: scale(0.8);
-}
-.svc__slide:not(.svc__slide--center) .svc__lg {
-  opacity: 0;
-  pointer-events: none;
-  transform: scale(0.85);
-}
-
-/* ── Big card ── */
-.svc__lg {
-  position: absolute;
-  inset: 0;
+.svc__card {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  min-height: 380px;
   background: #fff;
-  border-radius: 24px;
+  border-radius: 20px;
   border: 1.5px solid #e2e6ef;
-  padding: 36px 40px;
-  opacity: 0;
-  transform: scale(0.92);
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  pointer-events: none;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
-  overflow: hidden;
+  padding: 28px 26px;
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
 }
-.svc__slide--center .svc__lg {
-  opacity: 1;
-  transform: scale(1);
-  pointer-events: auto;
+
+.svc__slide:hover .svc__card {
+  border-color: rgba(37, 99, 235, 0.22);
+  box-shadow: 0 12px 32px rgba(37, 99, 235, 0.1);
+  transform: translateY(-2px);
 }
 
 .svc__lg-top {
@@ -1005,11 +899,11 @@ watch(activeCategory, () => {
   min-width: 0;
 }
 .svc__lg-title {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 800;
   color: #0f172a;
   margin: 0 0 6px;
-  line-height: 1.2;
+  line-height: 1.25;
 }
 .svc__lg-sub {
   font-size: 15px;
@@ -1032,17 +926,54 @@ watch(activeCategory, () => {
 .svc__lg-platforms {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  align-items: center;
+  gap: 8px;
   margin-bottom: 18px;
 }
-.svc__lg-tag {
-  padding: 4px 14px;
-  border-radius: 8px;
-  font-size: 12px;
-  font-weight: 600;
-  background: #f1f5f9;
-  color: #475569;
+
+.svc__lg-brand {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: #f8fafc;
   border: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.04);
+}
+
+.svc__lg-brand-img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+
+.svc__lg-brand-fallback {
+  font-size: 9px;
+  font-weight: 800;
+  color: #475569;
+  text-align: center;
+  line-height: 1.1;
+  padding: 0 4px;
+}
+
+.svc__lg-brand--more {
+  background: #f1f5f9;
+  border-style: dashed;
+  border-color: #cbd5e1;
+  box-shadow: none;
+}
+
+.svc__lg-brand--more .svc__lg-brand-fallback {
+  font-size: 18px;
+  font-weight: 700;
+  color: #64748b;
+  padding: 0;
 }
 
 .svc__lg-foot {
@@ -1080,12 +1011,52 @@ watch(activeCategory, () => {
   gap: 8px;
 }
 
-/* ── Dots ── */
+/* ── Nav: arrows + dots ── */
+.svc__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 32px;
+  padding: 0 28px;
+}
+
+.svc__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1.5px solid #e2e8f0;
+  background: #fff;
+  color: #334155;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease,
+    box-shadow 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+}
+
+.svc__arrow:hover:not(:disabled) {
+  border-color: rgba(37, 99, 235, 0.35);
+  color: #2563eb;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.15);
+  transform: translateY(-1px);
+}
+
+.svc__arrow:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
 .svc__dots {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 8px;
-  margin-top: 36px;
+  max-width: min(420px, 70vw);
 }
 .svc__dot {
   width: 8px;
@@ -1103,24 +1074,6 @@ watch(activeCategory, () => {
 }
 .svc__dot:hover:not(.svc__dot--active) {
   background: #94a3b8;
-}
-
-/* ── Counter ── */
-.svc__counter {
-  text-align: center;
-  margin-top: 16px;
-  font-size: 13px;
-  font-weight: 600;
-  color: #94a3b8;
-  letter-spacing: 0.05em;
-}
-.svc__counter-now {
-  color: #2563eb;
-  font-size: 16px;
-  font-weight: 800;
-}
-.svc__counter-div {
-  margin: 0 4px;
 }
 
 /* ── CTA ── */
@@ -1187,8 +1140,9 @@ watch(activeCategory, () => {
   .svc__heading {
     font-size: 36px;
   }
-  .svc__carousel {
-    height: 390px;
+  .svc__card {
+    min-height: 0;
+    padding: 22px 18px;
   }
 }
 
@@ -1231,65 +1185,104 @@ watch(activeCategory, () => {
     height: 14px;
   }
 
-  .svc__carousel {
-    height: 320px;
+  .svc__viewport {
+    padding: 0 14px;
   }
 
-  /* Small card mobile */
-  .svc__sm {
-    padding: 10px 8px;
-    gap: 6px;
-    border-radius: 12px;
-  }
-  .svc__sm-icon {
-    width: 30px;
-    height: 30px;
-    border-radius: 8px;
-  }
-  .svc__sm-icon svg {
-    width: 15px;
-    height: 15px;
-  }
-  .svc__sm-title {
-    font-size: 9px;
-  }
-  .svc__sm-free {
-    font-size: 7px;
-    padding: 1px 6px;
+  .svc__track {
+    gap: 12px;
+    align-items: stretch;
   }
 
-  /* Big card mobile */
-  .svc__lg {
-    padding: 18px 16px;
-    border-radius: 16px;
+  .svc__slide {
+    height: 268px;
   }
-  .svc__lg-icon {
+
+  .svc__carousel-wrap {
+    margin-bottom: 40px;
+  }
+
+  .svc__nav {
+    padding: 0 14px;
+    margin-top: 24px;
+    gap: 12px;
+  }
+
+  .svc__arrow {
     width: 40px;
     height: 40px;
+  }
+
+  .svc__slide:hover .svc__card {
+    transform: none;
+  }
+
+  .svc__card {
+    height: 100%;
+    min-height: 268px;
+    max-height: 268px;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 14px 14px 12px;
+    border-radius: 14px;
+    border-width: 1px;
+    box-shadow: 0 2px 12px rgba(15, 23, 42, 0.05);
+  }
+
+  .svc__lg-icon {
+    width: 36px;
+    height: 36px;
     border-radius: 10px;
   }
   .svc__lg-icon svg {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
   }
   .svc__lg-top {
-    gap: 10px;
-    margin-bottom: 10px;
+    gap: 8px;
+    margin-bottom: 0;
+    align-items: center;
   }
   .svc__lg-title {
-    font-size: 15px;
+    font-size: 14px;
+    margin-bottom: 2px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   .svc__lg-sub {
     font-size: 11px;
+    line-height: 1.35;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
   .svc__lg-detail {
-    font-size: 11px;
-    line-height: 1.5;
-    margin-bottom: 10px;
-    padding-top: 10px;
+    font-size: 12px;
+    line-height: 1.45;
+    margin-bottom: 0;
+    padding-top: 8px;
+    flex: 1 1 auto;
+    min-height: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
+
+  .svc__lg-platforms {
+    flex-shrink: 0;
+    min-height: 38px;
+  }
+
   .svc__lg-foot {
-    padding-top: 10px;
+    margin-top: auto;
+    flex-shrink: 0;
+    padding-top: 8px;
+    flex-wrap: wrap;
+    gap: 6px;
   }
   .svc__lg-free,
   .svc__lg-paid {
@@ -1298,17 +1291,24 @@ watch(activeCategory, () => {
   .svc__lg-link {
     font-size: 10px;
   }
-  .svc__lg-tag {
-    font-size: 9px;
-    padding: 2px 8px;
+  .svc__lg-brand {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+  }
+  .svc__lg-brand-img {
+    width: 18px;
+    height: 18px;
+  }
+  .svc__lg-brand--more .svc__lg-brand-fallback {
+    font-size: 13px;
   }
   .svc__lg-platforms {
-    margin-bottom: 8px;
-    gap: 4px;
+    margin-bottom: 4px;
+    gap: 5px;
   }
 
   .svc__dots {
-    margin-top: 20px;
     gap: 6px;
   }
   .svc__dot {
@@ -1317,13 +1317,6 @@ watch(activeCategory, () => {
   }
   .svc__dot--active {
     width: 24px;
-  }
-  .svc__counter {
-    margin-top: 12px;
-    font-size: 12px;
-  }
-  .svc__counter-now {
-    font-size: 14px;
   }
   .svc__cta-btn {
     width: 100%;
@@ -1339,15 +1332,22 @@ watch(activeCategory, () => {
   .svc__heading {
     font-size: 22px;
   }
-  .svc__carousel {
-    height: 300px;
-  }
   .svc__pill {
     padding: 7px 12px;
     font-size: 11px;
   }
-  .svc__lg {
-    padding: 14px 12px;
+  .svc__slide {
+    height: 252px;
+  }
+
+  .svc__card {
+    min-height: 252px;
+    max-height: 252px;
+    padding: 12px;
+  }
+
+  .svc__lg-detail {
+    -webkit-line-clamp: 2;
   }
   .svc__lg-title {
     font-size: 13px;
