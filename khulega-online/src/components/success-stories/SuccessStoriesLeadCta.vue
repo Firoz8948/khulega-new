@@ -105,12 +105,15 @@
 </template>
 
 <script setup>
-import { reactive, ref } from 'vue'
-import emailjs from '@emailjs/browser'
+import { reactive, ref, onMounted } from 'vue'
+import {
+  initEmailJs,
+  sendContactEmail,
+} from '@/utils/emailjsContact.js'
 
-const EMAILJS_PUBLIC_KEY = 'dLbCE5BH1XMiSd_03'
-const EMAILJS_SERVICE_ID = 'service_5bbk3zc'
-const EMAILJS_TEMPLATE_ID_CONTACT = 'template_fzlcbov'
+onMounted(() => {
+  initEmailJs()
+})
 
 const benefits = [
   'Guidance on the right marketplaces for your category',
@@ -164,12 +167,7 @@ async function handleSubmit() {
   }
 
   try {
-    await emailjs.send(
-      EMAILJS_SERVICE_ID,
-      EMAILJS_TEMPLATE_ID_CONTACT,
-      templateParams,
-      EMAILJS_PUBLIC_KEY
-    )
+    await sendContactEmail(templateParams)
     showSuccess.value = true
     form.name = ''
     form.businessName = ''

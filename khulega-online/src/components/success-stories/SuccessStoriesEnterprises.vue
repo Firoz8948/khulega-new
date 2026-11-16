@@ -12,15 +12,40 @@
         </p>
       </header>
 
-      <ul class="ss-enterprise__logo-strip" role="list" aria-label="Partner logos">
-        <li
-          v-for="n in 6"
-          :key="n"
-          class="ss-enterprise__logo-slot"
-        >
-          <span class="ss-enterprise__logo-slot-text">Logo {{ n }}</span>
-        </li>
-      </ul>
+      <div
+        class="ss-enterprise__logo-marquee"
+        role="region"
+        aria-label="Partner logos"
+      >
+        <div class="ss-enterprise__logo-viewport">
+          <div class="ss-enterprise__logo-track">
+            <ul
+              v-for="set in 2"
+              :key="set"
+              class="ss-enterprise__logo-set"
+              :aria-hidden="set === 2 ? true : undefined"
+            >
+              <li
+                v-for="(logo, index) in partnerLogos"
+                :key="`${set}-${index}`"
+                class="ss-enterprise__logo-item"
+              >
+                <img
+                  :src="logo.src"
+                  :alt="logo.alt"
+                  class="ss-enterprise__logo-img"
+                  width="160"
+                  height="64"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="ss-enterprise__logo-fade ss-enterprise__logo-fade--left" aria-hidden="true" />
+        <div class="ss-enterprise__logo-fade ss-enterprise__logo-fade--right" aria-hidden="true" />
+      </div>
 
       <ul
         class="ss-enterprise__cases"
@@ -32,34 +57,32 @@
           :key="item.id"
           class="ss-enterprise__card"
         >
-          <div class="ss-enterprise__card-logo" aria-hidden="true">
-            <span>Logo</span>
+          <div class="ss-enterprise__card-logo">
+            <img
+              :src="item.logoSrc"
+              :alt="item.logoAlt"
+              class="ss-enterprise__card-logo-img"
+              width="120"
+              height="56"
+              loading="lazy"
+              decoding="async"
+            >
           </div>
 
           <h4 class="ss-enterprise__name">{{ item.name }}</h4>
-          <p class="ss-enterprise__meta">
-            {{ item.sector }} · {{ item.scale }}
+          <p v-if="item.fullName" class="ss-enterprise__full-name">
+            {{ item.fullName }}
           </p>
 
-          <div class="ss-enterprise__block">
-            <p class="ss-enterprise__block-label">Challenge.</p>
-            <p class="ss-enterprise__block-text">{{ item.challenge }}</p>
-          </div>
+          <p class="ss-enterprise__type-label">Type of enterprise</p>
+          <p class="ss-enterprise__type-text">
+            {{ item.enterpriseType }}
+          </p>
 
-          <div class="ss-enterprise__block">
-            <p class="ss-enterprise__block-label">What TechSandhya did.</p>
-            <p class="ss-enterprise__block-text">{{ item.action }}</p>
+          <div class="ss-enterprise__sku">
+            <span class="ss-enterprise__sku-value">{{ item.skuCount }}</span>
+            <span class="ss-enterprise__sku-label">SKU count</span>
           </div>
-
-          <div class="ss-enterprise__block ss-enterprise__block--result">
-            <p class="ss-enterprise__block-label">Result.</p>
-            <p class="ss-enterprise__result">{{ item.result }}</p>
-          </div>
-
-          <a :href="item.caseHref" class="ss-enterprise__link">
-            Read case study
-            <span class="ss-enterprise__link-arrow" aria-hidden="true">→</span>
-          </a>
         </li>
       </ul>
     </div>
@@ -67,42 +90,9 @@
 </template>
 
 <script setup>
-const cases = [
-  {
-    id: 1,
-    name: 'Aurora Consumer Goods Ltd.',
-    sector: 'FMCG',
-    scale: 'National · 500+ SKUs',
-    challenge:
-      'Fragmented marketplace ops across regions slowed launches and skewed inventory toward a single channel.',
-    action:
-      'Unified catalog governance, automated listing workflows, and a single dashboard for orders and settlements.',
-    result: '40% faster time-to-market for new SKUs across five marketplaces.',
-    caseHref: '#',
-  },
-  {
-    id: 2,
-    name: 'Urban Weave Retail Group',
-    sector: 'Fashion & apparel',
-    scale: 'Enterprise · 12 fulfillment nodes',
-    challenge:
-      'Seasonal drops missed online windows because compliance and asset uploads were handled channel by channel.',
-    action:
-      'End-to-end onboarding playbooks, bulk creative checks, and Meesho / Flipkart / Amazon sync from one source.',
-    result: '2.1× online revenue in two peak seasons with fewer listing rejections.',
-    caseHref: '#',
-  },
-  {
-    id: 3,
-    name: 'VoltEdge Electronics Pvt. Ltd.',
-    sector: 'Consumer electronics',
-    scale: 'D2C + retail · Pan-India',
-    challenge:
-      'High return rates and warranty claims were hard to trace when marketplace data sat in separate spreadsheets.',
-    action:
-      'Integrated order-to-service views, return reason tagging, and ONDC + Amazon reporting aligned to ERP exports.',
-    result: '28% reduction in unresolved service tickets within one quarter.',
-    caseHref: '#',
-  },
-]
+import { enterprisePartnerLogos } from '@/data/enterprisePartnerLogos.js'
+import { enterpriseCaseCards } from '@/data/enterpriseCaseCards.js'
+
+const partnerLogos = enterprisePartnerLogos
+const cases = enterpriseCaseCards
 </script>

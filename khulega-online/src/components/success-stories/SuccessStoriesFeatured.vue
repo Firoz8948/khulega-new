@@ -7,15 +7,15 @@
 
       <div class="ss-featured__layout">
         <div class="ss-featured__visual">
-          <div class="ss-featured__placeholder">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-              <circle cx="8.5" cy="8.5" r="1.5" />
-              <polyline points="21 15 16 10 5 21" />
-            </svg>
-            <span>Image placeholder</span>
-          </div>
+          <img
+            class="ss-featured__image"
+            :src="story.imageSrc"
+            :alt="story.imageAlt"
+            width="800"
+            height="600"
+            loading="lazy"
+            decoding="async"
+          >
         </div>
 
         <article class="ss-featured__content">
@@ -23,15 +23,18 @@
           <h2 id="ss-featured-name" class="ss-featured__name">
             {{ story.name }}
           </h2>
-          <p class="ss-featured__meta">
-            <span>{{ story.cityState }}</span>
-            <span class="ss-featured__meta-dot" aria-hidden="true">·</span>
-            <span>{{ story.category }}</span>
-            <span class="ss-featured__meta-dot" aria-hidden="true">·</span>
-            <span>Selling on {{ story.marketplaces }}</span>
-          </p>
+          <div class="ss-featured__meta">
+            <span class="ss-featured__meta-line">{{ story.cityState }}</span>
+            <span class="ss-featured__meta-line">Selling on {{ story.marketplaces }}</span>
+            <span class="ss-featured__meta-line">
+              Collective — {{ story.collective }}
+            </span>
+            <span class="ss-featured__meta-line">
+              Key products — {{ story.keyProducts }}
+            </span>
+          </div>
 
-          <blockquote class="ss-featured__quote">
+          <blockquote v-if="story.quote" class="ss-featured__quote">
             <p>{{ story.quote }}</p>
           </blockquote>
 
@@ -41,35 +44,112 @@
               :key="index"
               class="ss-featured__metric"
             >
-              <span class="ss-featured__metric-value">{{ metric.value }}</span>
+              <span
+                class="ss-featured__metric-value"
+                :class="{ 'ss-featured__metric-value--compact': metric.compact }"
+              >{{ metric.value }}</span>
               <span class="ss-featured__metric-label">{{ metric.label }}</span>
             </li>
           </ul>
 
-          <a :href="story.storyHref" class="ss-featured__link">
+          <button
+            type="button"
+            class="ss-featured__link"
+            @click="openStory = true"
+          >
             Read the full story
             <span class="ss-featured__link-arrow" aria-hidden="true">→</span>
-          </a>
+          </button>
         </article>
       </div>
     </div>
+
+    <BaseModal
+      v-model="openStory"
+      :title="story.name"
+      size="lg"
+    >
+      <article class="ss-story-modal">
+        <h2 class="ss-story-modal__headline">
+          {{ story.modalTitle }}
+        </h2>
+
+        <dl class="ss-story-modal__profile">
+          <div class="ss-story-modal__profile-row">
+            <dt>Seller profile</dt>
+            <dd>{{ story.name }} ({{ story.profileLocation }})</dd>
+          </div>
+          <div class="ss-story-modal__profile-row">
+            <dt>Collective strength</dt>
+            <dd>{{ story.collective }}</dd>
+          </div>
+          <div class="ss-story-modal__profile-row">
+            <dt>Key products</dt>
+            <dd>{{ story.keyProducts }}</dd>
+          </div>
+        </dl>
+
+        <template v-for="(section, i) in story.sections" :key="i">
+          <section class="ss-story-modal__block">
+            <h3 class="ss-story-modal__h3">{{ section.heading }}</h3>
+            <p
+              v-for="(para, j) in section.paragraphs"
+              :key="`p-${i}-${j}`"
+              class="ss-story-modal__p"
+            >
+              {{ para }}
+            </p>
+            <p v-if="section.intro" class="ss-story-modal__p">
+              {{ section.intro }}
+            </p>
+            <ul v-if="section.bullets" class="ss-story-modal__list">
+              <li v-for="(item, k) in section.bullets" :key="`b-${i}-${k}`">
+                {{ item }}
+              </li>
+            </ul>
+            <div
+              v-if="section.metricsTable"
+              class="ss-story-modal__table-wrap"
+              role="region"
+              aria-label="Key performance metrics"
+            >
+              <table class="ss-story-modal__table">
+                <thead>
+                  <tr>
+                    <th scope="col">Key performance metric</th>
+                    <th scope="col">Milestone achieved</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr
+                    v-for="(row, r) in section.metricsTable"
+                    :key="`row-${r}`"
+                  >
+                    <th scope="row">{{ row.metric }}</th>
+                    <td>{{ row.value }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </template>
+      </article>
+    </BaseModal>
   </section>
 </template>
 
 <script setup>
-/** Dummy featured story — replace with a verified seller when ready */
-const story = {
-  name: 'Jaipur Heritage Crafts Pvt. Ltd.',
-  cityState: 'Jaipur, Rajasthan',
-  category: 'Handicrafts',
-  marketplaces: 'Amazon, Flipkart, Meesho & ONDC',
-  quote:
-    'We used to manage orders in spreadsheets and miss dispatch cut-offs. With TechSandhya, our catalog went live on four channels in weeks—and returns and reconciliation finally sit in one place.',
-  metrics: [
-    { value: '3.2×', label: 'Monthly order volume after going multi-channel' },
-    { value: '18 days', label: 'Time to first marketplace go-live' },
-    { value: '94%', label: 'On-time dispatch rate (last 90 days)' },
-  ],
-  storyHref: '#',
-}
+import { ref, watch, onUnmounted } from 'vue'
+import { kenBetwaFeaturedStory } from '@/data/kenBetwaFeaturedStory.js'
+
+const story = kenBetwaFeaturedStory
+const openStory = ref(false)
+
+watch(openStory, (isOpen) => {
+  document.body.style.overflow = isOpen ? 'hidden' : ''
+})
+
+onUnmounted(() => {
+  document.body.style.overflow = ''
+})
 </script>

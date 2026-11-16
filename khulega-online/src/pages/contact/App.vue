@@ -408,16 +408,15 @@
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue'
-import emailjs from '@emailjs/browser'
+import { ref, reactive, onMounted } from 'vue'
+import { initEmailJs, sendContactEmail } from '@/utils/emailjsContact.js'
 import { useI18n } from '@/i18n/index.js'
 
 const { t } = useI18n('contact')
 
-// EmailJS: Public Key from https://dashboard.emailjs.com/admin
-const EMAILJS_PUBLIC_KEY = 'dLbCE5BH1XMiSd_03'
-const EMAILJS_SERVICE_ID = 'service_5bbk3zc'
-const EMAILJS_TEMPLATE_ID_CONTACT = 'template_fzlcbov'
+onMounted(() => {
+  initEmailJs()
+})
 
 const form = reactive({
   firstName: '',
@@ -458,12 +457,7 @@ const handleSubmit = async () => {
   }
 
   try {
-    await emailjs.send(
-      EMAILJS_SERVICE_ID,
-      EMAILJS_TEMPLATE_ID_CONTACT,
-      templateParams,
-      EMAILJS_PUBLIC_KEY
-    )
+    await sendContactEmail(templateParams)
 
     showSuccess.value = true
     Object.keys(form).forEach(key => { form[key] = '' })

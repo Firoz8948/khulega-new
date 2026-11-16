@@ -60,8 +60,21 @@
       </div>
 
       <div class="ss-filters__results" aria-live="polite" aria-atomic="true">
-        <div class="ss-filters__results-placeholder">
-          Showcase listings will appear here - filter logic.
+        <div class="ss-filters__results-card">
+          <p class="ss-filters__results-stat">
+            <span v-if="resultCopy.prefix" class="ss-filters__results-text">
+              {{ resultCopy.prefix }}
+            </span>
+            <span class="ss-filters__results-value">
+              {{ displayCount }}{{ resultCopy.showPlus ? '+' : '' }}
+            </span>
+            <span v-if="resultCopy.suffix" class="ss-filters__results-text">
+              {{ resultCopy.suffix }}
+            </span>
+          </p>
+          <p class="ss-filters__results-sub">
+            {{ resultCopy.sub }}
+          </p>
         </div>
       </div>
     </div>
@@ -69,7 +82,8 @@
 </template>
 
 <script setup>
-import { reactive, ref } from 'vue'
+import { reactive, ref, computed, watch, onUnmounted } from 'vue'
+import { resultCopyForSelections } from '@/utils/successStoriesFilterStats'
 
 const query = ref('')
 
@@ -78,6 +92,58 @@ const selections = reactive({
   category: 'all',
   marketplace: 'any',
 })
+
+const resultCopy = computed(() => resultCopyForSelections(selections))
+const displayCount = ref('0')
+
+let frameIds = []
+let animGeneration = 0
+
+function easeOutCubic(t) {
+  return 1 - (1 - t) ** 3
+}
+
+function formatCount(n) {
+  return n.toLocaleString('en-IN')
+}
+
+function cancelCounterFrames() {
+  frameIds.forEach((id) => cancelAnimationFrame(id))
+  frameIds = []
+}
+
+function animateToCount(target, duration = 1600) {
+  cancelCounterFrames()
+  const gen = ++animGeneration
+  displayCount.value = formatCount(0)
+  const start = performance.now()
+
+  const tick = (now) => {
+    if (gen !== animGeneration) return
+    const elapsed = now - start
+    const progress = Math.min(elapsed / duration, 1)
+    const current = Math.round(target * easeOutCubic(progress))
+    displayCount.value = formatCount(current)
+
+    if (progress < 1) {
+      const id = requestAnimationFrame(tick)
+      frameIds.push(id)
+    } else {
+      displayCount.value = formatCount(target)
+    }
+  }
+
+  const id = requestAnimationFrame(tick)
+  frameIds.push(id)
+}
+
+watch(
+  () => resultCopy.value.target,
+  (target) => {
+    animateToCount(target)
+  },
+  { immediate: true }
+)
 
 const filterGroups = [
   {
@@ -118,4 +184,8 @@ const filterGroups = [
 function setSelection(key, value) {
   selections[key] = value
 }
+
+onUnmounted(() => {
+  cancelCounterFrames()
+})
 </script>
