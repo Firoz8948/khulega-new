@@ -177,22 +177,50 @@
     <!-- ── CTA ── -->
     <div class="svc__inner">
       <div class="svc__cta" :class="{ 'svc__cta--in': isVisible }">
-        <a href="/services/" class="svc__cta-btn">
-          <span>{{ t('ourServices.viewAllServices') }}</span>
-          <svg
-            viewBox="0 0 24 24"
-            width="16"
-            height="16"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <line x1="5" y1="12" x2="19" y2="12" />
-            <polyline points="12 5 19 12 12 19" />
-          </svg>
-        </a>
+        <div class="svc__cta-actions">
+          <a href="/services/" class="svc__cta-btn">
+            <span>{{ t('ourServices.viewAllServices') }}</span>
+            <svg
+              viewBox="0 0 24 24"
+              width="16"
+              height="16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+          <a href="/kharcha-calculator/" class="svc__cta-btn svc__cta-btn--kharcha">
+            <span>{{ t('ourServices.kharchaCalculator') }}</span>
+            <svg
+              viewBox="0 0 24 24"
+              width="16"
+              height="16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <rect x="4" y="2" width="16" height="20" rx="2" />
+              <line x1="8" y1="6" x2="16" y2="6" />
+              <line x1="8" y1="10" x2="8" y2="10.01" />
+              <line x1="12" y1="10" x2="12" y2="10.01" />
+              <line x1="16" y1="10" x2="16" y2="10.01" />
+              <line x1="8" y1="14" x2="8" y2="14.01" />
+              <line x1="12" y1="14" x2="12" y2="14.01" />
+              <line x1="16" y1="14" x2="16" y2="14.01" />
+              <line x1="8" y1="18" x2="8" y2="18.01" />
+              <line x1="12" y1="18" x2="16" y2="18" />
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -1087,6 +1115,13 @@ watch(cardsPerView, () => {
   opacity: 1;
   transform: translateY(0);
 }
+.svc__cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+}
 .svc__cta-btn {
   display: inline-flex;
   align-items: center;
@@ -1131,6 +1166,13 @@ watch(cardsPerView, () => {
 }
 .svc__cta-btn:hover svg {
   transform: translateX(3px);
+}
+.svc__cta-btn--kharcha {
+  background: linear-gradient(135deg, #7c3aed, #6d28d9);
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.svc__cta-btn--kharcha:hover {
+  box-shadow: 0 8px 28px rgba(124, 58, 237, 0.45), 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 /* ══════════════════════════════════════════════
@@ -1318,9 +1360,15 @@ watch(cardsPerView, () => {
   .svc__dot--active {
     width: 24px;
   }
-  .svc__cta-btn {
+  .svc__cta-actions {
+    flex-direction: column;
     width: 100%;
     max-width: 360px;
+    margin-inline: auto;
+    gap: 12px;
+  }
+  .svc__cta-btn {
+    width: 100%;
     justify-content: center;
     padding: 14px 28px;
     font-size: 15px;

@@ -121,7 +121,7 @@
         </div>
 
         <!-- Column 2: Become a Seller -->
-        <div class="footer__col">
+        <div class="footer__col footer__col--seller">
           <h4 class="footer__title">
             <span class="footer__title-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -154,6 +154,9 @@
               <a href="/services/" class="footer__link">{{ t('sidebar.sellerServices') }}</a>
             </li>
             <li>
+              <a href="/kharcha-calculator/" class="footer__link">{{ t('sidebar.kharchaCalculator') }}</a>
+            </li>
+            <li>
               <a href="/user-journey/" class="footer__link">{{ t('sidebar.userJourney') }}</a>
             </li>
             <li>
@@ -166,7 +169,7 @@
         </div>
 
         <!-- Column 3: Career -->
-        <div class="footer__col">
+        <div class="footer__col footer__col--career">
           <h4 class="footer__title">
             <span class="footer__title-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -182,57 +185,59 @@
             </li>
           </ul>
 
-          <h4 class="footer__title footer__title--sub">
-            <span class="footer__title-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
-                <circle cx="12" cy="7" r="4" />
-              </svg>
-            </span>
-            {{ t('sidebar.customer') }}
-          </h4>
-          <ul class="footer__list">
-            <li>
-              <a
-                href="https://milega.online"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="footer__link"
-                >{{ t('sidebar.signIn') }}</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://milega.online"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="footer__link"
-                >{{ t('sidebar.register') }}</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://milega.online"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="footer__link"
-                >{{ t('sidebar.myOrders') }}</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://milega.online"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="footer__link"
-                >{{ t('sidebar.wishlist') }}</a
-              >
-            </li>
-          </ul>
+          <div class="footer__col--customer">
+            <h4 class="footer__title footer__title--sub">
+              <span class="footer__title-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                  <circle cx="12" cy="7" r="4" />
+                </svg>
+              </span>
+              {{ t('sidebar.customer') }}
+            </h4>
+            <ul class="footer__list">
+              <li>
+                <a
+                  href="https://milega.online"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="footer__link"
+                  >{{ t('sidebar.signIn') }}</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://milega.online"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="footer__link"
+                  >{{ t('sidebar.register') }}</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://milega.online"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="footer__link"
+                  >{{ t('sidebar.myOrders') }}</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://milega.online"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="footer__link"
+                  >{{ t('sidebar.wishlist') }}</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
 
         <!-- Column 4: Shop Now -->
-        <div class="footer__col">
+        <div class="footer__col footer__col--shop">
           <h4 class="footer__title">
             <span class="footer__title-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -275,7 +280,7 @@
         </div>
 
         <!-- Column 5: Quick Links -->
-        <div class="footer__col">
+        <div class="footer__col footer__col--quick">
           <h4 class="footer__title">
             <span class="footer__title-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

@@ -393,6 +393,25 @@
     .footer__bottom-right {
       font-size: 11.5px;
     }
+
+    .footer__col--career,
+    .footer__col--shop,
+    .footer__col--customer {
+      display: none !important;
+    }
+
+    .footer__col--seller {
+      grid-column: 1;
+    }
+
+    .footer__col--quick {
+      grid-column: 2;
+    }
+
+    .footer__col--seller,
+    .footer__col--quick {
+      text-align: left;
+    }
   }
   
   /* ===========================
@@ -400,12 +419,13 @@
      =========================== */
   @media (max-width: 400px) {
     .footer__container {
-      grid-template-columns: 1fr;
-      gap: 24px;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px 14px;
       padding-inline: 16px;
     }
   
     .footer__col--brand {
+      grid-column: 1 / -1;
       border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
   
@@ -810,7 +830,7 @@
   align-items: center;
   gap: var(--space-sm);
   flex-shrink: 0;
-  margin-right: 18px; /* move desktop Shop/Apply Job slightly left */
+  margin-right: 18px;
 }
 
 .header__action-btn {
@@ -824,17 +844,6 @@
   white-space: nowrap;
   transition: all var(--transition-fast);
   text-decoration: none;
-}
-
-.header__action-btn--shop {
-  background: var(--color-primary);
-  color: var(--color-text-inverse);
-}
-
-.header__action-btn--shop:hover {
-  background: var(--color-primary-dark);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-md);
 }
 
 .header__action-btn--job {
@@ -914,7 +923,6 @@
     margin-bottom: -10px;
   }
 
-  .header__action-btn--shop { padding: 6px 10px; font-size: var(--fs-xs); }
   .hamburger { width: 44px; height: 38px; padding: 8px; gap: 5px; }
 }
 

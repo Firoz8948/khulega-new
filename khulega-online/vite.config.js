@@ -31,6 +31,7 @@ export default defineConfig({
         'seller-guidelines': resolve(__dirname, 'seller-guidelines/index.html'),
         'capacity-building': resolve(__dirname, 'capacity-building/index.html'),
         'success-stories': resolve(__dirname, 'success-stories/index.html'),
+        'kharcha-calculator': resolve(__dirname, 'kharcha-calculator/index.html'),
       }
     }
   }

@@ -1,0 +1,38 @@
+.page--kharcha-calculator {
+  background: #0b1316;
+}
+
+.page--kharcha-calculator .kharcha-calculator-main {
+  max-width: none;
+  width: 100%;
+  padding-inline: 0;
+  padding-bottom: 0;
+  margin: 0;
+}
+
+/* Fixed mobile header — keep iframe top (language bar) below site header */
+@media (max-width: 768px) {
+  .page--kharcha-calculator .kharcha-calculator-main {
+    padding-top: 70px;
+  }
+}
+
+.kharcha-calculator__frame {
+  display: block;
+  width: 100%;
+  border: 0;
+  min-height: 0;
+  height: 480px;
+  background: transparent;
+  vertical-align: top;
+}
+
+@media (max-width: 979px) {
+  .page--kharcha-calculator .kharcha-calculator__frame {
+    max-height: calc(100dvh - 78px);
+  }
+
+  .page--kharcha-calculator .whatsapp-btn {
+    bottom: calc(76px + env(safe-area-inset-bottom, 0px));
+  }
+}

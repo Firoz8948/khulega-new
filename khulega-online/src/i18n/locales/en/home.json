@@ -155,6 +155,7 @@
     "learnMore": "Learn more",
     "includedFree": "Included Free",
     "viewAllServices": "View All Services & Pricing",
+    "kharchaCalculator": "Kharcha Calculator",
     "registration": [
       { "title": "e-PAN Card", "shortDesc": "Instant digital PAN card generation", "detail": "Get your business PAN card digitally without visiting any office. Required for GST and marketplace registration." },
       { "title": "GST Registration", "shortDesc": "Mandatory for online selling on marketplaces", "detail": "Complete GST registration with ARN generation. Required to sell on Amazon, Flipkart, and other marketplaces." },
